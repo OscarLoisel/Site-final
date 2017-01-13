@@ -102,7 +102,7 @@
         $id = intval($_SESSION['id]']);
         $n_serie = htmlspecialchars($_POST['ajout_capteurs']);
         insertcapteur2($bdd, $id, $n_serie);
-        echo "enregistré";
+        echo "enregistréééééé";
         }
     }
        
