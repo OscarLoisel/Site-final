@@ -1,13 +1,6 @@
 <?php
 	require("connexion_base.php");
 
-	function editidentifiant($bdd, $identifiant, $id)
-	{
-		$reponse = $bdd->prepare("UPDATE utilisateur SET identifiant = ? WHERE id= ?");
-		$reponse->execute(array($identifiant, $id));
-		return $reponse;
-	}
-
 	function editmail($bdd, $mail, $id)
 	{
 		$reponse = $bdd->prepare("UPDATE utilisateur SET mail = ? WHERE id = ?");

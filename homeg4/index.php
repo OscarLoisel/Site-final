@@ -96,23 +96,23 @@
             $data = "$data[1]";
             if($data = "H")
             {
-                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie)
+                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
             }
             if($data = "T")
             {
-                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie)
+                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
             }
             if($data = "H")
             {
-                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie)
+                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
             }
             if($data = "H")
             {
-                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie)
+                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
             }
             if($data = "H")
             {
-                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie)
+                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
             }
             insertcapteur($bdd, $id, $n_serie);
             echo "enregistrAIENT";

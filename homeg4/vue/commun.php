@@ -518,14 +518,6 @@ function edition_profil()
 
 				<tr>
 					<td>
-						<label for="newidentifiant">Nouvel identifiant :</label>
-					</td>
-					<td>
-						<input type="text " name="newidentifiant" id="newidentifiant" placeholder="Identifiant">
-					</td>
-				</tr>
-				<tr>
-					<td>
 						<label for="newmail">Nouveaux mail :</label>
 					</td>
 					<td>
