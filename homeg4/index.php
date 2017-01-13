@@ -6,6 +6,7 @@
     include_once("modele/utilisateur.php");
     include_once("modele/para_capteurs.php");
     include_once("modele/insertpiece.php");
+    include_once("modele/edition_profil.php");
     /*include("modele/insertcapteur.php");
     
     require("modele/para_capteurs.php");*/

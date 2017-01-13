@@ -1,6 +1,4 @@
-<?php
-include("modele/utilisateur.php");
-include("modele/edition_profil.php");
+<?php 
 
 if (isset($_SESSION['id']))
 {

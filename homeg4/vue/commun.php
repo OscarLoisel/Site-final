@@ -513,7 +513,7 @@ function edition_profil()
 	ob_start();
 	?>
 	<div id="editionprofil">
-		<form method="POST" action="index.php?cible=verif">
+		<form method="POST" action="index.php?cible=home">
 			<table id="tableau_editionprofil">
 
 				<tr>
