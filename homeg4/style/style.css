@@ -2,6 +2,9 @@ body {
 	font-family: Arial, sans-serif;
 	margin : auto;
 	width : 100%;
+	background-image: url("../images/background.png");
+	background-size: 100%;
+	background-attachment: fixed;
 }
 
 
@@ -23,6 +26,8 @@ header {
 
 .logo img{
 	padding-top: 1em;
+	width: 30%;
+	height: 30%;
 }
 
 nav {
@@ -134,18 +139,26 @@ color:#000;
     min-height: 50%;*/
     min-height:400px;
     margin-left:200px;
-    background-color: skyblue;
     display: flex;
 	justify-content:center;
 	align-items: center;/* */
 	text-align: center;
 	flex-wrap: wrap;
 	word-wrap : break-word;
-	border:2px solid red; /* ROUGE */
+	/*border:2px solid red;  /*ROUGE */
 	margin-right:2em;
 	margin-left:2em;
 	width: 50em;
+	color: black;
 }
+
+.titre_bienvenue {
+	/*text-shadow: 2px 2px 10px #000000;*/
+	font-size: 2em;
+	border-top: black solid;
+	border-bottom: black solid;
+}
+
 
 form
 {
@@ -243,8 +256,12 @@ aside {
 footer{
 	display : flex;
 	justify-content: center;
-	margin-top : 2em;
-	background-color: skyblue;
+	margin-top : 6em;
+	border-top : black solid 1px;
+	width : 90%;
+	margin-left : auto;
+	margin-right: auto;
+	text-shadow: 3px 3px 2px #FFFFFF;
 }
 footer div{
 	
@@ -344,7 +361,11 @@ footer div{
 
 .tableau_connexion {
 	border: 2px solid black;
+	border-radius: 20px;
 	position: absolute;
+	padding: 1.5em;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #tableau_inscription td, #tableau_connexion td {

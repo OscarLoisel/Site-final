@@ -2,8 +2,9 @@
 
     $entete = enteteConnexion();
     $aside = asideHorsConnexion();
-    $contenu = "<h1> Bienvenue sur le site d'Homeg4 !</h1>";
-    $contenu .= '<h2> Veuillez renseigner votre mail et mot de passe.</h2>';
+    $contenu = '<div class="titre_bienvenue">';
+    $contenu .= "<h1> Bienvenue chez vous où que vous soyez !</h1> ";
+    $contenu .= '</div>';
     $pied = pied();
 
     include 'gabarit.php';
