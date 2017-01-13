@@ -287,6 +287,10 @@
         {
             include("vue/liste_capteur_camera.php");
         }
+        elseif ($_GET['cible'] == "sav") // OK
+        {
+            include("vue/sav.php");
+        }
 
         //ADMIN
 
