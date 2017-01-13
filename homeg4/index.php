@@ -6,7 +6,7 @@
     include_once("modele/utilisateur.php");
     include_once("modele/para_capteurs.php");
     include_once("modele/insertpiece.php");
-    /*include("modele/insertcapteur.php") je m'appelle Thomas;
+    /*include("modele/insertcapteur.php");
     
     require("modele/para_capteurs.php");*/
     if(!isset($_SESSION["id"]))
