@@ -2,7 +2,7 @@
     $dbname = "Homeg4";
     $host='localhost';
     $user='root';
-    $pass='root';
+    $pass='';
 
     $bdd = new PDO("mysql:host=$host;dbname=$dbname", "$user", "$pass");
     $bdd->query("SET NAMES UTF8");
