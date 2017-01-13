@@ -3,7 +3,7 @@ body {
 	margin : auto;
 	width : 100%;
 	background-image: url("../images/background.png");
-	background-size: 100%;
+	background-size: 100% 100%;
 	background-attachment: fixed;
 }
 
@@ -30,6 +30,7 @@ header {
 	height: 30%;
 }
 
+
 nav {
 	display: flex;
 }
@@ -43,9 +44,10 @@ nav {
 	justify-content: space-around;
 	margin-left : 50px;
 	width : 200%;
-	height : 27%;
-	/*border : 2px solid black;*/
+	height : 10%;
+	border : 2px solid black;
 }
+
 #menu-accordeon, #menu-accordeon ul{
 padding:0;
 list-style:none;
@@ -68,12 +70,14 @@ left : -25px;
 width : 100%;
 border-radius:0;
 }
+
 #menu-accordeon ul li:hover{
 border-radius:0;
 }
 #menu-accordeon ul li:last-child{
 border-radius:0 0 8px 8px;
 }
+
 #menu-accordeon ul{
 position:absolute;
 z-index: 1000;
@@ -157,6 +161,7 @@ color:#000;
 	font-size: 2em;
 	border-top: black solid;
 	border-bottom: black solid;
+
 }
 
 
@@ -173,14 +178,14 @@ form
 
 
 
-aside {
+/*aside {
 	border: 2px solid pink;
 }
 #aside
 {
 	border: 2px solid pink;
 	
-}
+}*/
 #tdb {
 	width: 16.1em;
 	height: 10em;
