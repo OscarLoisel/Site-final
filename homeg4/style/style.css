@@ -178,18 +178,23 @@ form
 
 
 
+<<<<<<< HEAD
 /*aside {
 	border: 2px solid pink;
+=======
+aside {
+	border: 2px;
+>>>>>>> origin/master
 }
 #aside
 {
-	border: 2px solid pink;
+	border: 2px;
 	
 }*/
 #tdb {
 	width: 16.1em;
 	height: 10em;
-	border: 2px solid green; /* VERT */
+	border: 2px ;
 
 }
 
@@ -213,7 +218,7 @@ form
 
 
 #menu_capteurs {
-	border: 2px solid yellow; /*JAUNE */
+	border: 2px;
 	width: 16.1em;
 	height: 16em;
 	float: bottom left;

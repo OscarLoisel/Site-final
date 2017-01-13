@@ -6,7 +6,7 @@
     include_once("modele/utilisateur.php");
     include_once("modele/para_capteurs.php");
     include_once("modele/insertpiece.php");
-    /*include("modele/insertcapteur.php") je m'appelle Thomas;
+    /*include("modele/insertcapteur.php");
     
     require("modele/para_capteurs.php");*/
     if(!isset($_SESSION["id"]))
@@ -82,11 +82,45 @@
 
     if (isset($_POST['formparapieces'])) 
     {
-        $id = intval($_SESSION['id']);
-        $piece = htmlspecialchars($_POST['ajout_piece']);
-        insertpiece($bdd, $piece, $id);
-        include'vue/ajout_capteurs.php';
-        echo "enregistrer";
+        $id = intval($_SESSION['id']); // id de session
+        $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
+        $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
+        $reponse = checkCapteur($bdd, $n_serie); 
+        $data = $reponse->fetch();
+        if ($reponse -> rowcount() == 1) 
+        {
+
+            insertpiece($bdd, $piece, $id);
+            $id_new_piece = idNewPiece($bdd, $id);
+            $id_new_piece2 = $id_new_piece -> fetch();
+            $data = "$data[1]";
+            if($data = "H")
+            {
+                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie)
+            }
+            if($data = "T")
+            {
+                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie)
+            }
+            if($data = "H")
+            {
+                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie)
+            }
+            if($data = "H")
+            {
+                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie)
+            }
+            if($data = "H")
+            {
+                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie)
+            }
+            insertcapteur($bdd, $id, $n_serie);
+            echo "enregistrAIENT";
+        
+            echo(substr($data, 1,1));
+        }
+        //include'vue/ajout_capteurs.php';
+        
     } 
 
 

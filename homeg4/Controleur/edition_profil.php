@@ -9,14 +9,6 @@ if (isset($_SESSION['id']))
 		$reponse = selectid($bdd, $_SESSION['id']);
 		$user = $reponse->fetch();
 
-		if (isset($_POST['newidentifiant']) AND !empty($_POST['newidentifiant']) AND $_POST['newidentifiant'] != $user['identifiant'])
-		{
-			$newidentifiant = htmlspecialchars($_POST['newidentifiant']);
-			$reponse = editidentifiant($bdd, $newidentifiant, $_SESSION['id']);
-
-			//header("Location: ../vue/home.php?id=".$_SESSION['id']);
-		}
-
 		if (isset($_POST['newmail']) AND !empty($_POST['newmail']) AND isset($_POST['newmail2']) AND !empty($_POST['newmail2']))
 		{
 			$mail = htmlspecialchars($_POST['newmail']);
