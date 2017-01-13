@@ -174,17 +174,17 @@ form
 
 
 aside {
-	border: 2px solid pink;
+	border: 2px;
 }
 #aside
 {
-	border: 2px solid pink;
+	border: 2px;
 	
 }
 #tdb {
 	width: 16.1em;
 	height: 10em;
-	border: 2px solid green; /* VERT */
+	border: 2px ;
 
 }
 
@@ -208,7 +208,7 @@ aside {
 
 
 #menu_capteurs {
-	border: 2px solid yellow; /*JAUNE */
+	border: 2px;
 	width: 16.1em;
 	height: 16em;
 	float: bottom left;
