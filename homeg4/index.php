@@ -262,13 +262,18 @@
         {
             include("vue/ajout_piece.php");
         }
-        if ($_GET['cible'] == 'ajout_capteurs') 
+        elseif ($_GET['cible'] == 'ajout_capteurs') 
         {
             include("vue/ajout_capteurs.php");
         }
         elseif ($_GET['cible'] == 'home') // HOME // OK
         {
             include("vue/home.php");
+        }
+        elseif ($_GET['cible'] == 'page_capteur_commun') 
+        {
+            $id_piece = $_GET['id_piece'];
+            include("vue/page_capteur_commun.php");
         }
         elseif ($_GET['cible'] == 'reglage') // REGLAGE
         {
