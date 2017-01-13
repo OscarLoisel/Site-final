@@ -622,6 +622,7 @@ function formulaireParapiece()
 						<label for="ajout_piece">Ajouter une piéce :</label>
 					</td>
 					<td>
+						<input type="text" name="ajout_piece" id="ajout_piece" placeholder="nom de la salle">
 					</td>
 				</tr>
 
@@ -631,7 +632,7 @@ function formulaireParapiece()
 						<label for="ajout_capteur">Ajouter un capteur :</label>
 					</td>
 					<td>
-						<input type="text" name="ajout_capteur" id="ajout_piece" placeholder="n° de série">
+						<input type="text" name="ajout_capteur" id="ajout_capteur" placeholder="n° de série">
 					</td>
 				</tr>
 
