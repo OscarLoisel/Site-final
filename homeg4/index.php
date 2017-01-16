@@ -305,7 +305,7 @@
         }
         elseif ($_GET['cible'] == 'sav') 
         {
-            include("#");
+            include("vue/sav.php");
         }
         elseif ($_GET['cible'] == 'lampes') // ASIDE
         {
