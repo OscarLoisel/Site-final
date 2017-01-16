@@ -11,7 +11,7 @@
 
 	function idNewPiece($bdd, $id_utilisateur)
 	{
-		$reponse = $bdd -> prepare('SELECT * FROM pieces WHERE id_utilisateur = ? ORDER BY DESC')
+		$reponse = $bdd -> prepare('SELECT * FROM pieces WHERE id_utilisateur = ? ORDER BY DESC');
 		$reponse -> execute(array($n_serie));
 		return $reponse;
 	}

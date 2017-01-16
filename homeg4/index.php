@@ -7,9 +7,9 @@
     include_once("modele/para_capteurs.php");
     include_once("modele/insertpiece.php");
     include_once("modele/edition_profil.php");
-    /*include("modele/insertcapteur.php");
+    include_once("modele/insertcapteur.php");
     
-    require("modele/para_capteurs.php");*/
+    //require("modele/para_capteurs.php");*/
     if(!isset($_SESSION["id"]))
     { 
         include("controleur/connexion.php");
@@ -310,7 +310,7 @@
         }
         elseif ($_GET['cible'] == 'sav') 
         {
-            include("#");
+            include("vue/sav.php");
         }
         elseif ($_GET['cible'] == 'lampes') // ASIDE
         {
