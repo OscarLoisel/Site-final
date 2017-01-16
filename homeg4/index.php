@@ -98,24 +98,29 @@
             if($data = "H")
             {
                 insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
+                echo "enregistrAIENT humidité";
             }
             if($data = "T")
             {
                 insertcapteur($bdd,$id_new_piece2, "Température", $n_serie);
+                echo "enregistrAIENT Température";
             }
             if($data = "L")
             {
                 insertcapteur($bdd,$id_new_piece2, "Lumière", $n_serie);
+                echo "enregistrAIENT lumiere";
             }
             if($data = "P")
             {
-                insertcapteur($bdd,$id_new_piece2, "Pression", $n_serie);
+                insertcapteur($bdd,$id_new_piece2, "Présence", $n_serie);
+                echo "enregistrAIENT présence";
             }
             if($data = "V")
             {
-                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
+                insertcapteur($bdd,$id_new_piece2, "Volet", $n_serie);
+                echo "enregistrAIENT volet";
             }
-            insertcapteur($bdd, $id, $n_serie);
+
             echo "enregistrAIENT";
         
             echo(substr($data, 1,1));
@@ -305,7 +310,7 @@
         }
         elseif ($_GET['cible'] == 'sav') 
         {
-            include("vue/sav.php");
+            include("#");
         }
         elseif ($_GET['cible'] == 'lampes') // ASIDE
         {
