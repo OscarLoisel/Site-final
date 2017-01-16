@@ -14,7 +14,7 @@ function entete($etape)
 ?>
 		<header>
 			<div class="logo">
-				<img src="images/logo.png" alt= "logo">
+				<a href="index.php?cible=home"><img src="images/logo.png" alt= "logo"></a>
 			</div>
 			<nav>
 				<ul id ="menu-accordeon">
