@@ -1,7 +1,7 @@
 body {
 	font-family: Arial, sans-serif;
-	margin : auto;
-	width : 100%;
+	/*margin : auto;
+	width : 100%;*/
 	background-image: url("../images/background.png");
 	background-size: 100% 100%;
 	background-attachment: fixed;
@@ -152,7 +152,7 @@ color:#000;
 	/*border:2px solid red;  /*ROUGE */
 	margin-right:2em;
 	margin-left:2em;
-	width: 50em;
+	width: 60%;
 	color: black;
 }
 
