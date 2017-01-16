@@ -109,32 +109,24 @@
                 $type = "temperature";
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie);
                 echo "enregistrAIENT Température";
-                echo($id_new_piece2);
-                echo($n_serie);
             }
             elseif($data == "L")
             {
                 $type = "light";
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie);
                 echo "enregistrAIENT lumiere";
-                echo($id_new_piece2);
-                echo($n_serie);
             }
             elseif($data == "P")
             {
                 $type = 'presence';
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie);
                 echo "enregistrAIENT présence";
-                echo($id_new_piece2[0]);
-                //echo($n_serie);
             }
             elseif($data == "V")
             {
                 $type = "volet";
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie);
                 echo "enregistrAIENT volet";
-                echo($id_new_piece2);
-                echo($n_serie);
             }
         }
         //include'vue/ajout_capteurs.php';
