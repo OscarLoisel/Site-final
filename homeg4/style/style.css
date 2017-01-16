@@ -388,6 +388,27 @@ footer div{
 	right: 10%;
 }
 
+input[type=email] {
+	border: solid #3C99D7 1.7px;
+}
+
+input[type=password] {
+	border: solid #3C99D7 1.7px;
+}
+
+input[name=formconnexion] {
+	color : white;
+	background-color: #3C99D7;
+	border: 1px #3C99D7 solid;
+	border-radius: 5px;
+}
+
+input[name=bouton_inscription] {
+	border: 1px #3C99D7 solid;
+	border-radius: 5px;
+	background-color: white;
+}
+
 
 
 #msg_erreur {
