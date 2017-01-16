@@ -101,17 +101,17 @@
             }
             if($data = "T")
             {
-                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
+                insertcapteur($bdd,$id_new_piece2, "Température", $n_serie);
             }
-            if($data = "H")
+            if($data = "L")
             {
-                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
+                insertcapteur($bdd,$id_new_piece2, "Lumière", $n_serie);
             }
-            if($data = "H")
+            if($data = "P")
             {
-                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
+                insertcapteur($bdd,$id_new_piece2, "Pression", $n_serie);
             }
-            if($data = "H")
+            if($data = "V")
             {
                 insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
             }
