@@ -152,7 +152,7 @@ function enteteConnexion()
 	?>
 	<header>
 			<div class="logo">
-				<img src="images/logo.png" alt= "logo">
+				<a href="index.php?cible=home"><img src="images/logo.png" alt= "logo"></a>
 			</div>
 			<div id = "formulaire_connexion">
 				<form method="POST" action="index.php?cible=verif">
@@ -211,7 +211,7 @@ function enteteAdmin($etape)
 	?>
 	<header>
 			<div class="logo">
-				<img src="images/logo.png" alt= "logo">
+				<a href="index.php?cible=home"><img src="images/logo.png" alt= "logo"></a>
 			</div>
 			<nav>
 				<ul id ="menu-accordeon">
