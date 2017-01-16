@@ -2,12 +2,14 @@ body {
 	font-family: Arial, sans-serif;
 	/*margin : auto;
 	width : 100%;*/
+	
+}
+
+#wpp_connexion {
 	background-image: url("../images/background.png");
 	background-size: 100% 100%;
 	background-attachment: fixed;
 }
-
-
 
 
 
@@ -149,7 +151,7 @@ color:#000;
 	text-align: center;
 	flex-wrap: wrap;
 	word-wrap : break-word;
-	/*border:2px solid red;  /*ROUGE */
+	/*border:2px solid red;*/
 	margin-right:2em;
 	margin-left:2em;
 	width: 60%;
