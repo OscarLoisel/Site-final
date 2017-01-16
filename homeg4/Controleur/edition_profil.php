@@ -15,7 +15,6 @@ if (isset($_SESSION['id']))
 			if($mail== $mail2)
 			{
 				$reponse = editmail($bdd, $mail, $_SESSION['id']);
-
 			}
 			else
 			{
