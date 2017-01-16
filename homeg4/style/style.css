@@ -145,7 +145,7 @@ color:#000;
     margin-left:200px;
     display: flex;
 	justify-content:center;
-	align-items: center;/* */
+	align-items: center;
 	text-align: center;
 	flex-wrap: wrap;
 	word-wrap : break-word;
@@ -375,16 +375,15 @@ footer div{
 }
 
 .tableau_connexion {
-	position: relative;
-	right: 80%;
+	margin-left: 500px;
 	padding: 2.3em;
 	/*margin-left: auto;
 	margin-right: auto;*/
 }
 
 /*#tableau_inscription td, #tableau_connexion td {
-	text-align: right;*/
-}
+	text-align: right;
+}*/
 
 #connexion {
 	display: flex;
