@@ -370,16 +370,15 @@ footer div{
 }
 
 .tableau_connexion {
-	border: 2px solid black;
-	border-radius: 20px;
-	position: absolute;
-	padding: 1.5em;
-	margin-left: auto;
-	margin-right: auto;
+	position: relative;
+	right: 80%;
+	padding: 2.3em;
+	/*margin-left: auto;
+	margin-right: auto;*/
 }
 
-#tableau_inscription td, #tableau_connexion td {
-	text-align: right;
+/*#tableau_inscription td, #tableau_connexion td {
+	text-align: right;*/
 }
 
 #connexion {

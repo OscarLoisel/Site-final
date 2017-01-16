@@ -157,38 +157,36 @@ function enteteConnexion()
 			<div id = "formulaire_connexion">
 				<form method="POST" action="index.php?cible=verif">
 					<table class="tableau_connexion">
-					<tr>
-						<td>
-							<label for="mailconnect"> Mail :</label>
-						</td>
-						<td>
+					
+					<td>
+							<label for="mailconnect"> Adresse e-mail :</label><br />
+
+
 							<input type="email" name="mailconnect" placeholder="Mail">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="mdpconnect">Mot de passe :</label>
-						</td>
-						<td>
+					</td>
+					
+					
+					<td>
+							<label for="mdpconnect">Mot de passe :</label><br />
+
+
 							<input type="password" name="mdpconnect" placeholder="Mot de passe">
-						</td>
-					</tr>
-					<tr>
+					</td>
+					
+					
+						
 						<td>
-							
+							<br /><input type="submit" name="formconnexion" value="Se connecter">
 						</td>
-						<td>
-							<input type="submit" name="formconnexion" value="Se connecter">
-						</td>
-					</tr>
-					<tr>
+					
+					
 							<td>
 							
 							</td>
 							<td>
-								<input type="submit" name="bouton_inscription" value="Créer un compte">
+								<br /><input type="submit" name="bouton_inscription" value="Créer un compte">
 							</td>
-						</tr>
+						
 					</table>
 				</form>
 
