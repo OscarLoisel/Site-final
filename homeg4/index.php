@@ -94,36 +94,45 @@
             insertpiece($bdd, $piece, $id);
             $id_new_piece = idNewPiece($bdd, $id);
             $id_new_piece2 = $id_new_piece -> fetch();
+            echo($id_new_piece2[0]);
             $data = "$data[1]";
-            if($data = "H")
+            $data = "$data[1]";
+            //echo($data); == H T L P ou V
+            if($data == "H")
             {
-                insertcapteur($bdd,$id_new_piece2, "Humidité", $n_serie);
+                insertcapteur($bdd,$id_new_piece2[0], "humidite", $n_serie);
                 echo "enregistrAIENT humidité";
+                echo($id_new_piece2);
+                echo($n_serie);
             }
-            if($data = "T")
+            elseif($data == "T")
             {
-                insertcapteur($bdd,$id_new_piece2, "Température", $n_serie);
+                insertcapteur($bdd,$id_new_piece2[0], "temperature", $n_serie);
                 echo "enregistrAIENT Température";
+                echo($id_new_piece2);
+                echo($n_serie);
             }
-            if($data = "L")
+            elseif($data == "L")
             {
-                insertcapteur($bdd,$id_new_piece2, "Lumière", $n_serie);
+                insertcapteur($bdd,$id_new_piece2[0], "light", $n_serie);
                 echo "enregistrAIENT lumiere";
+                echo($id_new_piece2);
+                echo($n_serie);
             }
-            if($data = "P")
+            elseif($data == "P")
             {
-                insertcapteur($bdd,$id_new_piece2, "Présence", $n_serie);
+                insertcapteur($bdd,$id_new_piece2[0], "presence", $n_serie);
                 echo "enregistrAIENT présence";
+                echo($id_new_piece2[0]);
+                //echo($n_serie);
             }
-            if($data = "V")
+            elseif($data == "V")
             {
-                insertcapteur($bdd,$id_new_piece2, "Volet", $n_serie);
+                insertcapteur($bdd,$id_new_piece2[0], "volet", $n_serie);
                 echo "enregistrAIENT volet";
+                echo($id_new_piece2);
+                echo($n_serie);
             }
-
-            echo "enregistrAIENT";
-        
-            echo(substr($data, 1,1));
         }
         //include'vue/ajout_capteurs.php';
         

@@ -11,8 +11,8 @@
 
 	function idNewPiece($bdd, $id_utilisateur)
 	{
-		$reponse = $bdd -> prepare('SELECT * FROM pieces WHERE id_utilisateur = ? ORDER BY "id" DESC');
-		$reponse -> execute(array("id"));
+		$reponse = $bdd -> prepare('SELECT * FROM pieces WHERE id_utilisateur = ? ORDER BY id DESC');
+		$reponse -> execute(array($id_utilisateur));
 		return $reponse;
 	}
 
@@ -26,7 +26,7 @@
 	function insertcapteur2($bdd, $n_serie)
 	{
 		$reponse = $bdd -> prepare('INSERT INTO capteurs(n_serie) VALUES (?)');
-		$reponse -> execute(array($n_serie,));
+		$reponse -> execute(array($n_serie));
 		return $reponse;
 	}
 
