@@ -100,35 +100,38 @@
             //echo($data); == H T L P ou V
             if($data == "H")
             {
-                insertcapteur($bdd,$id_new_piece2[0], "humidite", $n_serie);
+                $type = "humidite";
+                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie);
                 echo "enregistrAIENT humidité";
-                echo($id_new_piece2);
-                echo($n_serie);
             }
             elseif($data == "T")
             {
-                insertcapteur($bdd,$id_new_piece2[0], "temperature", $n_serie);
+                $type = "temperature";
+                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie);
                 echo "enregistrAIENT Température";
                 echo($id_new_piece2);
                 echo($n_serie);
             }
             elseif($data == "L")
             {
-                insertcapteur($bdd,$id_new_piece2[0], "light", $n_serie);
+                $type = "light";
+                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie);
                 echo "enregistrAIENT lumiere";
                 echo($id_new_piece2);
                 echo($n_serie);
             }
             elseif($data == "P")
             {
-                insertcapteur($bdd,$id_new_piece2[0], "presence", $n_serie);
+                $type = 'presence';
+                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie);
                 echo "enregistrAIENT présence";
                 echo($id_new_piece2[0]);
                 //echo($n_serie);
             }
             elseif($data == "V")
             {
-                insertcapteur($bdd,$id_new_piece2[0], "volet", $n_serie);
+                $type = "volet";
+                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie);
                 echo "enregistrAIENT volet";
                 echo($id_new_piece2);
                 echo($n_serie);
