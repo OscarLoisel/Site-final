@@ -13,7 +13,7 @@
         for ($i= 0; $i < $nbrligne ; $i++) 
         {   
                 $contenu .= '<div class="piece_grille">';
-                $contenu .= '<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'" >';
+                $contenu .= '<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=" >';
                     //$contenu .= '<div class="piece_grille">';
                     ?>
                         <strong><?php $contenu .= $data[$i][1]; ?></strong>
