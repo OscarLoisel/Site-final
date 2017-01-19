@@ -511,7 +511,7 @@ function edition_profil()
 	ob_start();
 	?>
 	<div id="editionprofil">
-		<form method="POST" action="index.php?cible=home">
+		<form method="POST" action="">
 			<table id="tableau_editionprofil">
 
 				<tr>
