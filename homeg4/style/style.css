@@ -2,6 +2,10 @@ body {
 	font-family: Arial, sans-serif;
 	/*margin : auto;
 	width : 100%;*/
+}
+
+#body_accueil {
+	font-family: Arial, sans-serif;
 	background-image: url("../images/background.png");
 	background-size: 100% 100%;
 	background-attachment: fixed;

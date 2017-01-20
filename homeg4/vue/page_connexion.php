@@ -6,5 +6,5 @@
     $contenu .= '</div>';
     $pied = pied();
 
-    include 'gabarit.php';
+    include 'gabarit_accueil.php';
 ?>
