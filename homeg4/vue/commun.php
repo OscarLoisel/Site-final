@@ -704,17 +704,24 @@ function formulaireParacapteurs ($piece = '')
 	return $paraPieces;
 }
 
+
+/* -----------------------------------------------------------------------------------------------------------*/
+
+
+
+//FONCTION D'AFFICHAGES DES CONSOLES CAPTEURS
+
+
+
 function console_volet()
 {
 	ob_start();
 	?>
-	<a href="">
-		<div class="bouton_ouvrir">OUVRIR</div>
-	</a>
-	<a href="">
-		<div class="bouton_fermer">FERMER</div>
-	</a>
-	
+	<form >
+		<input type="radio" name="fermer">FERMER
+		<input type="radio" name="ouvrir">OUVRIR
+	</form>
+
 	
 	<?php
 	$console_volet = ob_get_clean();
