@@ -808,7 +808,55 @@ function console_camera()
 	$console_camera = ob_get_clean();
 	return $console_camera;
 }
+/* -----------------------------------------------------------------------------------------------------------*/
 
+// REGLAGE CAPTEURS
+
+function listecapteurs()
+{
+	ob_start();
+	?>
+		<table id="listecapteurs">
+			<tr>
+				<td>
+					ID CAPTEUR
+				</td>
+				<td>
+					VALEUR
+				</td>
+				<td>
+					BATTERIE
+				</td>
+				<td>
+					DATE
+				</td>
+				<td>
+					ETAT
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					
+				</td>
+				<td>
+					
+				</td>
+				<td>
+					
+				</td>
+				<td>
+					
+				</td>
+				<td>
+					
+				</td>
+			</tr>
+		</table>
+	<?php
+	$listecapteurs = ob_get_clean();
+	return $listecapteurs;
+}
 
 /* -----------------------------------------------------------------------------------------------------------*/
 

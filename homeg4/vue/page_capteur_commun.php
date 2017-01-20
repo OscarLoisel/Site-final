@@ -49,7 +49,7 @@ require("modele/affichagepiece.php");
                         $contenu .='</div>';
                         $contenu .='<a href="">';
                         $contenu .='<img src="images/reglage.png">';
-                        $contenu .='</a>';
+                        $contenu .='</a>'; 
                     }
                 }
                 else
