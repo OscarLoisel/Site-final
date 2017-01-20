@@ -704,6 +704,103 @@ function formulaireParacapteurs ($piece = '')
 	return $paraPieces;
 }
 
+function console_volet()
+{
+	ob_start();
+	?>
+	<a href="">
+		<div class="bouton_ouvrir">OUVRIR</div>
+	</a>
+	<a href="">
+		<div class="bouton_fermer">FERMER</div>
+	</a>
+	
+	
+	<?php
+	$console_volet = ob_get_clean();
+	return $console_volet;
+}
+
+function console_light()
+{
+	ob_start();
+	?>
+	<a href="">
+		<div class="bouton_allumer">ALLUMER</div>
+	</a>
+	<a href="">
+		<div class="bouton_eteindre">ETEINDRE</div>
+	</a>
+	<?php
+	$console_light = ob_get_clean();
+	return $console_light;
+}
+
+function console_temperature()
+{
+	ob_start();
+	?>
+	<div id="valeur_temperature">
+		<!-- <?php echo $data['valeur']; ?> -->
+	</div>
+
+	<form action="" method="POST">
+		<input type="range" name="curseur_temperature" id="curseur_temperature">
+		<input type="submit" name="formvaleur_temperature" value="Actualiser">
+	</form>
+
+	<a href="">
+		<div class="bouton_allumer">ALLUMER</div>
+	</a>
+	<a href="">
+		<div class="bouton_eteindre">ETEINDRE</div>
+	</a>
+	<?php
+	$console_temperature = ob_get_clean();
+	return $console_temperature;
+}
+
+function console_humidite()
+{
+	ob_start();
+	?>
+	<div id="valeur_humidite">
+		<!-- <?php echo $data['valeur']; ?> -->
+	</div>
+	<?php
+	$console_humidite = ob_get_clean();
+	return $console_humidite;
+}
+
+function console_alarme()
+{
+	ob_start();
+	?>
+	<a href="">
+		<div class="bouton_allumer">ALLUMER</div>
+	</a>
+	<a href="">
+		<div class="bouton_eteindre">ETEINDRE</div>
+	</a>
+	<?php
+	$console_alarme = ob_get_clean();
+	return $console_alarme;
+}
+
+function console_camera()
+{
+	ob_start();
+	?>
+	<a href="">
+		<div class="bouton_allumer">ALLUMER</div>
+	</a>
+	<a href="">
+		<div class="bouton_eteindre">ETEINDRE</div>
+	</a>
+	<?php
+	$console_camera = ob_get_clean();
+	return $console_camera;
+}
 
 
 /* -----------------------------------------------------------------------------------------------------------*/

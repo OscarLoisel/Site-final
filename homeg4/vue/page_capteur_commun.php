@@ -22,7 +22,7 @@ require("modele/affichagepiece.php");
     	while ($data = $reponse->fetch())
     	{
 
-            //LUMIÈRE
+            //VOLET
 
     		if($data['type'] == "volet")
     		{
@@ -31,7 +31,7 @@ require("modele/affichagepiece.php");
                 {
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/volet.png" alt= "img_capteur"></a>';
                     $contenu .='<div class=console_reglage>';
-                    //$contenu .=console_volet();
+                    $contenu .=console_volet();
                     $contenu .='</div>';
                 }
                 else
@@ -50,7 +50,7 @@ require("modele/affichagepiece.php");
                 {
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/light.png" alt= "img_capteur"></a>';
                     $contenu .='<div class=console_reglage>';
-                    //$contenu .=console_light();
+                    $contenu .=console_light();
                     $contenu .='</div>';
                 }
                 else
@@ -69,7 +69,7 @@ require("modele/affichagepiece.php");
                 {
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/temperature.png" alt= "img_capteur"></a>';
                     $contenu .='<div class=console_reglage>';
-                    //$contenu .=console_temperature();
+                    $contenu .=console_temperature();
                     $contenu .='</div>';
                 }
                 else
@@ -88,7 +88,7 @@ require("modele/affichagepiece.php");
                 {
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/baro.png" alt= "img_capteur"></a>';
                     $contenu .='<div class=console_reglage>';
-                    //$contenu .=console_humidite();
+                    $contenu .=console_humidite();
                     $contenu .='</div>';
                 }
                 else
@@ -107,7 +107,7 @@ require("modele/affichagepiece.php");
                 {
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/presence.png" alt= "img_capteur"></a>';
                     $contenu .='<div class=console_reglage>';
-                    //$contenu .=console_presence();
+                    $contenu .=console_presence();
                     $contenu .='</div>';
                 }
                 else
@@ -126,7 +126,7 @@ require("modele/affichagepiece.php");
                 {
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/cam.png" alt= "img_capteur"></a>';
                     $contenu .='<div class=console_reglage>';
-                    //$contenu .=console_cam();
+                    $contenu .=console_cam();
                     $contenu .='</div>';
                 }
                 else
