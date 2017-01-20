@@ -141,7 +141,7 @@ color:#000;
     margin-left:25%;
     min-height: 50%;*/
     min-height:400px;
-    margin-left:200px;
+    /*margin-left:200px;*/
     display: flex;
 	justify-content:center;
 	align-items: center;
@@ -149,10 +149,12 @@ color:#000;
 	flex-wrap: wrap;
 	word-wrap : break-word;
 	/*border:2px solid red;*/
-	margin-right:2em;
-	margin-left:2em;
+	/*margin-right:2em;
+	margin-left:2em;*/
+	margin : auto;
 	width: 60%;
 	color: black;
+
 }
 
 .titre_bienvenue {
