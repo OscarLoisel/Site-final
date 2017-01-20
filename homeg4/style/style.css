@@ -156,7 +156,7 @@ color:#000;
 	/*margin-right:2em;
 	margin-left:2em;*/
 	margin : auto;
-	width: 60%;
+	/*width: 60%;*/
 	color: black;
 
 }
@@ -175,10 +175,10 @@ color:#000;
 }
 
 
-form
+/*form
 {
 	width :21em;
-}
+}*/
 
 
 
@@ -188,7 +188,7 @@ form
 
 
 
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
 /*aside {
 	border: 2px solid pink;
 =======
@@ -313,36 +313,25 @@ footer div{
 
 
 
-- - - -  - - - - - - - - - - - - - - -  - - - - - -  - - -  - -
+/*- - - -  - - - - - - - - - - - - - - -  - - - - - -  - - -  - -*/
 
 
 /* MENU INSCRIPTION ADMIN */
 
-#menu_inscription li {
-	border-collapse: collapse;
-	text-align: right;
-	color: black;
-}
-
-#menu_inscription ul {
-	list-style-type: none;
-	display: flex;
-	width: 50em;
-	padding: 10px;
-}
-
 #tableau_inscription {
-	padding: 1.5em;
-	margin-left: auto;
-	margin-right: auto;
+	border : red solid;
+	width: 120%;
 }
 
-#inscription {
+
+
+
+/*#inscription {
 	display: flex;
 	justify-content: center;
 	position: relative;
 	right: 20%;
-}
+}*/
 
 
 
@@ -402,6 +391,10 @@ input[type=email] {
 }
 
 input[type=password] {
+	border: solid #3C99D7 1.7px;
+}
+
+input[name=n_serie] {
 	border: solid #3C99D7 1.7px;
 }
 
