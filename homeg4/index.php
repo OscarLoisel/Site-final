@@ -143,10 +143,10 @@
                 
         if ($reponse -> rowcount() == 1) 
         {
-        $id = intval($_SESSION['id]']);
-        $n_serie = htmlspecialchars($_POST['ajout_capteurs']);
-        insertcapteur2($bdd, $id, $n_serie);
-        echo "enregistré";
+            $id = intval($_SESSION['id]']);
+            $n_serie = htmlspecialchars($_POST['ajout_capteurs']);
+            insertcapteur2($bdd, $id, $n_serie);
+            echo "enregistré";
         }
     }
        
@@ -283,6 +283,11 @@
         {
             $id_piece = $_GET['id_piece'];
             include("vue/page_capteur_commun.php");
+        }
+        elseif ($_GET['cible'] == 'reglage_capteur') 
+        {
+            $id_piece = $_GET['id_piece'];
+            include("vue/page_reglage_capteur.php");
         }
         elseif ($_GET['cible'] == 'reglage') // REGLAGE
         {

@@ -15,7 +15,7 @@ require("modele/affichagepiece.php");
 	$contenu .= '</h1>';
 	$contenu .='</div>';
 	$contenu .= "<div id='grille_capteurs'>";
-	$id = $_GET['id_piece'];
+	$id_piece = $_GET['id_piece'];
 		
 	$reponse = affichagetypecapteurs($bdd, $id_piece);
 		// Affiche les capteurs de la table capteur en fonction de l'id_piece récupéré via l'URL.
@@ -33,28 +33,28 @@ require("modele/affichagepiece.php");
                     if ( $x=0/*PROBLEME*/) 
                     {
                         $contenu .='<img src="">'; // IMAGE PROBLEME
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/volet.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/volet.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_volet();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
                     else
                     {
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/volet.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/volet.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_volet();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>'; 
                     }
                 }
                 else
                 {
-                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=true_volet"><img src="images/volet_off.png" alt= "img_capteur"></a>';
+                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_volet"><img src="images/volet_off.png" alt= "img_capteur"></a>';
                 }
     			
     		}
@@ -70,21 +70,21 @@ require("modele/affichagepiece.php");
                     if ( $x=0/*PROBLEME*/) 
                     {
                         $contenu .='<img src="">'; // IMAGE PROBLEME
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/light.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/light.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_light();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
                     else
                     {
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/light.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/light.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_light();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';  
                     }
@@ -92,7 +92,7 @@ require("modele/affichagepiece.php");
                 }
                 else
                 {
-                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=true_light"><img src="images/light_off.png" alt= "img_capteur"></a>';
+                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_light"><img src="images/light_off.png" alt= "img_capteur"></a>';
                 }
                 
             }
@@ -108,28 +108,28 @@ require("modele/affichagepiece.php");
                     if ( $x=0/*PROBLEME*/) 
                     {   
                         $contenu .='<img src="">';
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/temperature.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/temperature.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_temperature();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
                     else
                     {
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/temperature.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/temperature.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_temperature();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>'; 
                     }
                 }
                 else
                 {
-                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=true_temperature"><img src="images/temperature_off.png" alt= "img_capteur"></a>';
+                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_temperature"><img src="images/temperature_off.png" alt= "img_capteur"></a>';
                 }
                 
             }
@@ -145,28 +145,28 @@ require("modele/affichagepiece.php");
                     if ( $x=0/*PROBLEME*/) 
                     {   
                         $contenu .='<img src="">';
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/baro.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/baro.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_humidite();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
                     else
                     {
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/baro.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/baro.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_humidite();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
                 }
                 else
                 {
-                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=true_humidite"><img src="images/baro_off.png" alt= "img_capteur"></a>';
+                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_humidite"><img src="images/baro_off.png" alt= "img_capteur"></a>';
                 }
                 
             }
@@ -182,28 +182,28 @@ require("modele/affichagepiece.php");
                     if ( $x=0/*PROBLEME*/) 
                     {   
                         $contenu .='<img src="">';
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/presence.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/presence.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_presence();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
                     else
                     {
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/presence.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/presence.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_presence();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';  
                     }
                 }
                 else
                 {
-                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=true_presence"><img src="images/presence_off.png" alt= "img_capteur"></a>';
+                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_presence"><img src="images/presence_off.png" alt= "img_capteur"></a>';
                 }
                 
             }
@@ -219,28 +219,28 @@ require("modele/affichagepiece.php");
                     if ( $x=0/*PROBLEME*/) 
                     {   
                         $contenu .='<img src="">';
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/cam.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/cam.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_cam();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
                     else
                     {
-                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat="><img src="images/cam.png" alt= "img_capteur"></a>';
+                        $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/cam.png" alt= "img_capteur"></a>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_cam();
                         $contenu .='</div>';
-                        $contenu .='<a href="">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
                 }
                 else
                 {
-                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=true_cam"><img src="images/cam_off.png" alt= "img_capteur"></a>';
+                    $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_cam"><img src="images/cam_off.png" alt= "img_capteur"></a>';
                 }
                 
             }

@@ -13,8 +13,6 @@ body {
 
 
 
-
-
 /* HEADER */
 
 header {
@@ -27,7 +25,7 @@ header {
 	margin-bottom: 0.7em;
 }
 
-.logo img{
+.logo img {
 	padding-top: 1em;
 	width: 300px;
 	height: 100px;
@@ -131,8 +129,6 @@ color:#fff;
 #menu-accordeon li:hover a, #menu-accordeon li li:hover a{
 color:#000;
 }
-
-
 
 
 
@@ -314,6 +310,23 @@ footer div{
 
 
 /*- - - -  - - - - - - - - - - - - - - -  - - - - - -  - - -  - -*/
+
+
+/* PAGE CAPTEUR COMMUN */
+
+#nom_piece {
+	display: flex;
+	margin-top: 0px;
+}
+
+#grille_capteur {
+	display: flex;
+}
+
+
+
+
+
 
 
 /* MENU INSCRIPTION ADMIN */

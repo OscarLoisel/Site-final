@@ -3,22 +3,10 @@
 $entete = entete();
 $aside = aside("sav");
 $contenu = '<h1>Réglages</h1>';
-$contenu .= '<ul>';
-$contenu .= '<li>';
-$contenu .= $data['nom'];
-$contenu .=' : '
-$contenu .= $donnes['valeur'];
-$contenu .= '  -  '
-$contenu .= $data['batterie'];
-$contenu .=
-$contenu .= '</li>';
-$contenu .= '</ul>';
-// NOM_CAPTEURS - DONNEES DU CAPTEURS - BATTERIE DU CAPTEURS - VERT - ORANGE - ROUGE
-?>
+$contenu .= listecapteurs();
 
- <?php echo ; ?> : 
-< ?>
-<?php
+// NOM_CAPTEURS - DONNEES DU CAPTEURS - BATTERIE DU CAPTEURS - VERT - ORANGE - ROUGE
+
 $pied = pied();
 
 include('gabarit.php');
