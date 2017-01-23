@@ -1,10 +1,10 @@
 <?php
 require("modele/connexion_base.php");
 
-function affichage_table_capteur($bdd, $id_piece)
+function affichage_table_capteur($bdd, $id_piece, $type)
 {
-	$reponse = $bdd ->prepare('SELECT * FROM capteurs WHERE id_piece = ?');
-	$reponse -> execute(array($id_piece));
+	$reponse = $bdd ->prepare('SELECT * FROM capteurs WHERE id_piece = ? AND type = ?');
+	$reponse -> execute(array($id_piece, $type));
 	return $reponse;
 }
 

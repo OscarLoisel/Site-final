@@ -6,13 +6,10 @@ $aside = aside("sav");
 $contenu = '<h1>Réglages</h1>';
 $contenu .= listecapteurs();
 
-$reponse = affichage_table_capteur($bdd, $id_piece);
+$reponse = affichage_table_capteur($bdd, $id_piece, $type);
 while ($donnees = $reponse->fetch()) 
 {
 	$id_capteur = $donnees['id'];
-
-	echo $donnees['n_tram'].'<br>';
-	echo $donnees['n_serie'].'<br>';
 
 	$req = affichage_table_donnees($bdd, $id_capteur);
 	$data = $req->fetch();

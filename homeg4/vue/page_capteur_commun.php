@@ -26,6 +26,7 @@ require("modele/affichagepiece.php");
 
     		if($data['type'] == "volet")
     		{
+                $type = $data['type'];
                 $etat = $_GET['etat'];
                 if ($etat == "true_volet") 
                 {
@@ -63,6 +64,7 @@ require("modele/affichagepiece.php");
 
             if($data['type'] == "light")
             {
+                $type = $data['type'];
                 $etat = $_GET['etat'];
                 if ($etat == "true_light") 
                 {
@@ -101,6 +103,7 @@ require("modele/affichagepiece.php");
 
             if($data['type'] == "temperature")
             {
+                $type = $data['type'];
                 $etat = $_GET['etat'];
                 if ($etat == "true_temperature") 
                 {
@@ -138,6 +141,7 @@ require("modele/affichagepiece.php");
 
             if($data['type'] == "humidite")
             {
+                $type = $data['type'];
                 $etat = $_GET['etat'];
                 if ($etat == "true_humidite") 
                 {
@@ -175,6 +179,7 @@ require("modele/affichagepiece.php");
 
             if($data['type'] == "presence")
             {
+                $type = $data['type'];
                 $etat = $_GET['etat'];
                 if ($etat == "true_presence") 
                 {
@@ -212,6 +217,7 @@ require("modele/affichagepiece.php");
 
             if($data['type'] == "cam")
             {
+                $type = $data['type'];
                 $etat = $_GET['etat'];
                 if ($etat == "true_cam") 
                 {
