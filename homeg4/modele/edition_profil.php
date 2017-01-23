@@ -13,5 +13,10 @@
 		$reponse -> execute(array($mdp, $id));
 	}
 
+	function editbouton_off($bdd, $id_piece, $type)
+	{
+		$reponse = $bdd->prepare("UPDATE capteurs SET etat = '1' WHERE id_piece = ? AND type = ?");
+		$reponse->execute(array($mail, $id));
+	}
 ?>
 
