@@ -34,10 +34,6 @@ while ($donnees = $reponse->fetch())
 	$contenu .= $data['date']; //TABLE DONNEES
 	$contenu .= '</td>';
 	$contenu .= '<td>';
-	$contenu .= '<td>';
-	$contenu .= '</td>';
-	$contenu .='<input type="radio" name="supprimer">';
-	$contenu .= '<td>';
 
 	if ($donnees['etat'] == 1) //TABLE CAPTEUR
 	{
@@ -49,13 +45,16 @@ while ($donnees = $reponse->fetch())
 	}
 
 	$contenu .='</td>';
+	$contenu .='<td>';
+	$contenu .='<input type="radio" name="supprimer">';
+	$contenu .='</td>';
 	$contenu .='</tr>';
 	
 	
 }
 $contenu .='</table>';
 
-// NOM_CAPTEURS - DONNEES DU CAPTEURS - BATTERIE DU CAPTEURS - VERT - ORANGE - ROUGE
+// NOM_CAPTEURS - NUMERO DE SERIE - DONNEES DU CAPTEUR - BATTERIE DU CAPTEUR - VERT/ROUGE - SUPPRIMER
 
 $pied = pied();
 

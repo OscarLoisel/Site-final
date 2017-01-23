@@ -37,7 +37,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_volet();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
@@ -47,7 +47,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_volet();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>'; 
                     }
@@ -74,7 +74,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_light();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
@@ -84,7 +84,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_light();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';  
                     }
@@ -112,7 +112,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_temperature();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
@@ -122,7 +122,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_temperature();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>'; 
                     }
@@ -149,7 +149,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_humidite();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
@@ -159,7 +159,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_humidite();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
@@ -186,7 +186,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_presence();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
@@ -196,7 +196,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_presence();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';  
                     }
@@ -223,7 +223,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_cam();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
@@ -233,7 +233,7 @@ require("modele/affichagepiece.php");
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_cam();
                         $contenu .='</div>';
-                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'">';
+                        $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
                     }
