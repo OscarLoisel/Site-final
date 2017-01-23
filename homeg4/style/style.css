@@ -203,15 +203,13 @@ aside {
 #tdb {
 	width: 16.1em;
 	height: 10em;
-	border: 2px ;
+	padding: 1em;
+	margin-left: 1.3em;
+	margin-top: 1.3em;
+	background-color: rgba(100,134,180,0.6);
 
 }
 
-#tableau_tdb {
-	border: 2px solid black;
-	border-radius: 20px;
-	background-color: grey;
-}
 
 .critere {
 	padding: 1.5em;
