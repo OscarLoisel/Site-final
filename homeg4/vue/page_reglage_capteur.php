@@ -36,6 +36,7 @@ while ($donnees = $reponse->fetch())
 	$contenu .= '<td>';
 	$contenu .= '<td>';
 	$contenu .= '</td>';
+	$contenu .='<input type="radio" name="supprimer">';
 	$contenu .= '<td>';
 
 	if ($donnees['etat'] == 1) //TABLE CAPTEUR
