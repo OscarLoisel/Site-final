@@ -395,7 +395,7 @@ function pied()
             <div id="mentions_pied">
                 <h2>Mentions légales</h2>
                 <ul>
-                    <li><a href="#" title="Lire les mentions légales">Lire</a></li>
+                    <li><a href="index.php?cible=cgu" title="Lire les mentions légales">Lire</a></li>
                     <li><a href="#" title="Télécharger les mentions légales">Télécharger en pdf</a></li>
                 </ul>
             </div>

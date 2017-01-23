@@ -1,6 +1,6 @@
 <?php
 
-$entete = entete();
+$entete = entete("home");
 $aside = aside("sav");
 $contenu = '<h1>Réglages</h1>';
 $contenu .= listecapteurs();
