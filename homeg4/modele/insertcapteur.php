@@ -30,4 +30,11 @@
 		return $reponse;
 	}
 
+	function read_n_tram($bdd, $id_piece)
+	{
+		$reponse = $bdd-> prepare("SELECT n_tram WHERE id_piece = ? ORDER BY n_tram DESC LIMIT 0,1");
+		$reponse-> execute(array($id_piece));
+		return $reponse;
+	}
+
 ?>
