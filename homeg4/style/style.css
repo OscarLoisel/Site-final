@@ -157,7 +157,28 @@ color:#000;
 	margin : auto;
 	/*width: 60%;*/
 	color: black;
+	border: black solid;
+}
 
+#contenua{
+	/*width: 65%;
+    margin-left:25%;
+    min-height: 50%;*/
+    min-height:400px;
+    /*margin-left:200px;*/
+    display: flex;
+	justify-content:center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	word-wrap : break-word;
+	/*border:2px solid red;*/
+	/*margin-right:2em;
+	margin-left:2em;*/
+	margin : auto;
+	/*width: 60%;*/
+	color: black;
+	border: black solid;
 }
 
 .titre_bienvenue {
