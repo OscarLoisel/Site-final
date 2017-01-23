@@ -386,7 +386,7 @@ function pied()
             <div id="contact_pied">
                 <h2>Contact</h2>
                 <ul>
-                    <li><a href="mailto:siteomeg4@gmail.com" title="Courrier électronique">Ecrivez-nous</a></li>
+                    <li><a href="mailto:siteomeg4@gmail.com" title="Courrier électronique">Écrivez-nous</a></li>
                     <li><a href="#" title="Téléphone">Appelez-nous</a></li>
                     <li><a href="#" title="Venir nous voir">Venir nous voir</a></li>
                 </ul>
