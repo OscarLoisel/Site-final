@@ -1055,7 +1055,7 @@ function listecapteurcamera()
     return $listecapteurcamera;
 }
 
-function metionslegales()
+function mentionslegales()
 {
     ob_start();
     ?>
