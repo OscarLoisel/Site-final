@@ -17,10 +17,10 @@
 	}
 
 
-	function insertcapteur($bdd, $id_piece, $type, $n_serie)
+	function insertcapteur($bdd, $id_piece, $type, $n_serie, $n_tram)
 	{
-		$reponse = $bdd -> prepare('INSERT INTO capteurs(id_piece, type, n_serie) VALUES (?, ?, ?)');
-		$reponse -> execute(array($id_piece, $type, $n_serie));
+		$reponse = $bdd -> prepare('INSERT INTO capteurs(id_piece, type, n_serie, n_tram) VALUES (?, ?, ?, ?)');
+		$reponse -> execute(array($id_piece, $type, $n_serie,$n_tram));
 	}
 
 	function insertcapteur2($bdd, $n_serie, $n_tram)
@@ -30,10 +30,10 @@
 		return $reponse;
 	}
 
-	function read_n_tram($bdd, $id_piece)
+	function read_n_tram($bdd, $id_utilisateur)
 	{
-		$reponse = $bdd-> prepare("SELECT n_tram WHERE id_piece = ? ORDER BY n_tram DESC LIMIT 0,1");
-		$reponse-> execute(array($id_piece));
+		$reponse = $bdd-> prepare("SELECT n_tram FROM capteurs INNER JOIN pieces WHERE pieces.id_utilisateur = ? ORDER BY n_tram DESC");
+		$reponse-> execute(array($id_utilisateur));
 		return $reponse;
 	}
 
