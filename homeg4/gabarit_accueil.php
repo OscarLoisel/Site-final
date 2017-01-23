@@ -18,8 +18,8 @@
 			<aside>
 				<?php echo($aside); ?>
 			</aside>
-			<div id="contenu">
-				<?php echo($contenu); ?>
+			<div id="contenua">
+				<?php echo($contenua); ?>
 			</div>	
 		</div>
 	
