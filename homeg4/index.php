@@ -181,7 +181,7 @@
         }
         elseif ($_GET['cible'] == 'cgu') 
         {
-            include("#");
+            include("vue/cgu.php");
         }
         elseif ($_GET['cible'] == 'edition_profil') // OK
         {
