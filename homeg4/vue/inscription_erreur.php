@@ -2,8 +2,8 @@
 
 	$entete = enteteConnexion();
 	$aside = asideHorsConnexion();
-	$contenu = forminscription();
-	$contenu.= $erreur;
+	$contenua = forminscription();
+	$contenua.= $erreur;
 	$pied = pied();
 
 	include 'gabarit.php';

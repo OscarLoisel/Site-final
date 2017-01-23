@@ -42,7 +42,7 @@
                         {
                             insertutilisateur($bdd, $mail, $mdp);
                             $erreur = "Votre compte a bien été créé !";
-                            include('vue/connexion_erreur.php');
+                            include('vue/connexion_success.php');
                         }
                         else
                         {

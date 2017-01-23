@@ -1,11 +1,11 @@
 <?php
     $entete = enteteConnexion();
     $aside = asideHorsConnexion();
-    $contenu = '<div class="titre_bienvenue_erreur">';
-    $contenu .= '<h2> Oups ! <br /> Un petit trou de mémoire ?</h2>';
-    $contenu .= $erreur;
-    $contenu .= '<p>Veuillez renseigner votre identifiant et mot de passe.</p>';
-    $contenu .='</div>';
+    $contenua = '<div class="titre_bienvenue_erreur">';
+    $contenua .= '<h2> Oups ! <br /> Un petit trou de mémoire ?</h2>';
+    $contenua .= $erreur;
+    $contenua .= '<p>Veuillez renseigner votre identifiant et mot de passe.</p>';
+    $contenua .='</div>';
     $pied = pied();
 
     include 'gabarit_accueil.php';

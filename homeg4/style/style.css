@@ -194,6 +194,12 @@ color:#000;
 	border-bottom: black solid;
 }
 
+.titre_bienvenue_success {
+	font-size: 2em;
+	border-top: black solid;
+	border-bottom: black solid;
+}
+
 
 /*form
 {
