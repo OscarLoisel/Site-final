@@ -15,6 +15,6 @@
     exit();
   }
  
-  forcerTelechargement('CGU.pdf', './images/CGU.pdf', 10000);
+  forcerTelechargement('CU.pdf', './images/CDU.pdf', 10000);
  
 ?>
