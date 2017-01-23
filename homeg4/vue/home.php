@@ -31,9 +31,9 @@
     {
         echo $sql . "<br>" . $e->getMessage();
     }
-    $conn = "null";
+    /*$contenu .= "null";*/
     $contenu .= '<a href="index.php?cible=ajout_piece"';
-    $contenu .= '</div class="piece_grille">';
+    $contenu .= '<div class="piece_grille">';
     $contenu .= '<img src="images/croix.png">';
     $contenu .= '</div>';
     $contenu .= '</a>';
