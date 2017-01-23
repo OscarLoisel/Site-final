@@ -818,56 +818,13 @@ function listecapteurs()
 	?>
 		<table id="listecapteurs">
 			<tr>
-				<td>
-					ID CAPTEUR
-				</td>
-				<td>
-					NUMÉRO DE SÉRIE
-				</td>
-				<td>
-					VALEUR
-				</td>
-				<td>
-					BATTERIE
-				</td>
-				<td>
-					DATE
-				</td>
-				<td>
-					ETAT
-				</td>
+				<td> ID CAPTEUR </td>
+				<td>NUMÉRO DE SÉRIE </td>
+				<td>VALEUR </td>
+				<td> BATTERIE </td>
+				<td> DATE </td>
+				<td> ETAT </td>
 			</tr>
-
-			<tr>
-				<td>
-					<?php echo $donnees['n_tram']; ?> <!-- TABLE CAPTEUR -->
-				</td>
-				<td>
-					<?php echo $donnees['n_serie']; ?> <!-- TABLE CAPTEUR -->
-				</td>
-				<td>
-					<?php echo $data['valeur']; ?>
-				</td>
-				<td>
-					<!--<?php echo $data['batterie']; ?>--> <!-- TABLE CAPTEUR -->
-				</td>
-				<td>
-					<?php echo $data['date']; ?> <!-- TABLE DONNEES -->
-				</td>
-				<td> 							<!-- TABLE CAPTEUR -->
-					<?php
-					if ($donnees['etat'] == 1) 
-					{
-						echo "vert";
-					}
-					else
-					{
-						echo "rouge";
-					}
-					?>
-				</td>
-			</tr>
-		</table>
 	<?php
 	$listecapteurs = ob_get_clean();
 	return $listecapteurs;
