@@ -720,6 +720,11 @@ function console_volet()
 	<form >
 		<input type="radio" name="fermer">FERMER
 		<input type="radio" name="ouvrir">OUVRIR
+		<script type="text/javascript">
+			$('input[name$="fermer"]').click(function(){
+			});
+			$('input[name$="ouvrir"]').click(function(){});
+		</script>
 	</form>
 
 	
