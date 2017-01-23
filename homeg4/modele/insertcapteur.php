@@ -23,10 +23,10 @@
 		$reponse -> execute(array($id_piece, $type, $n_serie));
 	}
 
-	function insertcapteur2($bdd, $n_serie)
+	function insertcapteur2($bdd, $n_serie, $n_tram)
 	{
-		$reponse = $bdd -> prepare('INSERT INTO capteurs(n_serie) VALUES (?)');
-		$reponse -> execute(array($n_serie));
+		$reponse = $bdd -> prepare('INSERT INTO capteurs(n_serie, n_tram) VALUES (?, ?)');
+		$reponse -> execute(array($n_serie, $n_tram));
 		return $reponse;
 	}
 
