@@ -829,6 +829,7 @@ function listecapteurs()
 				<td> BATTERIE </td>
 				<td> DATE </td>
 				<td> ETAT </td>
+				<td></td>
 			</tr>
 	<?php
 	$listecapteurs = ob_get_clean();
