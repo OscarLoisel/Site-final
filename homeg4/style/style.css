@@ -206,7 +206,7 @@ aside {
 	padding: 1em;
 	margin-left: 1.3em;
 	margin-top: 1.3em;
-	background-color: rgba(100,134,180,0.6);
+	background-color: rgba(165,191,200,0.8);
 }
 
 
@@ -232,10 +232,10 @@ aside {
 
 #liste_capteurs {
 	width: 16.1em;
-	border-radius: 20px;
 	margin-top: 3em;
-	border: 2px solid black;
-	background-color: #427396;
+	background-color: rgba(165,191,200,0.8);
+	margin-left: 1.3em;
+	padding: 1em;
 }
 
 #liste_capteurs ul {
@@ -244,20 +244,29 @@ aside {
 }
 
 #liste_capteurs li{
-	border: 2px solid black;
 	border-collapse: collapse;
-	border-radius: 20px;
 	text-align: center;
 	margin-bottom: 1em;
-	color: black;
-	background-color: white;
+	background-color: rgb(100,128,154);
 	position: relative;
-	right:10%;	
+	right:10%;
+	padding: 0.6em;
+}
+
+#liste_capteurs li:hover {
+	border-collapse: collapse;
+	text-align: center;
+	margin-bottom: 1em;
+	background-color: rgb(100,128,154);
+	position: relative;
+	right:10%;
+	padding: 0.8em;
 }
 
 
 #liste_capteurs a {
 	text-decoration: none;
+	color: white;
 }
 
 
