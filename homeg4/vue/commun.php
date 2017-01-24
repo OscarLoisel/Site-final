@@ -25,11 +25,11 @@ function entete($etape)
 
 					if($etape == "home")
 					{
-		                echo('<li><a href="index.php?cible=home"><strong>Home</strong></a></li>');
+		                echo('<li class="radiusl"><a href="index.php?cible=home"><strong>Home</strong></a></li>');
 		            }
 		            else
 		            {
-		            	echo('<li><a href="index.php?cible=home">Home</a></li>');
+		            	echo('<li class="radiusl"><a href="index.php?cible=home">Home</a></li>');
 		            }
 		            if($etape == "reglage")
 		            {
@@ -41,7 +41,7 @@ function entete($etape)
 		            }
 		            if ($etape == "contact") 
 		            {
-		            	echo('<li><a href="index.php?cible=contact"><strong>Contact</strong></a></li>');
+		            	echo('<li class="divider"><a href="index.php?cible=contact"><strong>Contact</strong></a></li>');
 		            }
 		            else
 		            {
@@ -53,7 +53,7 @@ function entete($etape)
 		            }
 		            else
 		            {
-		            	echo('<li><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
+		            	echo('<li class="radiusr"><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
 		            }
 
 					?>
@@ -196,7 +196,7 @@ function aside($etape)
 				<table id="tableau_tdb">
 
 					<tr>
-						<td colspan="2">Tableau de bord</td>
+						<td colspan="2">TABLEAU DE BORD</td>
 					</tr>
 
 					<tr>

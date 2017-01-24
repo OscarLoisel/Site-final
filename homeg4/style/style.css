@@ -57,7 +57,6 @@ list-style:none;
 text-align:center;
 height: 50px;
 width: 900px;
-border-radius: 5px;
 }
 
 
@@ -69,7 +68,7 @@ margin-left : 25px;
 margin-left : 25px;*/
 background-color: #729EBF;
 /*background-image: -webkit-linear-gradient(top, #64809A 0%, #30ABDD 100%);*/
-background-image:linear-gradient(to bottom,  #ffffff 0%, #64809A 80%);
+background-image:linear-gradient(to bottom,  #DBEAE9 0%, #7B8EA1 100%);
 /*border-radius:8px 8px 0 0;*/
 }
 
@@ -82,15 +81,35 @@ display:block;
 background-image: url(navi_bg_divider.png);
 background-repeat: no-repeat;
 background-position: right;
-padding-right: 71px;
-padding-left: 71px;
+padding-right: 70px;
+padding-left: 70px;
 line-height: 50px;
 font-size: 21px;
-color: #371C1C;
+color: #314367;
+border-radius: 10px;
+}
+
+.radiusl {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-right: 1px solid #64809A;
+}
+
+#reglage {
+	border-right: 1px solid #64809A;
+}
+
+.divider {
+	border-right: 1px solid #64809A;
+}
+
+.radiusr {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 #menu-accordeon li:hover{
-background:#30ABDD;
+background:#BDCCD3;
 }
 
 /*#menu-accordeon ul li:hover{
@@ -251,6 +270,10 @@ aside {
 	margin-left: 1.3em;
 	margin-top: 2em;
 	background-color: rgba(165,191,200,0.8);
+}
+
+#tableau_tdb {
+	color: #314367;
 }
 
 td[colspan="2"] {
