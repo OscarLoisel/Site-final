@@ -1089,6 +1089,6 @@ function mentionslegales()
     </div>
     
     <?php
-    $metionslegales = ob_get_clean();
-    return $metionslegales;
+    $mentionslegales = ob_get_clean();
+    return $mentionslegales;
 }
