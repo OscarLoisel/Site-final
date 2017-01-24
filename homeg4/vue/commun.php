@@ -674,7 +674,7 @@ function formulaireParapiece()
 					</td>
 				</tr>
 
-
+				<div id="test2">
 				<tr>
 					<td>
 						<label for="ajout_capteur">Ajouter un capteur :</label>
@@ -683,6 +683,23 @@ function formulaireParapiece()
 						<input type="text" name="ajout_capteur" id="ajout_capteur" placeholder="n° de série">
 					</td>
 				</tr>
+				</div>
+
+
+			    <script type="text/javascript" >
+			        var div = document.getElementById('champs');
+			        function addInput(nam){
+			            var input = document.createElement("input");
+			            input.name = name;
+			            div.appendChild(input);
+			            return false;
+			        }
+			        function addField() {
+			        	alert("test");
+			        	$("<p>textes</p>").append("#test2");
+			            return false;
+			        }
+			    </script>
 
 				<tr>
 					<td>
@@ -690,6 +707,7 @@ function formulaireParapiece()
 					</td>
 					<td>
 						<br>
+						<button type="button" onclick="addField()" >+</button>
 						<input type="submit" value="Ajouter" name="formparapieces">
 					</td>
 				</tr>
