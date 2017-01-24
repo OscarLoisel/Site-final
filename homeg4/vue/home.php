@@ -31,10 +31,10 @@
     {
         echo $sql . "<br>" . $e->getMessage();
     }
-    /*$contenu .= "null";*/
+
     $contenu .= '<a href="index.php?cible=ajout_piece"';
     $contenu .= '<div class="piece_grille">';
-    $contenu .= '<img src="images/croix.png">';
+    $contenu .= '<img src="images/croix.png" title="[imgcroix]" />';
     $contenu .= '</div>';
     $contenu .= '</a>';
     
