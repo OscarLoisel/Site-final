@@ -17,7 +17,7 @@ function entete($etape)
 			<div class="logo">
 				<a href="index.php?cible=home"><img src="images/logo.png" alt= "logo"></a>
 			</div>
-			
+
 			<nav>
 				<ul id ="menu-accordeon">
 
@@ -287,6 +287,101 @@ function asideHorsConnexion()
 	return $asideHorsConnexion;
 }
 
+
+function asideReglage($etape)
+{
+	ob_start();
+	?>
+	<div id="menu_capteurs">
+			<div id="liste_capteurs"  class="test">
+				<ul>
+
+				<?php
+
+					if($etape=="securite")
+					{
+	                    echo('<li><a href="index.php?cible=securite"><strong>Sécurité</strong></a></li>');
+	                }
+	                else
+            		{
+            			echo('<li><a href="index.php?cible=securite">Sécurité</a></li>');
+            		}
+	                if($etape=="systeme")
+					{
+	                    echo('<li><a href="index.php?cible=systeme"><strong>Système</strong></a></li>');
+	                }
+	                else
+            		{
+            			echo('<li><a href="index.php?cible=systeme">Système</a></li>');
+            		}
+	                if($etape=="cgu")
+					{
+	                    echo('<li id="reglage_3"><a href="index.php?cible=cgu"><strong>Conditions générales d\'utilisation</strong></a></li>'); // voir pour l'appostophe
+	                }
+	                else
+            		{
+            			echo('<li><a href="index.php?cible=cgu">Conditions générales d\'utilisation</a></li>');
+            		}
+	                if($etape=="edition_profil"/* AND isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']*/)
+					{
+	                    echo('<li id="reglage_4"><a href="index.php?cible=edition_profil"><strong>Editer mon profil</strong></a></li>');
+	                }
+	                else
+            		{
+            			echo('<li><a href="index.php?cible=edition_profil">Editer mon profil</a></li>');
+            		}
+
+                ?>
+
+				</ul>
+			</div>
+	</div>
+	<?php
+	$asideHorsConnexion= ob_get_clean();
+	return $asideHorsConnexion;
+}
+
+function asideContact($etape)
+{
+	ob_start();
+	?>
+	<div id="menu_capteurs">
+			<div id="liste_capteurs"  class="test">
+
+				<?php
+
+					if($etape=="newsletter")
+					{
+	                    echo('<li id="contact_1"><a href="index.php?cible=newsletter">Newsletter</a></li>'); 
+	                }
+	                else
+            		{
+            			echo('<li><a href="index.php?cible=newsletter">Newsletter</a></li>');
+            		}
+	                if($etape=="forum")
+					{
+	                    echo('<li id="contact_2"><a href="index.php?cible=forum">Forum</a></li>'); 
+	                }
+	                else
+            		{
+            			echo('<li><a href="index.php?cible=forum">Forum</a></li>');
+            		}
+	                if($etape=="sav")
+					{
+	                    echo('<li id="contact_3"><a href="index.php?cible=sav">S.A.V</a></li>'); 
+	                }
+	                else
+            		{
+            			echo('<li><a href="index.php?cible=sav">S.A.V</a></li>');
+            		}
+
+                ?>
+			</div>
+	</div>
+	<?php
+	$asideHorsConnexion= ob_get_clean();
+	return $asideHorsConnexion;
+}
 
 
 

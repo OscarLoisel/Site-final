@@ -3,7 +3,7 @@
     $entete = entete("edition_profil");
     $id = $_SESSION['id'];
     echo $id;
-    $aside = aside("sav");
+    $aside = asideReglage("edition_profil");
     $contenu = edition_profil();
     $pied = pied();
 

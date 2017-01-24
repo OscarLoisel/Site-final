@@ -1,7 +1,7 @@
 <?php
 
 $entete = entete("contact");
-$aside = aside("sav");
+$aside = asideContact("sav");
 $contennu =
 $pied = pied();
 

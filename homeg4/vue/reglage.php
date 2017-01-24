@@ -1,7 +1,7 @@
 <?php
 
 $entete = entete("reglage");
-$aside = aside("sav");
+$aside = asideReglage("edition_profil");
 $contennu =
 $pied = pied();
 
