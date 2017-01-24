@@ -181,13 +181,15 @@
             $type = $_GET['type'];
             include("vue/page_reglage_capteur.php");
         }
+
+
         elseif ($_GET['cible'] == 'reglage') // REGLAGE
         {
             include("vue/reglage.php");
         }
-        elseif ($_GET['cible'] == 'securite') // REGLAGE
+        elseif ($_GET['cible'] == 'securite') 
         {
-            include("vue/home.php");
+            include("#");
         }
         elseif ($_GET['cible'] == 'systeme') 
         {
@@ -201,7 +203,13 @@
         {
             include("vue/edition_profil.php");
         }
-        elseif ($_GET['cible'] == 'newsletter') // CONTACT
+
+
+        elseif ($_GET['cible'] == 'contact') // CONTACT
+        {
+            include("vue/contact.php");
+        }
+        elseif ($_GET['cible'] == 'newsletter') 
         {
             include("vue/newsletter.php");
         }
@@ -213,6 +221,8 @@
         {
             include("vue/sav.php");
         }
+        
+
         elseif ($_GET['cible'] == 'lampes') // ASIDE
         {
             include("vue/liste_capteur_lampe.php");
