@@ -316,7 +316,7 @@ function asideReglage($etape)
             		}
 	                if($etape=="cgu")
 					{
-	                    echo('<li id="reglage_3"><a href="index.php?cible=cgu"><strong>Conditions générales d\'utilisation</strong></a></li>'); // voir pour l'appostophe
+	                    echo('<li id="reglage_3"><a href="index.php?cible=cgu"><strong>Conditions générales d\'utilisation</strong></a></li>'); 
 	                }
 	                else
             		{
