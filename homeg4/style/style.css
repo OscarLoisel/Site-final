@@ -44,42 +44,67 @@ nav {
 
 #menu-accordeon{
 	position : relative;
-	top : 28%;
-	justify-content: space-around;
-	margin-left : 50px;
-	width : 200%;
-	height : 10%;
-	border : 2px solid black;
+	margin-top: 4em;
+	/*justify-content: space-around;*/
+	margin-left : 108px;
+	/*width : 900px;
+	height : 10%;*/
 }
 
 #menu-accordeon, #menu-accordeon ul{
 padding:0;
 list-style:none;
 text-align:center;
+height: 50px;
+width: 900px;
+border-radius: 5px;
 }
 
 
 #menu-accordeon li{
-display : inline-block;
-position:relative;
+	float: left;
+/*display : inline-block;*/
+/*position:relative;
 margin-left : 25px;
-margin-left : 25px;
+margin-left : 25px;*/
+background-color: #729EBF;
+/*background-image: -webkit-linear-gradient(top, #64809A 0%, #30ABDD 100%);*/
+background-image:linear-gradient(to bottom,  #ffffff 0%, #64809A 80%);
 /*border-radius:8px 8px 0 0;*/
 }
 
-#menu-accordeon ul li{
-/*display:inherit;*/
-position : relative;
-left : -25px;
-width : 100%;
-border-radius:0;
+
+#menu-accordeon a{
+text-decoration:none;
+display:block;
+/*padding:8px 32px;*/
+
+background-image: url(navi_bg_divider.png);
+background-repeat: no-repeat;
+background-position: right;
+padding-right: 71px;
+padding-left: 71px;
+line-height: 50px;
+font-size: 21px;
+color: #371C1C;
 }
 
-#menu-accordeon ul li:hover{
+#menu-accordeon li:hover{
+background:#30ABDD;
+}
+
+/*#menu-accordeon ul li:hover{
 border-radius:0;
 }
 #menu-accordeon ul li:last-child{
 border-radius:0 0 8px 8px;
+}
+
+#menu-accordeon ul li{
+position : relative;
+left : -25px;
+width : 100%;
+border-radius:0;
 }
 
 #menu-accordeon ul{
@@ -96,33 +121,22 @@ transition: .8s all .3s;
 #menu-accordeon li:hover ul{
 max-height:15em;
 }
-/* background des liens menus */
-#menu-accordeon li{
-background-color: #729EBF;
-background-image: -webkit-linear-gradient(top, #427396 0%, #30ABDD 100%);
-background-image:linear-gradient(to bottom, #427396 0%, #30ABDD 100%);
-}
-/* background des liens sous menus */
+/* background des liens menus 
+
+
+/* background des liens sous menus 
 #menu-accordeon li li{
 background:#333A40;
 }
-/* background des liens menus et sous menus au survol */
-#menu-accordeon li:hover{
-background:#30ABDD;
-}
+/* background des liens menus et sous menus au survol 
+
 
 #menu-accordeon li li:hover{
  	background: #999;
  }
 
-/* les a href */
-#menu-accordeon a{
-text-decoration:none;
-display:block;
-padding:8px 32px;
-color:#fff;
-font-family:arial;
-}
+/* les a href 
+
 #menu-accordeon ul a{
 padding:8px 0;
 }
@@ -131,7 +145,7 @@ color:#fff;
 }
 #menu-accordeon li:hover a, #menu-accordeon li li:hover a{
 color:#000;
-}
+}*/
 
 
 
