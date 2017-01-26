@@ -8,6 +8,7 @@
     include_once("modele/insertpiece.php");
     include_once("modele/edition_profil.php");
     include_once("modele/insertcapteur.php");
+    include_once("modele/insertdonnes.php");
     
     //require("modele/para_capteurs.php");*/
     if(!isset($_SESSION["id"]))
@@ -15,6 +16,7 @@
         include("controleur/connexion.php");
     }
 
+// FORMULAIRE INSCRIPTION
     
     if (isset($_POST['forminscription'])) 
         {
@@ -80,6 +82,7 @@
 
     }
 
+// FORMULAIRE PARA PIECES 
 
     if (isset($_POST['formparapieces'])) 
     {
@@ -146,6 +149,24 @@
         
     } 
 
+    if (isset($_POST("form_insert_valeur"))) 
+    {
+        $tram = htmlspecialchars($_POST['tram']);
+        if (!empty($tram)) 
+        {
+            $type_tram = substr($tram, 0, 1); //1 - TYPE DE TRAM UTILISÉ - toujours la premiere tram
+            $objet = substr($tram, 1, 4); //4 - NUMERO D'EQUIPE - ne change jamais
+            $requete = substr($tram, 5, 1); //1 - IDENTIFIE LA COMMANDE - modifie l'etat du capteur
+            $type = substr($tram, 6,1); // 1 - LE TYPE DE CAPTEUR
+            $numero = substr($tram, 7, 2); //2 - NUMERO DE CAPTEUR
+            $valeur_capteur_hex = substr($tram, 9, 4); //4 - VALEUR DU CAPTEUR
+            $date = substr($tram, 13, 4); // 4 - DATE
+
+            insertdonnees($bdd, $valeur_capteur_hex, $date, $numero);
+        }
+        
+    }
+
 
 
 
@@ -189,7 +210,7 @@
         }
         elseif ($_GET['cible'] == 'securite') 
         {
-            include("#");
+            include("vue/insertion_valeur.php");
         }
         elseif ($_GET['cible'] == 'systeme') 
         {
