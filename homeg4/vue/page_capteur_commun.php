@@ -16,6 +16,9 @@ require("modele/affichagepiece.php");
 	$contenu .='</div>';
 	$contenu .= "<div id='grille_capteurs'>";
 	$id_piece = $_GET['id_piece'];
+    $contenu .='<table>';
+    $contenu .='<tr>';
+    
 		
 	$reponse = affichagetypecapteurs($bdd, $id_piece);
 		// Affiche les capteurs de la table capteur en fonction de l'id_piece récupéré via l'URL.
@@ -33,18 +36,37 @@ require("modele/affichagepiece.php");
                     $x=1;
                     if ( $x=0/*PROBLEME*/) 
                     {
+                        $contenu .= '<td>';
                         $contenu .='<img src="">'; // IMAGE PROBLEME
                         $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/volet.png" alt= "img_capteur"></a>';
+                        $contenu .= '</td>';
+                        $contenu .= '</tr>';
+
+                        $contenu .= '<tr>';
+
+                        $contenu .= '<td>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_volet();
                         $contenu .='</div>';
+                        $contenu .= '</td>';
+
+                        $contenu .= '<td>';
                         $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
+                        $contenu .= '</td>';
+                        $contenu .= '</tr>';
                     }
                     else
                     {
+                        $contenu .= '<td>';
                         $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/volet.png" alt= "img_capteur"></a>';
+                        $contenu .= '</td>';
+                        $contenu .= '</tr>';
+
+                        $contenu .= '<tr>';
+
+                        $contenu .= '</td>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_volet();
                         $contenu .='</div>';
@@ -255,6 +277,8 @@ require("modele/affichagepiece.php");
     	}
 	
 	$contenu .="</div>";
+    $contenu .='</tr>';
+    $contenu .="</table>";
 	$pied = pied();
 
 include("gabarit.php");
