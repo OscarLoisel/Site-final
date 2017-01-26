@@ -16,7 +16,7 @@ require("modele/affichagepiece.php");
 	$contenu .='</div>';
 	$contenu .= "<div id='grille_capteurs'>";
 	$id_piece = $_GET['id_piece'];
-    $contenu .='<table>';
+    $contenu .='<table id="table_capteurs">';
     $contenu .='<tr>';
     
 		

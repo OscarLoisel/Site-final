@@ -562,6 +562,14 @@ input[name=bouton_inscription] {
 
 }
 
+#table_capteurs td{
+	border: solid black 2px;
+}
+
+#table_capteurs tr{
+	border: solid black 2px;
+}
+
 
 
 
