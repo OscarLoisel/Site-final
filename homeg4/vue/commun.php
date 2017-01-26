@@ -453,7 +453,7 @@ function pieda()
             </div>
             
             <div id="mentions_pied">
-                <h2>Mentions légales [PAGE ACCUEIL]</h2>
+                <h2>Mentions légales</h2>
                 <ul>
                     <li><a href="index.php?cible=cguA" title="Lire les mentions légales">Lire</a></li>
                     <li><a href="controleur/cgudw.php" title="Télécharger les mentions légales">Télécharger en pdf</a></li>

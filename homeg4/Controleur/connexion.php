@@ -1,6 +1,7 @@
 <?php
 
 if(isset($_GET['cible']) && $_GET['cible']=="verif")
+
 {
 	if (isset($_POST['formconnexion'])) 
 	{
@@ -55,6 +56,10 @@ if(isset($_GET['cible']) && $_GET['cible']=="verif")
 	{	
 		include("vue/page_inscription.php");
 	}
+}
+elseif(if(isset($_GET['cible']) && $_GET['cible']=="verif")
+{
+
 }
 else
 {
