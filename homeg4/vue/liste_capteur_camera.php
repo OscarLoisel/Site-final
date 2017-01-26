@@ -2,8 +2,8 @@
     
     $entete = entete("home");
     $aside = aside("sav");
-    $contenu = listecapteurcamera();
+    $contenuc = listecapteurcamera();
     $pied = pied();
     
-    include('gabarit.php');
+    include('gabarit_capteur.php');
 ?>

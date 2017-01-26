@@ -1,20 +1,25 @@
-body {
+/*body {
     width: 50%;
     margin: auto;
+}*/
+
+#contenuc {
+    text-align: center;
+    margin : auto;
+    color: black;
+    width: 900px;
+    height: 554px;
+    margin-top: 2em;
+    background-color: rgba(165,191,200,0.6);
 }
 
-p {
+/*p {
     text-align: center;
-}
+}*/
 
 h1 {
-    color: #359AD8;
+    color: #314367;
     text-align: center;
-}
-
-input[type="range"] {
-    position: relative;
-    margin-left: 1em;
 }
 
 input[type="range"]:after, input[type="range"]:before {
@@ -34,7 +39,7 @@ input[type="range"]:after {
 }
 
 .temperature {
-    color: #359AD8;
+    color: #314367;
     font-size: 30px;
     font-weight: bold;
 }

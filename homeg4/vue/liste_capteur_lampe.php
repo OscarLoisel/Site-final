@@ -2,8 +2,8 @@
     
     $entete = entete("home");
     $aside = aside("sav");
-    $contenu = listecapteurlampe();
+    $contenuc = listecapteurlampe();
     $pied = pied();
     
-    include('gabarit.php');
+    include('gabarit_capteur.php');
 ?>

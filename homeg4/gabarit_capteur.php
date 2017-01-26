@@ -3,12 +3,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<link rel="stylesheet" type="text/css" href="style_liste_capteurs.css">
+	<link rel="stylesheet" type="text/css" href="style/style_liste_capteurs.css">
 	<title>
 		Homeg4
 	</title>
 </head>
-	<body id="body_accueil">
+	<body>
 		<div id="tete">
 			<?php echo($entete);?>
 		</div>
@@ -17,8 +17,8 @@
 			<aside>
 				<?php echo($aside); ?>
 			</aside>
-			<div id="contenua">
-				<?php echo($contenua); ?>
+			<div id="contenuc">
+				<?php echo($contenuc); ?>
 			</div>	
 		</div>
 	
