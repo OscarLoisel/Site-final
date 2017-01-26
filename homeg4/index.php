@@ -165,8 +165,9 @@
             $numero = substr($tram, 7, 2); //2 - NUMERO DE CAPTEUR
             $valeur_capteur_hex = substr($tram, 9, 4); //4 - VALEUR DU CAPTEUR
             $date = substr($tram, 13, 4); // 4 - DATE
+            $valeur_capteur_dec = hexdec($valeur_capteur_hex);
 
-            insertdonnees($bdd, $valeur_capteur_hex, $date, $numero, $id_utilisateur);
+            insertdonnees($bdd, $valeur_capteur_dec, $date, $numero, $id_utilisateur);
         }
         else
         {
