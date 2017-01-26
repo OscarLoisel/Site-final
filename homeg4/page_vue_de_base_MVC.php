@@ -2,7 +2,7 @@
 
 $entete = entete();
 $aside = aside("sav");
-$contennu =
+$contenu =
 $pied = pied();
 
 include('gabarit.php');

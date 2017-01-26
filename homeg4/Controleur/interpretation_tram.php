@@ -12,6 +12,8 @@ $numero = substr($tram, 7, 2); //2 - NUMERO DE CAPTEUR
 $valeur_capteur_hex = substr($tram, 9, 4); //4 - VALEUR DU CAPTEUR
 $date = substr($tram, 13, 4); // 4 - DATE
 
+
+
 $valeur_capteur_dec = hexdec($valeur_capteur_hex);
 echo "<br>";
 echo $valeur_capteur_dec;
