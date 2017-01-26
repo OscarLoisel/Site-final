@@ -156,6 +156,8 @@
         $tram = htmlspecialchars($_POST['tram']);
         if (!empty($tram)) 
         {
+            $id_utilisateur = intval($_SESSION['id']);
+
             $type_tram = substr($tram, 0, 1); //1 - TYPE DE TRAM UTILISÉ - toujours la premiere tram
             $objet = substr($tram, 1, 4); //4 - NUMERO D'EQUIPE - ne change jamais
             $requete = substr($tram, 5, 1); //1 - IDENTIFIE LA COMMANDE - modifie l'etat du capteur
@@ -163,8 +165,9 @@
             $numero = substr($tram, 7, 2); //2 - NUMERO DE CAPTEUR
             $valeur_capteur_hex = substr($tram, 9, 4); //4 - VALEUR DU CAPTEUR
             $date = substr($tram, 13, 4); // 4 - DATE
+            $valeur_capteur_dec = hexdec($valeur_capteur_hex);
 
-            insertdonnees($bdd, $valeur_capteur_hex, $date, $numero);
+            insertdonnees($bdd, $valeur_capteur_dec, $date, $numero, $id_utilisateur);
         }
         else
         {
