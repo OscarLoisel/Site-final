@@ -285,24 +285,48 @@ require("modele/affichagepiece.php");
                     $x=1;
                     if ( $x=0/*PROBLEME*/) 
                     {   
-                        $contenu .='<img src="">';
+                        $contenu .= '<td>';
+                        $contenu .='<img src="">'; // IMAGE PROBLEME
                         $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/presence.png" alt= "img_capteur"></a>';
+                        $contenu .= '</td>';
+                        $contenu .= '</tr>';
+
+                        $contenu .= '<tr>';
+
+                        $contenu .= '<td>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_presence();
                         $contenu .='</div>';
+                        $contenu .= '</td>';
+
+                        $contenu .= '<td>';
                         $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
+                        $contenu .= '</td>';
+                        $contenu .= '</tr>';
                     }
                     else
                     {
+                        $contenu .= '<td>';
                         $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/presence.png" alt= "img_capteur"></a>';
+                        $contenu .= '</td>';
+                        $contenu .= '</tr>';
+
+                        $contenu .= '<tr>';
+
+                        $contenu .= '</td>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_presence();
                         $contenu .='</div>';
+                        $contenu .= '</td>';
+
+                        $contenu .= '<td>';
                         $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
-                        $contenu .='</a>';  
+                        $contenu .='</a>';
+                        $contenu .= '</td>';
+                        $contenu .= '</tr>';  
                     }
                 }
                 else
@@ -323,24 +347,48 @@ require("modele/affichagepiece.php");
                     $x=1;
                     if ( $x=0/*PROBLEME*/) 
                     {   
-                        $contenu .='<img src="">';
+                        $contenu .= '<td>';
+                        $contenu .='<img src="">'; // IMAGE PROBLEME
                         $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/cam.png" alt= "img_capteur"></a>';
+                        $contenu .= '</td>';
+                        $contenu .= '</tr>';
+
+                        $contenu .= '<tr>';
+
+                        $contenu .= '<td>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_cam();
                         $contenu .='</div>';
+                        $contenu .= '</td>';
+
+                        $contenu .= '<td>';
                         $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
+                        $contenu .= '</td>';
+                        $contenu .= '</tr>';
                     }
                     else
                     {
+                        $contenu .= '<td>';
                         $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat="><img src="images/cam.png" alt= "img_capteur"></a>';
+                        $contenu .= '</td>';
+                        $contenu .= '</tr>';
+
+                        $contenu .= '<tr>';
+
+                        $contenu .= '</td>';
                         $contenu .='<div class=console_reglage>';
                         $contenu .=console_cam();
                         $contenu .='</div>';
+                        $contenu .= '</td>';
+
+                        $contenu .= '<td>';
                         $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                         $contenu .='<img src="images/reglage.png">';
                         $contenu .='</a>';
+                        $contenu .= '</td>';
+                        $contenu .= '</tr>';
                     }
                 }
                 else
