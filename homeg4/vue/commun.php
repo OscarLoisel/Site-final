@@ -960,7 +960,7 @@ function listecapteurlampe()
 {
     ob_start();
     ?>
-
+    <br /><br />
 	<h1>Lampe</h1>
 
 	<div class="onoffswitch">
@@ -991,7 +991,7 @@ function listecapteurchauffage()
 {
     ob_start();
 	?>
-
+    <br /><br />
 	<h1>Chauffage</h1>
 
 	<div class="onoffswitch">
@@ -1025,7 +1025,7 @@ function listecapteurvolet()
 {
     ob_start();
     ?>
-
+    <br /><br />
 	<h1>Volet</h1>
 
 	<div class="onoffswitch">
@@ -1057,7 +1057,7 @@ function listecapteuralarme()
     ob_start();
     ?>
 
-
+    <br /><br />
 	<h1>Alarme</h1>
 
 	<div class="onoffswitch">
@@ -1078,7 +1078,7 @@ function listecapteurcamera()
     ob_start();
     ?>
 
-
+    <br /><br />
 	<h1>Caméra</h1>
 
 	<div class="onoffswitch">
