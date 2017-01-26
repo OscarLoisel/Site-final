@@ -195,6 +195,10 @@
         {
             include("#");
         }
+           elseif ($_GET['cible'] == 'cguA') 
+        {
+            include("vue/cguA.php");
+        }
         elseif ($_GET['cible'] == 'cgu') 
         {
             include("vue/cgu.php");
@@ -203,8 +207,6 @@
         {
             include("vue/edition_profil.php");
         }
-
-
         elseif ($_GET['cible'] == 'contact') // CONTACT
         {
             include("vue/contact.php");

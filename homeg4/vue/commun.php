@@ -438,6 +438,40 @@ function pied()
 }
 
 
+function pieda()
+{ // FAIRE LES LIENS !!!!!
+	ob_start();
+	?>
+		<footer>
+            <div id="contact_pied">
+                <h2>Contact</h2>
+                <ul>
+                    <li><a href="mailto:siteomeg4@gmail.com" title="Courrier électronique">Écrivez-nous</a></li>
+                    <li><a href="#" title="Téléphone">Appelez-nous</a></li>
+                    <li><a href="#" title="Venir nous voir">Venir nous voir</a></li>
+                </ul>
+            </div>
+            
+            <div id="mentions_pied">
+                <h2>Mentions légalesAAAAAAAAAAAAAa</h2>
+                <ul>
+                    <li><a href="index.php?cible=cguA" title="Lire les mentions légales">Lire</a></li>
+                    <li><a href="controleur/cgudw.php" title="Télécharger les mentions légales">Télécharger en pdf</a></li>
+                </ul>
+            </div>
+            
+            <div id="reseaux_pied">
+                <h2>Nous suivre sur :</h2>
+                <a href="https://www.facebook.com/Homeg4-1704397496541016/"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="https://twitter.com/Homeg_4"><img src="images/twitter.png" alt="Twitter"></a>
+            </div>
+         
+        </footer>
+
+	<?php
+	$pieda = ob_get_clean();
+	return $pieda;
+}
 
 /* -----------------------------------------------------------------------------------------------------------*/
 
