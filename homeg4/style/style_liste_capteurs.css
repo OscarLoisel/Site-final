@@ -1,8 +1,3 @@
-/*body {
-    width: 50%;
-    margin: auto;
-}*/
-
 #contenuc {
     text-align: center;
     margin : auto;
@@ -12,10 +7,6 @@
     margin-top: 2em;
     background-color: rgba(165,191,200,0.6);
 }
-
-/*p {
-    text-align: center;
-}*/
 
 h1 {
     color: #314367;
@@ -45,9 +36,29 @@ input[type="range"]:after {
 }
 
 .cadre {
-    border: 1px #359AD8 solid;
-    width: 30%;
+    width: 40%;
+    height: 100%;
     margin: auto;
+    background-color: rgb(100,128,154);
+}
+
+button {
+    background-color: #314367;
+    border: solid #314367 2px;
+    color: white;
+    font-size: 1em;
+    border-radius: 10px;
+    width: 150px;
+    height: 35px;
+}
+
+button:hover {
+    background-color: #314367;
+    border: solid #314367 2px;
+    color: white;
+    border-radius: 10px;
+    width: 155px;
+    height: 40px;
 }
 
 .onoffswitch {
@@ -78,13 +89,14 @@ input[type="range"]:after {
 
 .onoffswitch-inner:before {
     content: "ON";
-    padding-left: 13px;
+    padding-left: 10px;
     background-color: #359AD8; color: #FFFFFF;
+    text-align: left;
 }
 
 .onoffswitch-inner:after {
     content: "OFF";
-    padding-right: 13px;
+    padding-right: 10px;
     background-color: #EEEEEE; color: #999999;
     text-align: right;
 }
