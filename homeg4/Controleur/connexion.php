@@ -57,7 +57,7 @@ if(isset($_GET['cible']) && $_GET['cible']=="verif")
 		include("vue/page_inscription.php");
 	}
 }
-elseif(if(isset($_GET['cible']) && $_GET['cible']=="verif")
+elseif(isset($_GET['cible']) && $_GET['cible']=="cguA")
 {
 
 }
