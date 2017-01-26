@@ -43,7 +43,9 @@ while ($donnees = $reponse->fetch())
 
 	$contenu .='</td>';
 	$contenu .='<td>';
-	$contenu .='<input type="radio" name="supprimer">';
+	$contenu .='<input type="checkbox" name="supprimer" onclick="show()">';
+	$contenu .='<script>';
+	$contenu .=
 	$contenu .='</td>';
 	$contenu .='</tr>';
 	

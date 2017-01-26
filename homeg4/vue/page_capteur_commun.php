@@ -82,7 +82,9 @@ require("modele/affichagepiece.php");
                 }
                 else
                 {
+                    $contenu .= '<td>';
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_volet"><img src="images/volet_off.png" alt= "img_capteur"></a>';
+                    $contenu .= '</td>';
                 }
     			
     		}
@@ -145,8 +147,10 @@ require("modele/affichagepiece.php");
                 }
                 else
                 {
+                    $contenu .= '<td>';
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_light"><img src="images/light_off.png" alt= "img_capteur"></a>';
-                }
+                    $contenu .= '</td>';
+                }   
                 
             }
 
@@ -207,7 +211,9 @@ require("modele/affichagepiece.php");
                 }
                 else
                 {
+                    $contenu .= '<td>';
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_temperature"><img src="images/temperature_off.png" alt= "img_capteur"></a>';
+                    $contenu .= '</td>';
                 }
                 
             }
@@ -269,7 +275,9 @@ require("modele/affichagepiece.php");
                 }
                 else
                 {
+                    $contenu .= '<td>';
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_humidite"><img src="images/baro_off.png" alt= "img_capteur"></a>';
+                    $contenu .= '</td>';
                 }
                 
             }
@@ -331,7 +339,9 @@ require("modele/affichagepiece.php");
                 }
                 else
                 {
+                    $contenu .= '<td>';
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_presence"><img src="images/presence_off.png" alt= "img_capteur"></a>';
+                    $contenu .= '</td>';
                 }
                 
             }
@@ -393,7 +403,9 @@ require("modele/affichagepiece.php");
                 }
                 else
                 {
+                    $contenu .= '<td>';
                     $contenu .='<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=true_cam"><img src="images/cam_off.png" alt= "img_capteur"></a>';
+                    $contenu .= '<td>';
                 }
                 
             }
