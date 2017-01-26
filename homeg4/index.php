@@ -149,7 +149,9 @@
         
     } 
 
-    if (isset($_POST("form_insert_valeur"))) 
+//  FORMULAIRE INSERTION VALEUR 
+
+    if (isset($_POST['form_insert_valeur'])) 
     {
         $tram = htmlspecialchars($_POST['tram']);
         if (!empty($tram)) 
@@ -163,6 +165,10 @@
             $date = substr($tram, 13, 4); // 4 - DATE
 
             insertdonnees($bdd, $valeur_capteur_hex, $date, $numero);
+        }
+        else
+        {
+            $msg ="Veuillez remplir tous les champs";
         }
         
     }
