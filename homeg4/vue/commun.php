@@ -1173,7 +1173,7 @@ function mentionslegales()
     ob_start();
     ?>
 
-    <div>
+    <div id="cgu">
         
         <h1>Mentions légales</h1>
         </br>
@@ -1234,7 +1234,6 @@ function mentionslegales()
         <p style="color: #b51a00;"><span style="color: rgb(0, 0, 0);"><b>Litiges : </b></span></p>
         Les présentes conditions du site <a href="http://www.homeg4.com">www.homeg4.com</a> sont régies par les lois françaises et toute contestation ou litiges qui pourraient naître de l'interprétation ou de l'exécution de celles-ci seront de la compétence exclusive des tribunaux dont dépend le siège social de la société. La langue de référence, pour le règlement de contentieux éventuels, est le français.
         </br>
-        <p style="color: #b51a00;"><span style="color: rgb(0, 0, 0);"><b>Données personnelles :</b></span></p>
     
     </div>
     
