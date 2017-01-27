@@ -14,6 +14,7 @@ require("modele/affichagepiece.php");
     $contenu .= $donnee['piece'];
     $contenu .= '</h1>';
     $contenu .='</div>';
+    $contenu .='<br />';
     $contenu .= "<div id='grille_capteurs'>";
     $id_piece = $_GET['id_piece'];
     /*$contenu .= '<br />';
@@ -23,6 +24,7 @@ require("modele/affichagepiece.php");
     $contenu .='<tr>';
     $liste = [];
     $liste_piece = [];
+    echo('lolilolfgijezofgbasjk');
 
 
         
@@ -425,6 +427,12 @@ require("modele/affichagepiece.php");
             }       
         }
         $contenu .= '</tr>';
+        $contenu .='</table>';
+        $contenu .='<br />';
+        $contenu .='<table>';
+
+        
+
 
 
         $longueur = sizeof($liste);
@@ -433,8 +441,8 @@ require("modele/affichagepiece.php");
             echo($liste[$i]);
             if ($liste[$i] == 'true_volet')
             {
-                $contenu .= '<tr>';
 
+                $contenu .='<tr>';
                 $contenu .= '<td>';
                 $contenu .='<div class=console_reglage>';
                 $contenu .=console_volet();
@@ -445,8 +453,9 @@ require("modele/affichagepiece.php");
                 $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                 $contenu .='<img src="images/reglage.png">';
                 $contenu .='</a>';
-                $contenu .= '</td>';
-                $contenu .= '</tr>';
+                $contenu .='</td>';
+                $contenu .='</tr>';
+
             }
 
             elseif ($liste[$i] == 'true_light')
