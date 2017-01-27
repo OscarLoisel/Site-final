@@ -192,6 +192,7 @@ color:#000;
 	height: 554px;
 	margin-top: 2em;
 	background-color: rgba(165,191,200,0.6);
+	overflow: auto;
 
 }
 
@@ -236,17 +237,22 @@ color:#000;
 	border-bottom: black solid;
 }
 #grille_pieces {
-	padding : 3em;
+	padding: 3em;
 	display: flex;
 	justify-content: space-between;
 	width: 900px;
 	height: 554px;
+	flex-wrap: wrap;
 }
 
 .piece_grille {
-	width: 10em;
-	height: 10em;
+	width: 12em;
+	height: 12em;
     background-color: #314367;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .piece_grille a {
@@ -255,9 +261,13 @@ color:#000;
 	font-size: 1.5em;
 }
 
-.piece_grille_croix {
-	bottom: 3px;
+.piece_grille:hover {
+	width: 12.1em;
+	height: 12.1em;
+    background-color: #314367;
+    box-shadow: 2px 2px 2px black;
 }
+
 /*form
 {
 	width :21em;
@@ -591,6 +601,8 @@ input[name=bouton_inscription] {
 	border: solid black 2px;
 }
 
-
+#cgu {
+	
+}
 
 
