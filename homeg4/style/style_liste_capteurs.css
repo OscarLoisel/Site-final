@@ -206,3 +206,17 @@ button:hover {
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px;
 }
+
+
+
+
+
+
+/* TEST PAGE CAPTEUR COMMUN */
+
+#sous_contenu
+{
+    display : flex;
+    flex-direction: column;
+    justify-content : center;
+}

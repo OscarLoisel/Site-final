@@ -9,7 +9,8 @@ require("modele/affichagepiece.php");
     $reponse = affichagepiece($bdd, $id_piece);
     $donnee = $reponse -> fetch();
 
-    $contenu ='<div id = nom_piece>';
+    $contenu = '<div id = sous_contenu>';
+    $contenu .='<div id = nom_piece>';
     $contenu .= '<h1>';
     $contenu .= $donnee['piece'];
     $contenu .= '</h1>';
@@ -25,7 +26,6 @@ require("modele/affichagepiece.php");
     $liste = [];
     $liste_piece = [];
     echo('lolilolfgijezofgbasjk');
-
 
         
     $reponse = affichagetypecapteurs($bdd, $id_piece);
@@ -438,7 +438,6 @@ require("modele/affichagepiece.php");
         $longueur = sizeof($liste);
         for ($i=0; $i < $longueur ; $i++)
         { 
-            echo($liste[$i]);
             if ($liste[$i] == 'true_volet')
             {
 
@@ -553,8 +552,11 @@ require("modele/affichagepiece.php");
 
     
     $contenu .="</div>";
+    $contenu .='</div>';
     //$contenu .='</tr>';
     $contenu .="</table>";
+    $contenu .='</div>';
+    $contenu .='</div>';
     $pied = pied();
 
 include("gabarit.php");
