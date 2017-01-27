@@ -25,7 +25,6 @@ require("modele/affichagepiece.php");
     $contenu .='<tr>';
     $liste = [];
     $liste_piece = [];
-    echo('lolilolfgijezofgbasjk');
 
         
     $reponse = affichagetypecapteurs($bdd, $id_piece);

@@ -33,7 +33,7 @@
     }
 
     $contenu .= '<a href="index.php?cible=ajout_piece"';
-    $contenu .= '<div class="piece_grille">';
+    $contenu .= '<div class="piece_grille_croix">';
     $contenu .= '<img src="images/croix.png" title="[imgcroix]" />';
     $contenu .= '</div>';
     $contenu .= '</a>';

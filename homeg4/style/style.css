@@ -235,10 +235,28 @@ color:#000;
 	border-top: black solid;
 	border-bottom: black solid;
 }
+#grille_pieces {
+	padding : 3em;
+	display: flex;
+	justify-content: space-between;
+	width: 900px;
+	height: 554px;
+}
+
 .piece_grille {
-	border:solid 2px #64809A;
-	color: rgb(100,128,154);
-	box-shadow: 3px 3px 2px #000000;
+	width: 10em;
+	height: 10em;
+    background-color: #314367;
+}
+
+.piece_grille a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.5em;
+}
+
+.piece_grille_croix {
+	bottom: 3px;
 }
 /*form
 {
