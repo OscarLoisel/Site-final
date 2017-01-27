@@ -960,7 +960,7 @@ function listecapteurlampe()
 {
     ob_start();
     ?>
-    <br /><br />
+    <br />
 	<h1>Lampe</h1>
 
 	<div class="onoffswitch">
@@ -991,7 +991,7 @@ function listecapteurchauffage()
 {
     ob_start();
 	?>
-    <br /><br />
+    <br />
 	<h1>Chauffage</h1>
 
 	<div class="onoffswitch">
@@ -1002,8 +1002,8 @@ function listecapteurchauffage()
 		</label>
 	</div><br />
 
-	<p class="temperature"><input name="sliderinput" id="sliderinput" type="range" value="20" min="15" max="25" oninput="slideroutput.value = sliderinput.value" />
-	<output name="slideroutput" id="slideroutput">20</output>°C</p>
+	<p class="temperature"><output name="slideroutput" id="slideroutput">20</output>°C<br />
+	<input name="sliderinput" id="sliderinput" type="range" value="20" min="15" max="25" step="0.5" oninput="slideroutput.value = sliderinput.value" /></p>
 
 	<p><button onclick="scenario()">Créer un scénario</button></p>
 
@@ -1025,7 +1025,7 @@ function listecapteurvolet()
 {
     ob_start();
     ?>
-    <br /><br />
+    <br />
 	<h1>Volet</h1>
 
 	<div class="onoffswitch">
@@ -1057,7 +1057,7 @@ function listecapteuralarme()
     ob_start();
     ?>
 
-    <br /><br />
+    <br />
 	<h1>Alarme</h1>
 
 	<div class="onoffswitch">
@@ -1078,7 +1078,7 @@ function listecapteurcamera()
     ob_start();
     ?>
 
-    <br /><br />
+    <br />
 	<h1>Caméra</h1>
 
 	<div class="onoffswitch">
