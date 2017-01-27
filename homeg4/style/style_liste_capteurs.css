@@ -131,7 +131,7 @@ input[type="range"]:after {
     padding-top: 1.5em;
 }
 
-button {
+button[onclick="scenario()"] {
     background-color: #314367;
     border: solid #314367 2px;
     color: white;
