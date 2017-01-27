@@ -721,6 +721,75 @@ function formulaireParapiece()
 	return $paraPieces;
 }
 
+function formulaireTestParapiece()
+{
+	ob_start();
+	?>
+	<div id="parametrage">
+		<form method="POST" action="">
+			<table id="tableau_parametrage_pieces">
+
+
+				<tr>
+					<td>
+						<label for="ajout_piece">Ajouter une piéce :</label>
+					</td>
+					<td>
+						<input type="text" name="ajout_piece" id="ajout_piece" placeholder="nom de la salle">
+					</td>
+				</tr>
+
+
+				<p>
+			       	<label for="nb_capteur">Combien de capteurs voulez vous ajouter ?</label><br />
+			       <select name="nb_capteur" id="nb_capteur" onchange="test()">
+			           <option value="1">1</option>
+			           <option value="2">2</option>
+			           <option value="3">3</option>
+			           <option value="4">4</option>
+			           <option value="5">5</option>
+			           <option value="6">6</option>
+			       </select>
+			   </p>
+			   <script type="text/javascript">
+			        function test(){
+			            var x = document.getElementById("nb_capteur").value;
+			            alert(x);
+			            for (var i = 0; i < x; i++) 
+			            {
+			            	addfield();     
+			            }
+			        }
+			        function addField() {
+			        	alert("test");
+			        	("<p>textes</p>").append("#test2");
+			        }
+			    </script>
+
+				<div id="test2">
+				<tr>
+					<td>
+						<label for="ajout_capteur">Ajouter un capteur :</label>
+					</td>
+					<td>
+						<input type="text" name="ajout_capteur" id="ajout_capteur" placeholder="n° de série">
+					</td>
+				</tr>
+				</div>
+
+
+			    
+
+				
+			</table>
+		</form>
+	</div>
+
+	<?php
+	$paraPieces = ob_get_clean();
+	return $paraPieces;
+}
+
 
 function formulaireParacapteurs ($piece = '')
 {
