@@ -757,12 +757,8 @@ function formulaireTestParapiece()
 			            alert(x);
 			            for (var i = 0; i < x; i++) 
 			            {
-			            	addfield();     
+			            	<label for="ajout_capteur">Ajouter un capteur :</label>     
 			            }
-			        }
-			        function addField() {
-			        	alert("test");
-			        	("<p>textes</p>").append("#test2");
 			        }
 			    </script>
 
