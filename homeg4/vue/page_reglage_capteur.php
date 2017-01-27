@@ -1,6 +1,7 @@
 <?php
 include_once("modele/affichage_reglage_capteur.php");
 
+
 $entete = entete("home");
 $aside = aside("sav");
 $contenu = '<h1>Réglages</h1>';
@@ -45,7 +46,11 @@ while ($donnees = $reponse->fetch())
 	$contenu .='<td>';
 	$contenu .='<input type="checkbox" name="supprimer" onclick="show()">';
 	$contenu .='<script>';
-	$contenu .=
+	$contenu .='function show(){';
+	$contenu .='confirm("Voulez vous vraiment supprimer ce capteur de la liste ?"){';
+	$contenu .='}';
+	$contenu .='</script>';
+
 	$contenu .='</td>';
 	$contenu .='</tr>';
 	
