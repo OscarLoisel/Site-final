@@ -253,6 +253,10 @@
         {
             include("vue/sav.php");
         }
+        elseif ($_GET['cible'] == 'newsletter') // ASIDE
+        {
+            include("vue/newsletter.php");
+        }
         
 
         elseif ($_GET['cible'] == 'lampes') // ASIDE
