@@ -775,8 +775,7 @@ function formulaireTestParapiece()
 
 
 				<div id="test3">
-				
-				
+					<input type="submit" value="Ajouter" name="formparapieces">				
 				</div>
 
 

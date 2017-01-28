@@ -12,6 +12,11 @@ function test()
 		document.getElementById('test3').innerHTML += '<input type="text" name="ajout_capteur" id="ajout_capteur" placeholder="n° de série">';
 		document.getElementById('test3').innerHTML += '</td>';
 		document.getElementById('test3').innerHTML += '</tr>';
+		document.getElementById('test3').innerHTML += '<tr>';
+		document.getElementById('test3').innerHTML += '<td>';
+		document.getElementById('test3').innerHTML += '<input type="submit" value="Ajouter" name="formparapieces"></td>';
+		document.getElementById('test3').innerHTML += '</td>';
+		document.getElementById('test3').innerHTML += '</tr>';
 	}
 }
 
