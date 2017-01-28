@@ -190,7 +190,7 @@
     {
         if ($_GET['cible'] == 'ajout_piece') 
         {
-            include("vue/ajout_piece.php");
+            include("vue/ajout_piece_test.php");
         }
         elseif ($_GET['cible'] == 'ajout_capteurs') 
         {

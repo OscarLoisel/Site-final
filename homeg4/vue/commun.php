@@ -726,9 +726,28 @@ function formulaireTestParapiece()
 	ob_start();
 	?>
 	<div id="parametrage">
+	<script src="JS/js.js"></script>
 		<form method="POST" action="">
 			<table id="tableau_parametrage_pieces">
 
+				<div id="test2">
+				<tr>
+					<td>
+			       	<label for="nb_capteur">Combien de capteurs voulez vous ajouter ?</label><br />
+			       	
+			       	</td>
+			       	<td>
+			        <select name="nb_capteur" id="nb_capteur" onchange="test2()">
+			           <option value="1">1</option>
+			           <option value="2">2</option>
+			           <option value="3">3</option>
+			           <option value="4">4</option>
+			           <option value="5">5</option>
+			           <option value="6">6</option>
+			       </select>
+			       </td>
+			       
+			   </tr>
 
 				<tr>
 					<td>
@@ -740,29 +759,9 @@ function formulaireTestParapiece()
 				</tr>
 
 
-				<p>
-			       	<label for="nb_capteur">Combien de capteurs voulez vous ajouter ?</label><br />
-			       <select name="nb_capteur" id="nb_capteur" onchange="test()">
-			           <option value="1">1</option>
-			           <option value="2">2</option>
-			           <option value="3">3</option>
-			           <option value="4">4</option>
-			           <option value="5">5</option>
-			           <option value="6">6</option>
-			       </select>
-			   </p>
-			   <script type="text/javascript">
-			        function test(){
-			            var x = document.getElementById("nb_capteur").value;
-			            alert(x);
-			            for (var i = 0; i < x; i++) 
-			            {
-			            	<label for="ajout_capteur">Ajouter un capteur :</label>     
-			            }
-			        }
-			    </script>
 
-				<div id="test2">
+
+				
 				<tr>
 					<td>
 						<label for="ajout_capteur">Ajouter un capteur :</label>
@@ -772,12 +771,19 @@ function formulaireTestParapiece()
 					</td>
 				</tr>
 				</div>
+				</table>
+
+
+				<div id="test3">
+				
+				
+				</div>
 
 
 			    
 
 				
-			</table>
+			
 		</form>
 	</div>
 
