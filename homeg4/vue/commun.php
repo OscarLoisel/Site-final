@@ -778,6 +778,13 @@ function formulaireTestParapiece()
 					<input type="submit" value="Ajouter" name="formparapieces">				
 				</div>
 
+				<p id="choix_logo">
+
+				<input type="radio" name="age" value="logo1" id="logo1"/> <label for="logo1">logo 1</label><br />
+       			<input type="radio" name="age" value="logo2" id="logo2"/> <label for="logo2">logo 2</label><br />
+       			<input type="radio" name="age" value="logo3" id="logo3"/> <label for="logo3">logo 3</label><br />
+       			<input type="radio" name="age" value="logo4" id="logo4"/> <label for="logo4">logo 4</label>
+				</p>
 
 			    
 
