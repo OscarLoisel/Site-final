@@ -213,7 +213,7 @@ function aside($etape)
 		</div>
 
 		<div id="menu_capteurs">
-			<div id="liste_capteurs"  class="test">
+			<div class="liste_capteurs">
 				<ul>
 
 				<?php
@@ -293,7 +293,7 @@ function asideReglage($etape)
 	ob_start();
 	?>
 	<div id="menu_capteurs">
-			<div id="liste_capteurs"  class="test">
+			<div class="liste_capteurs">
 				<ul>
 
 				<?php
@@ -346,13 +346,13 @@ function asideContact($etape)
 	ob_start();
 	?>
 	<div id="menu_capteurs">
-			<div id="liste_capteurs"  class="test">
+			<div class="liste_capteurs">
 
 				<?php
 
 					if($etape=="newsletter")
 					{
-	                    echo('<li id="contact_1"><a href="index.php?cible=newsletter">Newsletter</a></li>'); 
+	                    echo('<li id="contact_1"><a href="index.php?cible=newsletter"><strong>Newsletter</strong></a></li>'); 
 	                }
 	                else
             		{
@@ -360,7 +360,7 @@ function asideContact($etape)
             		}
 	                if($etape=="forum")
 					{
-	                    echo('<li id="contact_2"><a href="index.php?cible=forum">Forum</a></li>'); 
+	                    echo('<li id="contact_2"><a href="index.php?cible=forum"><strong>Forum</strong></a></li>'); 
 	                }
 	                else
             		{
@@ -368,7 +368,7 @@ function asideContact($etape)
             		}
 	                if($etape=="sav")
 					{
-	                    echo('<li id="contact_3"><a href="index.php?cible=sav">S.A.V</a></li>'); 
+	                    echo('<li id="contact_3"><a href="index.php?cible=sav"><strong>S.A.V</strong></a></li>'); 
 	                }
 	                else
             		{

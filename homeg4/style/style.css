@@ -334,7 +334,7 @@ td[colspan="2"] {
 	float: bottom left;
 }
 
-#liste_capteurs {
+.liste_capteurs {
 	width: 16.1em;
 	margin-top: 3em;
 	background-color: rgba(165,191,200,0.8);
@@ -342,12 +342,12 @@ td[colspan="2"] {
 	padding: 1em;
 }
 
-#liste_capteurs ul {
+.liste_capteurs ul {
 	list-style-type: none;
 	
 }
 
-#liste_capteurs li{
+.liste_capteurs li{
 	border-collapse: collapse;
 	text-align: center;
 	margin-bottom: 1em;
@@ -357,7 +357,7 @@ td[colspan="2"] {
 	padding: 0.6em;
 }
 
-#liste_capteurs li:hover {
+.liste_capteurs li:hover {
 	border-collapse: collapse;
 	text-align: center;
 	margin-bottom: 1em;
@@ -368,7 +368,7 @@ td[colspan="2"] {
 }
 
 
-#liste_capteurs a {
+.liste_capteurs a {
 	text-decoration: none;
 	color: white;
 }
@@ -583,9 +583,9 @@ input[name=bouton_inscription] {
 	text-align: justify;
 }
 
-.test{
+/*.test{
 	background-color: #427396;
-}
+}*/
 
 .test_2{
 
