@@ -26,7 +26,7 @@ function test2()
 	
 	if(x == 2)
 	{
-		document.getElementById('test3').innerHTML = '<table class="paraPieceTest"><tr><td><label for="ajout_capteur2">Ajouter un capteur :</label></td><td><input type="text" name="ajout_capteur2" id="ajout_capteur2" placeholder="n° de série"></td></tr><tr><td><input type="submit" value="Ajouter" name="formparapieces2"></td></tr></table>';
+		document.getElementById('test3').innerHTML = '<tr><td></td><td><label for="ajout_capteur2">Ajouter un capteur :</label></td><td><input type="text" name="ajout_capteur2" id="ajout_capteur2" placeholder="n° de série"></td></tr><br /><tr><td><input type="submit" value="Ajouter" name="formparapieces2"></td></tr>';
 	}
 	else if(x == 3)
 	{

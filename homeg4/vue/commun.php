@@ -743,7 +743,6 @@ function formulaireTestParapiece()
 			           <option value="3">3</option>
 			           <option value="4">4</option>
 			           <option value="5">5</option>
-			           <option value="6">6</option>
 			       </select>
 			       </td>
 			       
@@ -771,19 +770,28 @@ function formulaireTestParapiece()
 					</td>
 				</tr>
 				</div>
-				</table>
-
-
+				
+				<tr>
+				<td>
+				
 				<div id="test3">
 					<input type="submit" value="Ajouter" name="formparapieces">				
 				</div>
+				</tr>
+				</td>
+				</table>
+
 
 				<p id="choix_logo">
 
-				<input type="radio" name="age" value="logo1" id="logo1"/> <label for="logo1">logo 1</label><br />
-       			<input type="radio" name="age" value="logo2" id="logo2"/> <label for="logo2">logo 2</label><br />
-       			<input type="radio" name="age" value="logo3" id="logo3"/> <label for="logo3">logo 3</label><br />
-       			<input type="radio" name="age" value="logo4" id="logo4"/> <label for="logo4">logo 4</label>
+				<input type="radio" name="age" value="logo1" id="logo1"/> <label for="logo1"><img src ="images/salon.png" alt="salon"></label><br />
+       			<input type="radio" name="age" value="logo2" id="logo2"/> <label for="logo2"><img src ="images/cuisine.png" alt="cuisine"></label><br />
+       			<input type="radio" name="age" value="logo4" id="logo4"/> <label for="logo4"><img src ="images/Salle à manger.png" alt="couvert"></label>
+       			<input type="radio" name="age" value="logo5" id="logo5"/> <label for="logo5"><img src ="images/toilettes.png" alt="toilettes"></label>
+       			<input type="radio" name="age" value="logo3" id="logo3"/> <label for="logo3"><img src ="images/lit.png" alt="lit"></label><br />
+       			<input type="radio" name="age" value="logo6" id="logo6"/> <label for="logo6"><img src ="images/chambre_enfant.png" alt="chambre_enfant"></label>
+       			<input type="radio" name="age" value="logo7" id="logo7"/> <label for="logo7"><img src ="images/chambre_bebe.png" alt="bebe"></label>
+
 				</p>
 
 			    
