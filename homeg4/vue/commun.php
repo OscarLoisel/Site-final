@@ -1049,15 +1049,9 @@ function listecapteurlampe()
 	<h1>Lampe</h1>
 
 	<div class="onoffswitch">
-	<form method="POST" action="">
-		
-	
-		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
-		<label class="onoffswitch-label" for="myonoffswitch">
-			<span class="onoffswitch-inner"></span>
-			<span class="onoffswitch-switch"></span>
-		</label>
-		<input type="submit" name="rafraichir" value="rafraichir">
+	<form method="POST" action="">	
+		<input type="submit" name="allumer" value="Allumer">
+		<input type="submit" name="eteindre" value="Eteindre">
 	</form>
 	</div><br />
 

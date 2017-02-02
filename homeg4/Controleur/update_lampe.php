@@ -3,36 +3,31 @@ include_once('modele/update_lampe.php');
 
 $id_utilisateur = $_SESSION['id'];
 
-if (isset($_POST['rafraichir'])) 
+if (isset($_POST['allumer'])) 
 {
-	if (isset($_POST['onoffswitch'])) 
-    {
-    	$reponse = read_lampe($bdd, $id_utilisateur);
-    	$data = $reponse-> fetchAll();
-    	$data_size = sizeof($data);
-    	echo $data_size;
-    	for ($id_capteur=$data[0]; $id_capteur <= $data_size ; $id_capteur++)   
-    	{
-    		echo $id_capteur;
-    		$reponse = update_lampe_on($bdd, $id_capteur);
-    	}
-    }
-    else
-    {
-    	$reponse = read_lampe($bdd, $id_utilisateur);
-    	$data = $reponse-> fetch(); 
-    	{
-    		
-    		$reponse = read_lampe($bdd, $id_utilisateur);
-	    	$data = $reponse-> fetchAll();
-	    	$data_size = sizeof($data);
-	    	echo $data_size;
-	    	for ($id_capteur=$data[0]; $id_capteur <= $data_size ; $id_capteur++)   
-	    	{
-	    		$reponse = update_lampe_off($bdd, $id_capteur);
-	    	}
-    	}
-    }
+	$reponse = read_lampe($bdd, $id_utilisateur);
+	$data = $reponse-> fetchAll();
+	$data_size = sizeof($data);
+	echo 'taille :<br>'.$data_size;
+	for ($i=0; $i < $data_size; $i++)   
+	{
+		echo $data[$i][0];
+		$reponse = update_lampe_on($bdd, $data[$i][0]);
+	}
+}
+    
+if (isset($_POST['eteindre']))
+{	
+	$reponse = read_lampe($bdd, $id_utilisateur);
+	$data = $reponse-> fetchAll();
+	$data_size = sizeof($data);
+	echo 'taille :<br>'.$data_size;
+	for ($i=0; $i < $data_size; $i++)   
+	{
+		echo $data[$i][0];
+		$reponse = update_lampe_off($bdd, $data[$i][0]);
+	}
+	
 }
 
 $msg='';
