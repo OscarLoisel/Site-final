@@ -29,18 +29,47 @@ if (isset($_POST['formscenario']))
 {
 	$date_debut = htmlspecialchars($_POST['date_debut']);
 	$date_fin = htmlspecialchars($_POST['date_fin']);
-	if (!empty($date_debut)) 
+	if (!empty($date_debut) and !empty($date_fin)) // DATE DE DEBUT ET DE FIN
 	{
-		echo "date_debut";
-		if (!empty($date_fin)) 
+		echo $date_debut.'<br>';
+		echo $date_fin.'<br>';
+
+		if ($date_debut < $date_fin) 
 		{
-			echo "date_fin";
-			if (isset($_POST['choixh']))  
+			
+			if (isset($_POST['choixh']) AND isset($_POST['choixm']))  // HEURE DU DÉBUT DE SCÉNARIO
 			{
 				$choix_h = $_POST['choixh'];
-				echo $choix_h;
+				$choix_m = $_POST['choixm'];
+				//insert dans la bdd
+				echo $choix_h.'H'.$choix_m.'m<br>';
+
+				if (isset($_POST['choixh']) AND isset($_POST['choixm']) )  // HEURE DE FIN DE SCÉNARIO
+				{
+					$choix_h = $_POST['choixh'];
+					$choix_m = $_POST['choixm'];
+					//insert dans la bdd
+					echo $choix_h.'H'.$choix_m.'m<br>';
+				}
+				else
+				{
+					$msg="Veuillez renseigner l'heure de fin du scénario.";
+				}
+				
+			}
+			else
+			{
+				$msg="Veuillez renseigner l'heure de début du scénario.";
 			}
 		}
+		else
+		{
+			$msg = "La date de début du scénario doit être inférieur à la date de fin du scénario.";
+		}
+	}
+	else
+	{
+		$msg="Veuillez renseigner une date de début et de fin du scénario.";
 	}
 }
 
