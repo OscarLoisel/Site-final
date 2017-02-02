@@ -929,6 +929,7 @@ if (isset($_POST['formscenario']))
 
             if(isset($_POST['choix_action']))
             {
+                echo "le 2 isset fonctionne";
                 $action = $_POST['choix_action'];
                 if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))  // HEURE DU DÉBUT DE SCÉNARIO
                 {
@@ -938,20 +939,20 @@ if (isset($_POST['formscenario']))
                     $choixm_f = $_POST['choixm_f'];
                     if ($choixh_d < $choixh_f) 
                     {
-                        echo $choixh_d.'H'.$choixm_d.'m<br>';
-                        echo $choixh_f.'H'.$choixm_f.'m<br>';
-                        $heure_debut = $choixh_d.':'.$choixm_d.': 00';
-                        $heure_fin = $choixh_f.':'.$choixm_f.': 00';
-                        $reponse = insert_scenario( $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1');
+                        //echo $choixh_d.'H'.$choixm_d.'m<br>';
+                        //echo $choixh_f.'H'.$choixm_f.'m<br>';
+                        $heure_debut = $choixh_d.$choixm_d.'00';
+                        $heure_fin = $choixh_f.$choixm_f.'00';
+                        $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1');
                         $msg = "Votre scénario a bien été créer";
                     }
                     if ($choixh_d == $choixh_f AND $choixm_d <= $choixm_f) 
                     {
-                        echo $choixh_d.'H'.$choixm_d.'m<br>';
-                        echo $choixh_f.'H'.$choixm_f.'m<br>';
-                        $heure_debut = $choixh_d.':'.$choixm_d.': 00';
-                        $heure_fin = $choixh_f.':'.$choixm_f.': 00';
-                        $reponse = insert_scenario( $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1');
+                        //echo $choixh_d.'H'.$choixm_d.'m<br>';
+                        //echo $choixh_f.'H'.$choixm_f.'m<br>';
+                        $heure_debut = $choixh_d.$choixm_d.'00';
+                        $heure_fin = $choixh_f.$choixm_f.'00';
+                        $reponse = insert_scenario($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1');
                         $msg = "Votre scénario a bien été créer";
                     }
                     else
@@ -973,13 +974,12 @@ if (isset($_POST['formscenario']))
 
 
 
-        if ($date_debut < $date_fin) 
+        elseif ($date_debut < $date_fin) 
         {
-            echo "date de debut < date de fin";
-
+            //echo "date de debut < date de fin";
             if(isset($_POST['choix_action']))
             {
-            
+                //echo "le 2 isset fonctionne";
                 $action = $_POST['choix_action'];
                 if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))  // HEURE DU DÉBUT DE SCÉNARIO
                 {
@@ -989,11 +989,11 @@ if (isset($_POST['formscenario']))
                     $choixm_f = $_POST['choixm_f'];
                     
                     //insert dans la bdd
-                    echo $choixh_d.'H'.$choixm_d.'m<br>';
-                    echo $choixh_f.'H'.$choixm_f.'m<br>';
-                    $heure_debut = $choixh_d.':'.$choixm_d.': 00';
-                    $heure_fin = $choixh_f.':'.$choixm_f.': 00';
-                    $reponse = insert_scenario( $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1');
+                    //echo $choixh_d.'H'.$choixm_d.'m<br>';
+                    //echo $choixh_f.'H'.$choixm_f.'m<br>';
+                    $heure_debut = $choixh_d.$choixm_d.'00';
+                    $heure_fin = $choixh_f.$choixm_f.'00';
+                    $reponse = insert_scenario($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1');
                     $msg = "Votre scénario a bien été créer";             
                 }
                 else
@@ -1010,7 +1010,7 @@ if (isset($_POST['formscenario']))
 
 
 
-        if ($date_debut > $date_fin)
+        elseif ($date_debut > $date_fin)
         {
             echo "date_debut > date_fin";
             if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))
