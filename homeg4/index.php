@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    include('modele/update_lampe.php');
     include_once("modele/connexion_base.php"); 
     include_once("vue/commun.php");
     include_once("modele/inscription.php");
