@@ -11,15 +11,16 @@
         $nbrligne = sizeof($data);
         $id = $data[0][0];
         for ($i= 0; $i < $nbrligne ; $i++) 
-        {   
+        {
+                $contenu .= '<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=" >';   
                 $contenu .= '<div class="piece_grille">';
-                $contenu .= '<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=" >';
                     //$contenu .= '<div class="piece_grille">';
                     ?>
                         <strong><?php $contenu .= $data[$i][1]; ?></strong>
                     <?php
-                    $contenu .= '</a>';
-                    $contenu .= '</div>';
+                $contenu .= '</div>';
+                $contenu .= '</a>';
+                    
                 
 
                 $id++;     
@@ -31,12 +32,12 @@
     {
         echo $sql . "<br>" . $e->getMessage();
     }
-
+    //$contenu .= '</div>';
     $contenu .= '<a href="index.php?cible=ajout_piece"';
-    $contenu .= '<div class="piece_grille_croix">';
+    //$contenu .= '<div class="piece_grille_croix">';
     $contenu .= '<img src="images/croix.png" title="[imgcroix]" />';
-    $contenu .= '</div>';
     $contenu .= '</a>';
+    $contenu .= '</div>';
     
     $pied = pied();
 

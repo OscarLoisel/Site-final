@@ -240,14 +240,21 @@ color:#000;
 	padding: 3em;
 	display: flex;
 	justify-content: space-between;
-	width: 900px;
-	height: 554px;
+	/*width: 8em;
+	height: 15em;*/
 	flex-wrap: wrap;
 }
 
+#grille_pieces a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.5em;
+}
+
+
 .piece_grille {
-	width: 12em;
-	height: 12em;
+	width: 8em;
+	height: 8em;
 	margin-top : 1em;
     background-color: #314367;
     display: flex;
@@ -256,15 +263,15 @@ color:#000;
     flex-wrap: wrap;
 }
 
-.piece_grille a {
+/*.piece_grille a {
 	color: white;
 	text-decoration: none;
 	font-size: 1.5em;
-}
+}*/
 
 .piece_grille:hover {
-	width: 12.1em;
-	height: 12.1em;
+	width: 8.1em;
+	height: 8.1em;
     background-color: #314367;
     box-shadow: 2px 2px 2px black;
 }
