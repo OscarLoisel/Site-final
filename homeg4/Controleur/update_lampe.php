@@ -25,6 +25,7 @@ if (isset($_POST['rafraichir']))
     	}
     }
 }*/
+$msg='';
 if (isset($_POST['formscenario'])) 
 {
 	$date_debut = htmlspecialchars($_POST['date_debut']);
@@ -37,17 +38,17 @@ if (isset($_POST['formscenario']))
 		if ($date_debut < $date_fin) 
 		{
 			
-			if (isset($_POST['choixh']) AND isset($_POST['choixm']))  // HEURE DU DÉBUT DE SCÉNARIO
+			if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']))  // HEURE DU DÉBUT DE SCÉNARIO
 			{
-				$choix_h = $_POST['choixh'];
-				$choix_m = $_POST['choixm'];
+				$choix_h = $_POST['choixh_d'];
+				$choix_m = $_POST['choixm_d'];
 				//insert dans la bdd
 				echo $choix_h.'H'.$choix_m.'m<br>';
 
-				if (isset($_POST['choixh']) AND isset($_POST['choixm']) )  // HEURE DE FIN DE SCÉNARIO
+				if (isset($_POST['choixh_f']) AND isset($_POST['choixm_f']) )  // HEURE DE FIN DE SCÉNARIO
 				{
-					$choix_h = $_POST['choixh'];
-					$choix_m = $_POST['choixm'];
+					$choix_h = $_POST['choixh_f'];
+					$choix_m = $_POST['choixm_f'];
 					//insert dans la bdd
 					echo $choix_h.'H'.$choix_m.'m<br>';
 				}
@@ -72,5 +73,6 @@ if (isset($_POST['formscenario']))
 		$msg="Veuillez renseigner une date de début et de fin du scénario.";
 	}
 }
+echo $msg;
 
 ?>
