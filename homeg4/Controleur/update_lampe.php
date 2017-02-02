@@ -1,30 +1,40 @@
 <?php
 include_once('modele/update_lampe.php');
 
-/*if (isset($_POST['rafraichir'])) 
+$id_utilisateur = $_SESSION['id'];
+
+if (isset($_POST['rafraichir'])) 
 {
 	if (isset($_POST['onoffswitch'])) 
     {
-    	
-    	$reponse = read_lampe($bdd);
-    	while ($data = $reponse-> fetch()) 
+    	$reponse = read_lampe($bdd, $id_utilisateur);
+    	$data = $reponse-> fetchAll();
+    	$data_size = sizeof($data);
+    	echo $data_size;
+    	for ($id_capteur=$data[0]; $id_capteur <= $data_size ; $id_capteur++)   
     	{
-    		$id_capteur = $data['capteurs.id'];
-    		
+    		echo $id_capteur;
     		$reponse = update_lampe_on($bdd, $id_capteur);
     	}
     }
     else
     {
-    	$reponse = read_lampe($bdd);
-    	while ($data = $reponse-> fetch()) 
+    	$reponse = read_lampe($bdd, $id_utilisateur);
+    	$data = $reponse-> fetch(); 
     	{
-    		$id_capteur = $data['capteurs.id'];
     		
-    		$reponse = update_lampe_off($bdd, $id_capteur);
+    		$reponse = read_lampe($bdd, $id_utilisateur);
+	    	$data = $reponse-> fetchAll();
+	    	$data_size = sizeof($data);
+	    	echo $data_size;
+	    	for ($id_capteur=$data[0]; $id_capteur <= $data_size ; $id_capteur++)   
+	    	{
+	    		$reponse = update_lampe_off($bdd, $id_capteur);
+	    	}
     	}
     }
-}*/
+}
+
 $msg='';
 if (isset($_POST['formscenario'])) 
 {
