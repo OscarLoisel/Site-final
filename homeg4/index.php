@@ -9,7 +9,7 @@
     include_once("modele/edition_profil.php");
     include_once("modele/insertcapteur.php");
     include_once("modele/insertdonnes.php");
-    
+    include_once("modele/recup_valeurs.php");
     //require("modele/para_capteurs.php");*/
     if(!isset($_SESSION["id"]))
     { 
@@ -37,10 +37,12 @@
                 {
                     if ($mdp == $mdp2) 
                     {
-                        $reponse = read_n_serie($bdd, $n_serie);
+                        $truc = read_n_serie($bdd, $n_serie);
                         $data = $reponse->fetch();
+                        echo($data[0]);
+                        echo($data[1]);
                 
-                        if ($reponse -> rowcount() == 1) 
+                        if ($truc -> rowcount() == 1) 
                         {
                             insertutilisateur($bdd, $mail, $mdp);
                             $erreur = "Votre compte a bien été créé !";
@@ -929,6 +931,7 @@
 
         elseif ($_GET['cible'] == 'reglage') // REGLAGE
         {
+            $id = $_SESSION["id"];
             include("vue/reglage.php");
         }
         elseif ($_GET['cible'] == 'securite') 

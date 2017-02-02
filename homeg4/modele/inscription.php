@@ -9,7 +9,7 @@
 		}
 	function read_n_serie($bdd, $n_serie)
 		{
-			$reponse= $bdd->prepare("SELECT n_serie FROM capteurs WHERE n_serie= ?");
+			$reponse= $bdd->prepare("SELECT n_serie FROM produit WHERE n_serie= ?");
 			$reponse->execute(array($n_serie));
 			return $reponse;
 		}
