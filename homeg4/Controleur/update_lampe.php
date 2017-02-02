@@ -37,9 +37,8 @@ if (isset($_POST['formscenario']))
 			echo "date_fin";
 			if (isset($_POST['choixh']))  
 			{
-				//$choix_h = $_POST['choixh'];
-				//echo $choix_h;
-				echo "string";
+				$choix_h = $_POST['choixh'];
+				echo $choix_h;
 			}
 		}
 	}
