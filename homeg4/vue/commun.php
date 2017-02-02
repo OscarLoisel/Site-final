@@ -1251,3 +1251,24 @@ function mentionslegales()
     $mentionslegales = ob_get_clean();
     return $mentionslegales;
 }
+
+function newspost()
+{
+    ob_start();
+    ?>
+
+   <form action="news_post.php" method="post">
+		        <p>
+		        <label for="pseudo">Pseudo</label> : <input type="text" name="pseudo" id="pseudo" /><br />
+		        <label for="titre">Titre</label> :  <input type="text" name="titre" id="titre" /><br />
+		        <label for="message">Message</label> :  <input type="text" name="message" id="message" /><br />
+
+		        <input type="submit" value="Envoyer" />
+				</p>
+	</form>
+
+	<?php
+    $listecapteurcamera = ob_get_clean();
+}
+
+    
