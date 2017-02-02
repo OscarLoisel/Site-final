@@ -248,6 +248,7 @@ color:#000;
 .piece_grille {
 	width: 12em;
 	height: 12em;
+	margin-top : 1em;
     background-color: #314367;
     display: flex;
     align-items: center;
@@ -603,6 +604,10 @@ input[name=bouton_inscription] {
 
 #cgu {
 	padding: 2em;
+}
+
+#choix_logo{
+	display : flex;
 }
 
 
