@@ -1,7 +1,7 @@
 <?php
-/*include_once('modele/update_lampe.php');
+include_once('modele/update_lampe.php');
 
-if (isset($_POST['rafraichir'])) 
+/*if (isset($_POST['rafraichir'])) 
 {
 	if (isset($_POST['onoffswitch'])) 
     {
