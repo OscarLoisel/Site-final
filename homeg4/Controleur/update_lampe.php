@@ -1,6 +1,8 @@
 <?php
 include_once('modele/update_lampe.php');
 
+// BOUTON ALLUMER / ETEINDRE
+
 $id_utilisateur = $_SESSION['id'];
 
 if (isset($_POST['allumer'])) 
@@ -29,6 +31,8 @@ if (isset($_POST['eteindre']))
 	}
 	
 }
+
+// FORMULAIRE DE CRATION DE SCENARIO
 
 $msg='';
 if (isset($_POST['formscenario'])) 
