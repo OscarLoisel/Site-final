@@ -13,49 +13,52 @@
 
     include 'gabarit.php';
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Mini-chat</title>
+    </head>
+    <style>
+    form
+    {
+        text-align:center;
+    }
+    </style>
+    <body>
+    
+    <form action="news_post.php" method="post">
+        <p>
+        <label for="pseudo">Pseudo</label> : <input type="text" name="pseudo" id="pseudo" /><br />
+        <label for="titre">Titre</label> :  <input type="text" name="titre" id="titre" /><br />
+        <label for="message">Message</label> :  <input type="text" name="message" id="message" /><br />
 
+        <input type="submit" value="Envoyer" />
+	</p>
+    </form>
 
- <div class="corps">
-    <section id="Inscrip">
-		<form method="POST" action="">
-		<table id="Bdd">
-			<tr>
-				<td>
-					<label for="mail" class="text"> Votre adresse mail: </label> 
-				</td>
-				<td>
-					<input type="text" name="mail" placeholder="" >
-				</td>
-			</tr>
+<?php
+// Connexion à la base de données
+try
+{
+	$bdd = new PDO('mysql:host=localhost;dbname=homeg4;charset=utf8', 'root', '');
+}
+catch(Exception $e)
+{
+        die('Erreur : '.$e->getMessage());
+}
 
+// Récupération des 10 derniers messages
+$reponse = $bdd->query('SELECT pseudo, titre, message FROM news ORDER BY ID DESC LIMIT 0, 10');
 
-			<tr>
-				<td>
-					<input type="submit" name="formconnexion" value="send" class="bouton" >
-				</td>
-			</tr>
+// Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
+while ($donnees = $reponse->fetch())
+{
+	echo '<p><strong>' . htmlspecialchars($donnees['pseudo']) . '</strong> : ' . htmlspecialchars($donnees['message']) . '</p>';
+}
 
+$reponse->closeCursor();
 
-				<tr>
-					<td colspan="2">
-						<br/><br/>
-						<div id="msg_erreur">
-
-						<?php 
-						if (isset($erreur)) 
-						{ 
-							echo '<font color="red">'.$erreur.'</font>';
-						}
-
-						?>
-						</div>
-					</td>
-				</tr>
-			
-
-		</table>
-		</form>
-	</section>
-	</div>
-
-
+?>
+    </body>
+</html>
