@@ -1,12 +1,14 @@
 <?php
 
 $entete = entete("reglage");
-$aside = asideReglage("edition_profil");
+//$aside = asideReglage("edition_profil");
+$aside = aside("cgu",)
 
 
 $test = read_temp($bdd,$_SESSION["id"]);
 $reponse = $test -> fetchAll();
 $nb_capteur = sizeof($reponse);
+$somme = 0;
 for ($i=0; $i < $nb_capteur; $i++)
 { 
 	echo($reponse[$i][0]);
@@ -19,6 +21,7 @@ for ($i=0; $i < $nb_capteur; $i++)
 		}
 	echo($valeur[0]);
 	echo('<br />');
+	$somme += $valeur[0];
 
 }
 $contenu ='';

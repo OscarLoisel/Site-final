@@ -187,7 +187,7 @@ function enteteAdmin($etape)
 
 
 
-function aside($etape)
+function aside($etape,$temperature)
 {
 	ob_start();
 	?>
@@ -203,6 +203,9 @@ function aside($etape)
 						<td class="critere">Température</td>
 						<td class="critere">Humidité</td>
 					</tr>
+
+					<tr>
+						<td class="critere">'$temperature' + '°C'</td>
 
 					<tr>
 						<td class="critere">Alarme</td>
