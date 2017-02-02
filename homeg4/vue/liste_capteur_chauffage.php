@@ -1,4 +1,5 @@
 <?php
+include_once("controleur/update_chauffage.php");
     
     $entete = entete("home");
     $aside = aside("sav");

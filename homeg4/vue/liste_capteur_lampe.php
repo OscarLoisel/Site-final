@@ -1,5 +1,5 @@
 <?php
-include("controleur/update_lampe.php");
+include_once("controleur/update_lampe.php");
 
     $entete = entete("home");
     $aside = aside("sav");
