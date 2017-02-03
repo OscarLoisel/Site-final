@@ -10,7 +10,7 @@ if (isset($_POST['allumer']))
 	$reponse = read_lampe($bdd, $id_utilisateur);
 	$data = $reponse-> fetchAll();
 	$data_size = sizeof($data);
-	echo 'taille :<br>'.$data_size;
+	//echo 'taille :<br>'.$data_size;
 	for ($i=0; $i < $data_size; $i++)   
 	{
 		echo $data[$i][0];
@@ -23,7 +23,7 @@ if (isset($_POST['eteindre']))
 	$reponse = read_lampe($bdd, $id_utilisateur);
 	$data = $reponse-> fetchAll();
 	$data_size = sizeof($data);
-	echo 'taille :<br>'.$data_size;
+	//echo 'taille :<br>'.$data_size;
 	for ($i=0; $i < $data_size; $i++)   
 	{
 		echo $data[$i][0];
