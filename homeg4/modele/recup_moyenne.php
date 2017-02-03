@@ -24,7 +24,6 @@ function moyenne_temperature($bdd,$id)
         //echo('<br />');
         $somme += $valeur[0];
         $nombre = $i + 1;
-        echo($nombre);
 	}
 
 $moyenne = $somme/$nombre;

@@ -2,7 +2,7 @@
 
 	function recup_donnees($bdd,$id_capteur)
 	{
-		$reponse= $bdd -> prepare("SELECT valeur FROM donnees WHERE id_capteur = $id_capteur");
+		$reponse= $bdd -> prepare("SELECT valeur FROM donnees WHERE id_capteur = $id_capteur ORDER BY date_capteur DESC LIMIT 1");
 		$reponse->execute(array($id_capteur));
 		return $reponse;
 	}
@@ -34,7 +34,7 @@
 		$reponse = $bdd -> prepare('SELECT capteurs.id 
 		FROM capteurs, pieces 
 		WHERE capteurs.id_piece = pieces.id 
-		AND capteurs.type = "light"
+		AND capteurs.type = "presence"
 		AND pieces.id_utilisateur = ?');
 		$reponse->execute(array($id_utilisateur));
 		return $reponse;
