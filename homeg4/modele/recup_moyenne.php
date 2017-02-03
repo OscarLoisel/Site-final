@@ -6,6 +6,10 @@ function moyenne_temperature($bdd,$id)
     $capteur_temp2 = $capteur_temp -> fetchAll();
     $nb_capteur = sizeof($capteur_temp2);
     $somme = 0;
+    if($nb_capteur == 0)
+    	{
+    		return 'Aucune donnée';
+    	}
     for ($i=0; $i < $nb_capteur; $i++)
     { 
     //echo($reponse[$i][0]);
@@ -19,7 +23,8 @@ function moyenne_temperature($bdd,$id)
         //echo($valeur[0]);
         //echo('<br />');
         $somme += $valeur[0];
-        $nombre = $i+1;
+        $nombre = $i + 1;
+        echo($nombre);
 	}
 
 $moyenne = $somme/$nombre;
@@ -57,5 +62,33 @@ function moyenne_humidite($bdd,$id)
 $moyenne = $somme/$nombre;
 //echo($moyenne);
 return $moyenne;
+
+}
+
+
+function nombre_camera_allume($bdd,$id)
+{
+	$capteur_light = read_light($bdd,$_SESSION["id"]);
+    $capteur_light2 = $capteur_light -> fetchAll();
+    $nb_capteur = sizeof($capteur_light2);
+    if($nb_capteur == 0)
+    {
+    	return 'Aucune alarme';
+    }
+    $somme = 0;
+    for ($i=0; $i < $nb_capteur; $i++)
+    { 
+    	$donnees= recup_donnees($bdd,$capteur_light2[$i][0]);
+    	$valeur = $donnees -> fetch();
+    	$somme += $valeur;
+    }
+    if($somme == 1)
+    {
+    	return $somme + 'alarme en marche sur' + $nb_capteur; 	
+    }
+    else
+    {
+    	return $somme + ' alarmes en marche sur ' + $nb_capteur;
+    }
 
 }

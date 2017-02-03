@@ -28,3 +28,14 @@
 	$reponse->execute(array($id_utilisateur));
 	return $reponse;
 }
+
+	function read_light($bdd,$id_utilisateur)
+	{
+		$reponse = $bdd -> prepare('SELECT capteurs.id 
+		FROM capteurs, pieces 
+		WHERE capteurs.id_piece = pieces.id 
+		AND capteurs.type = "light"
+		AND pieces.id_utilisateur = ?');
+		$reponse->execute(array($id_utilisateur));
+		return $reponse;
+	}
