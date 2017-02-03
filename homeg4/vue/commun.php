@@ -187,7 +187,7 @@ function enteteAdmin($etape)
 
 
 
-function aside($etape,$moyenne_temperature)
+function aside($etape,$moyenne_temperature,$moyenne_hum)
 {
 	ob_start();
 	?>
@@ -201,7 +201,7 @@ function aside($etape,$moyenne_temperature)
 
 					<tr>
 						<td class="critere">Température<br /><br /><?php echo($moyenne_temperature); ?>°C</td>
-						<td class="critere">Humidité</td>
+						<td class="critere">Humidité<br /><br /><?php echo($moyenne_hum); ?>%</td>
 					</tr>
 
 					<tr>
