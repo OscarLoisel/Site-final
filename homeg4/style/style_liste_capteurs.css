@@ -160,6 +160,41 @@ button:hover {
     height: 40px;
 }
 
+input[name="allumer"] {
+  background-color: #56718F;
+  border: solid #314367 2px;
+  color: white;
+  font-size: 1em;
+  width: 100px;
+  height: 35px;
+}
+
+input[name="allumer"]:hover {
+  background-color: #56718F;
+  border: solid #23A62E 3px;
+  color: white;
+  font-size: 1em;
+  width: 105px;
+  height: 40px;
+}
+
+input[name="eteindre"] {
+  background-color: #56718F;
+  border: solid #314367 2px;
+  color: white;
+  font-size: 1em;
+  width: 100px;
+  height: 35px;
+}
+
+input[name="eteindre"]:hover {
+  background-color: #56718F;
+  border: solid #C41616 3px;
+  color: white;
+  font-size: 1em;
+  width: 105px;
+  height: 40px;
+
 .onoffswitch {
     margin: auto;
     position: relative; width: 89px;

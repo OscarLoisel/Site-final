@@ -1048,7 +1048,7 @@ function listecapteurlampe()
     <br />
 	<h1>Lampe</h1>
 
-	<div class="onoffswitch">
+	<div class="onoff">
 		<form method="POST" action="">	
 			<input type="submit" name="allumer" value="Allumer">
 			<input type="submit" name="eteindre" value="Eteindre">
