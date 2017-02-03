@@ -769,20 +769,13 @@ function formulaireTestParapiece()
 						<input type="text" name="ajout_capteur" id="ajout_capteur" placeholder="n° de série">
 					</td>
 				</tr>
-				</div>
-				
-				<tr>
-				<td>
-				
-				<div id="test3">
-					<input type="submit" value="Ajouter" name="formparapieces">				
-				</div>
-				</tr>
-				</td>
-				</table>
 
+				</table>
+				
+				
 
 				<p id="choix_logo">
+
 
 				<input type="radio" name="age" value="logo1" id="logo1"/> <label for="logo1"><img src ="images/salon.png" alt="salon"></label><br />
        			<input type="radio" name="age" value="logo2" id="logo2"/> <label for="logo2"><img src ="images/cuisine.png" alt="cuisine"></label><br />
@@ -791,8 +784,14 @@ function formulaireTestParapiece()
        			<input type="radio" name="age" value="logo3" id="logo3"/> <label for="logo3"><img src ="images/lit.png" alt="lit"></label><br />
        			<input type="radio" name="age" value="logo6" id="logo6"/> <label for="logo6"><img src ="images/chambre_enfant.png" alt="chambre_enfant"></label>
        			<input type="radio" name="age" value="logo7" id="logo7"/> <label for="logo7"><img src ="images/chambre_bebe.png" alt="bebe"></label>
+       			</p>
 
-				</p>
+       			<input type="submit" value="Ajouter" name="formparapieces2">
+
+
+				
+				</div>
+
 
 			    
 
