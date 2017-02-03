@@ -288,21 +288,21 @@ function asideReglage($etape)
 
 				<?php
 
-					if($etape=="securite")
+					if($etape=="scenarios")
 					{
-	                    echo('<li><a href="index.php?cible=securite"><strong>Sécurité</strong></a></li>');
+	                    echo('<li><a href="index.php?cible=scenario"><strong>Scénarios</strong></a></li>');
 	                }
 	                else
             		{
-            			echo('<li><a href="index.php?cible=securite">Sécurité</a></li>');
+            			echo('<li><a href="index.php?cible=scenario">Scénarios</a></li>');
             		}
-	                if($etape=="systeme")
+	                if($etape=="ajout_capteur")
 					{
-	                    echo('<li><a href="index.php?cible=systeme"><strong>Système</strong></a></li>');
+	                    echo('<li><a href="index.php?cible=ajout_capteur"><strong>Ajouter un capteur</strong></a></li>');
 	                }
 	                else
             		{
-            			echo('<li><a href="index.php?cible=systeme">Système</a></li>');
+            			echo('<li><a href="index.php?cible=ajout_capteur">Ajouter un capteur</a></li>');
             		}
 	                if($etape=="cgu")
 					{
@@ -319,6 +319,14 @@ function asideReglage($etape)
 	                else
             		{
             			echo('<li><a href="index.php?cible=edition_profil">Editer mon profil</a></li>');
+            		}
+            		if($etape=="reglages_generaux")
+					{
+	                    echo('<li><a href="index.php?cible=reglages_generaux"><strong>Réglages généraux</strong></a></li>');
+	                }
+	                else
+            		{
+            			echo('<li><a href="index.php?cible=reglages_generaux">Réglages généraux</a></li>');
             		}
 
                 ?>
