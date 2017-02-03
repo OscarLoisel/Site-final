@@ -19,44 +19,79 @@
                 $contenu .= '<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=" >';   
                 $contenu .= '<div class="piece_grille">';
                     //$contenu .= '<div class="piece_grille">';
+                        $contenu .= '<table>';
+                        $contenu .= '<tr>';
+                        $contenu .= '<td>';
                     ?>
                         <strong><?php $contenu .= $data[$i][1]; ?></strong>
                     <?php
+                        $contenu .= '</tr>';
+                        $contenu .= '</td>';
                     if($data[$i][3] == 'logo1')
                     {
-                        $contenu .= '<br />';
+
+                        $contenu .= '<tr>';
+                        $contenu .= '<td>';
                         $contenu .= '<img src="images/salon.png" alt = "salon">';
+                        $contenu .= '</tr>';
+                        $contenu .= '</td>';
+                        
                     }
                     if($data[$i][3] == 'logo2')
                     {
-                        $contenu .= '<br />';
+                        $contenu .= '<tr>';
+                        $contenu .= '<td>';
                         $contenu .= '<img src="images/cuisine.png" alt = "cuisine">';
+                        $contenu .= '</tr>';
+                        $contenu .= '</td>';
+                        
                     }
                     if($data[$i][3] == 'logo3')
                     {
-                        $contenu .= '<br />';
+                        $contenu .= '<tr>';
+                        $contenu .= '<td>';
                         $contenu .= '<img src="images/Salle à manger.png" alt = "salle à manger">';
+                        $contenu .= '</tr>';
+                        $contenu .= '</td>';
+                        
                     }
                     if($data[$i][3] == 'logo4')
                     {
-                        $contenu .= '<br />';
+                        $contenu .= '<tr>';
+                        $contenu .= '<td>';
                         $contenu .= '<img src="images/toilettes.png" alt = "toilettes">';
+                        $contenu .= '</tr>';
+                        $contenu .= '</td>';
+                        
                     }
                     if($data[$i][3] == 'logo5')
                     {
-                        $contenu .= '<br />';
+                        $contenu .= '<tr>';
+                        $contenu .= '<td>';
                         $contenu .= '<img src="images/lit.png" alt = "lit">';
+                        $contenu .= '</tr>';
+                        $contenu .= '</td>';
+                        
                     }
                     if($data[$i][3] == 'logo6')
                     {
-                        $contenu .= '<br />';
+                        $contenu .= '<tr>';
+                        $contenu .= '<td>';
                         $contenu .= '<img src="images/chambre_enfant.png" alt = "chambre_enfant">';
+                        $contenu .= '</tr>';
+                        $contenu .= '</td>';
+                        
                     }
                     if($data[$i][3] == 'logo7')
                     {
-                        $contenu .= '<br />';
+                        $contenu .= '<tr>';
+                        $contenu .= '<td>';
                         $contenu .= '<img src="images/chambre_bebe.png" alt = "chambre_bebe">';
+                        $contenu .= '</tr>';
+                        $contenu .= '</td>';
+
                     }
+                $contenu .= '</table>';
                 $contenu .= '</div>';
                 $contenu .= '</a>';
                     
