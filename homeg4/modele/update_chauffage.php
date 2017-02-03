@@ -24,7 +24,7 @@ function update_chauffage_off ($bbd, $id_capteur)
 	$reponse -> execute(array($id_capteur));
 }
 
-function insert_valeur_chauffage ($bdd, $valeur, $date_capteur, $id_capteur, $id_utilisateur)
+function insert_valeur_chauffage ($bdd, $valeur, $date_capteur, $id_capteur, $id_utilisateur) // Insère dans la BDD données la valeur choisi par l'utilisateur.
 {
 	$reponse = $bdd -> prepare('INSERT INTO donnees(valeur, date_capteur, id_capteur, id_utilisateur) VALUES (?, ?, ?, ?)');
 	$reponse -> execute(array($valeur, $date_capteur, $id_capteur, $id_utilisateur));
