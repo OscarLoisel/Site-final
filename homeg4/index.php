@@ -96,8 +96,10 @@
         $id = intval($_SESSION['id']); // id de session
         $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
         $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
+        $type_piece = $_POST['logo'];
         $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
         $data = $reponse->fetch();
+
 
 
         $test = read_n_tram($bdd, $id);
@@ -108,7 +110,7 @@
         if ($reponse -> rowcount() == 1) // si le capteur existe 
         {
 
-            insertpiece($bdd, $piece, $id); // La piece est créée
+            insertpiece($bdd, $piece, $id, $type_piece); // La piece est créée
             $id_new_piece = idNewPiece($bdd, $id);
             $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
             //echo($id_new_piece2[0]);
