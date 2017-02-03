@@ -33,4 +33,14 @@ if (isset($_POST['eteindre']))
 	
 }
 
+if (isset($_POST['form_scroll_chauffage'])) 
+{
+	$reponse = read_chauffage($bdd, $id_utilisateur);
+	$data = $reponse-> fetchAll();
+	for ($i=; $i < ; $i++) { 
+		# code...
+	}
+
+}
+
 ?>

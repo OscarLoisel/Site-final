@@ -1,7 +1,7 @@
 <?php
 include_once("modele/connexion_base.php");
 
-function read_chauffage($bdd, $id_utilisateur)
+function read_chauffage($bdd, $id_utilisateur) // Renvoi tous les ID des capteurs de chauffage de la base de donnée de l'utilisateur connecté.
 {
 	$reponse = $bdd -> prepare('SELECT capteurs.id 
 		FROM capteurs, pieces 
@@ -22,6 +22,12 @@ function update_chauffage_off ($bbd, $id_capteur)
 {
 	$reponse = $bbd -> prepare('UPDATE capteurs SET etat = 0 WHERE id = ?');
 	$reponse -> execute(array($id_capteur));
+}
+
+function update_valeur_chauffage ($bdd, $id_capteur, $valeur)
+{
+	$reponse = $bdd -> prepare('UPDATE donnees SET valeur = ? WHERE id_capteur = ? AND id_utilisateur = ?');
+	$reponse -> execute(array($valeur, $id_capteur, $id_utilisateur));
 }
 
 /*function insert_scenario ($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $etat, $id_utilisateur)
