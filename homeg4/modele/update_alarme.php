@@ -12,23 +12,18 @@ function read_alarme($bdd, $id_utilisateur) // Renvoi tous les ID des capteurs d
 	return $reponse;
 }
 
-function update_chauffage_on($bbd, $id_capteur)
+function update_alarme_on($bbd, $id_capteur)
 {
 	$reponse = $bbd -> prepare('UPDATE capteurs SET etat = 1 WHERE id = ?');
 	$reponse -> execute(array($id_capteur));
 }
 
-function update_chauffage_off ($bbd, $id_capteur)
+function update_alarme_off ($bbd, $id_capteur)
 {
 	$reponse = $bbd -> prepare('UPDATE capteurs SET etat = 0 WHERE id = ?');
 	$reponse -> execute(array($id_capteur));
 }
 
-function insert_valeur_chauffage ($bdd, $valeur, $date_capteur, $id_capteur, $id_utilisateur) // Insère dans la BDD données la valeur choisi par l'utilisateur.
-{
-	$reponse = $bdd -> prepare('INSERT INTO donnees(valeur, date_capteur, id_capteur, id_utilisateur) VALUES (?, ?, ?, ?)');
-	$reponse -> execute(array($valeur, $date_capteur, $id_capteur, $id_utilisateur));
-}
 
 /*function insert_scenario ($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $etat, $id_utilisateur)
 {
