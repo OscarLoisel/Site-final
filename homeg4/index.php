@@ -12,6 +12,7 @@
     include_once("modele/insertdonnes.php");
     include_once("modele/recup_valeurs.php");
     include_once("modele/update_lampe.php");
+    include_once("modele/recup_moyenne.php");
     //require("modele/para_capteurs.php");*/
     if(!isset($_SESSION["id"]))
     { 
