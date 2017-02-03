@@ -8,7 +8,7 @@ function moyenne_temperature($bdd,$id)
     $somme = 0;
     if($nb_capteur == 0)
     	{
-    		return 'Aucune donnée';
+    		return '--';
     	}
     for ($i=0; $i < $nb_capteur; $i++)
     { 
@@ -40,7 +40,7 @@ function moyenne_humidite($bdd,$id)
     $somme = 0;
     if($nb_capteur == 0)
     	{
-    		return 'Aucune donnée';
+    		return '--';
     	}
     for ($i=0; $i < $nb_capteur; $i++)
     { 
@@ -72,7 +72,7 @@ function nombre_camera_allume($bdd,$id)
     $nb_capteur = sizeof($capteur_light2);
     if($nb_capteur == 0)
     {
-    	return 'Aucune alarme';
+    	return '--';
     }
     $somme = 0;
     for ($i=0; $i < $nb_capteur; $i++)
