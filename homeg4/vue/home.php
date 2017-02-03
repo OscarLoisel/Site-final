@@ -1,7 +1,9 @@
  <?php
 
+    $moyenne_temp = moyenne_temperature($bdd,$_SESSION['id']);
+
     $entete = entete("home");
-    $aside = aside("sav");
+    $aside = aside("sav",$moyenne_temp);
     $contenu = "<div id='grille_pieces'>";
     try 
     {
