@@ -925,14 +925,14 @@ if (isset($_POST['formscenario_lampe']))
 
     if (!empty($date_debut) AND !empty($date_fin) AND !empty($nom_scenario)) // DATE DE DEBUT ET DE FIN
     {
-        echo $date_debut.'<br>';
-        echo $date_fin.'<br>';
-        echo $nom_scenario.'<br>';
+        //echo $date_debut.'<br>';
+        //echo $date_fin.'<br>';
+        //echo $nom_scenario.'<br>';
 
 
         if ($date_debut == $date_fin) 
         {
-            echo "date debut = date de fin";
+            //echo "date debut = date de fin";
 
             if(isset($_POST['choix_action']))
             {
@@ -1042,7 +1042,7 @@ if (isset($_POST['form_scroll_chauffage']))
     $id_utilisateur = $_SESSION['id'];
     $valeur = htmlspecialchars($_POST['sliderinput']);
     $date_capteur = date("Y-m-d H:i");
-    echo($date_capteur);
+    //echo($date_capteur);
     
     $reponse = read_chauffage($bdd, $id_utilisateur);
     $data = $reponse-> fetchAll();
@@ -1115,7 +1115,7 @@ if (isset($_POST['formscenario_chauffage']))
 
         elseif ($date_debut < $date_fin) 
         {
-            echo "date de debut < date de fin<br>";
+            //echo "date de debut < date de fin<br>";
             
             if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))  // HEURE DU DÉBUT DE SCÉNARIO
             {
@@ -1172,18 +1172,18 @@ if (isset($_POST['formscenario_volet']))
 
     if (!empty($date_debut) AND !empty($date_fin) AND !empty($nom_scenario)) // DATE DE DEBUT ET DE FIN
     {
-        echo $date_debut.'<br>';
-        echo $date_fin.'<br>';
-        echo $nom_scenario.'<br>';
+        //echo $date_debut.'<br>';
+        //echo $date_fin.'<br>';
+        //echo $nom_scenario.'<br>';
 
 
         if ($date_debut == $date_fin) 
         {
-            echo "date debut = date de fin";
+            //echo "date debut = date de fin";
 
             if(isset($_POST['choix_action']))
             {
-                echo "le 2 isset fonctionne";
+                //echo "le 2 isset fonctionne";
                 $valeur = $_POST['choix_action'];
                 if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))  // HEURE DU DÉBUT DE SCÉNARIO
                 {
@@ -1256,7 +1256,7 @@ if (isset($_POST['formscenario_volet']))
 
         elseif ($date_debut > $date_fin)
         {
-            echo "date_debut > date_fin";
+            //echo "date_debut > date_fin";
             if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))
             {
                 $msg = "La date de début du scénario doit être inférieur à la date de fin du scénario.";
