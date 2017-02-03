@@ -1287,7 +1287,7 @@ echo $msg;
 
 $msg='';
 
-if (isset($_POST['formscenario_volet'])) 
+if (isset($_POST['formscenario_alarme'])) 
 {
     $nom_scenario = htmlspecialchars($_POST['nom_scenario']);
     $date_debut = htmlspecialchars($_POST['date_debut']);
