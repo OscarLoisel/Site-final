@@ -214,6 +214,42 @@ input[name="form_scroll_chauffage"]:hover {
   height: 35px;
 }
 
+input[name="ouvrir"] {
+  background-color: #56718F;
+  border: solid #314367 2px;
+  color: white;
+  font-size: 1em;
+  width: 100px;
+  height: 35px;
+}
+
+input[name="ouvrir"]:hover {
+  background-color: #56718F;
+  border: solid #23A62E 3px;
+  color: #23A62E;
+  font-size: 1em;
+  width: 100px;
+  height: 35px;
+}
+
+input[name="fermer"] {
+  background-color: #56718F;
+  border: solid #314367 2px;
+  color: white;
+  font-size: 1em;
+  width: 100px;
+  height: 35px;
+}
+
+input[name="fermer"]:hover {
+  background-color: #56718F;
+  border: solid #C41616 3px;
+  color: #C41616;
+  font-size: 1em;
+  width: 100px;
+  height: 35px;
+}
+
 .onoffswitch {
     margin: auto;
     position: relative; width: 89px;
@@ -301,6 +337,25 @@ input[name='formscenario_chauffage'] {
 }
 
 input[name='formscenario_chauffage']:hover {
+    background-color: #314367;
+    border: solid #314367 2px;
+    color: white;
+    border-radius: 10px;
+    width: 155px;
+    height: 40px;
+}
+
+input[name='formscenario_volet'] {
+    background-color: #314367;
+    border: solid #314367 2px;
+    color: white;
+    font-size: 1em;
+    border-radius: 10px;
+    width: 150px;
+    height: 35px;
+}
+
+input[name='formscenario_volet']:hover {
     background-color: #314367;
     border: solid #314367 2px;
     color: white;
