@@ -129,8 +129,8 @@ input[type="range"]:after {
 }
 
 .cadre {
-    width: 35%;
-    height: 430px;
+    width: 30%;
+    height: 200px;
     margin: auto;
     background-color: rgb(100,128,154);
     padding-top: 1.5em;
