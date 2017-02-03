@@ -1053,7 +1053,7 @@ function listecapteurlampe()
 			<input type="submit" name="allumer" value="Allumer">
 			<input type="submit" name="eteindre" value="Eteindre">
 		</form>
-	</div><br />
+	</div><br /><br />
 
 	<p><button onclick="scenario()">Créer un scénario</button></p>
 
@@ -1083,13 +1083,13 @@ function listecapteurchauffage()
 			<input type="submit" name="allumer" value="Allumer">
 			<input type="submit" name="eteindre" value="Eteindre">
 		</form>
-	</div><br />
+	</div><br /><br />
 
-	<p class="couleur"> Température actuelle </p>
+	<p><span class="couleur"> Température actuelle </span>
 	<form method="POST" action="">
-	<p class="temperature"><output name="slideroutput" id="slideroutput">20</output>°C<br /><br />
-	<input name="sliderinput" id="sliderinput" type="range" value="20" min="15" max="25" step="0.5" oninput="slideroutput.value = sliderinput.value" /></p>
-	<p><input type="submit" value = "Appliquer" name="form_scroll_chauffage"></p>
+	<span class="temperature"><output name="slideroutput" id="slideroutput">20</output>°C<br />
+	<input name="sliderinput" id="sliderinput" type="range" value="20" min="15" max="25" step="0.5" oninput="slideroutput.value = sliderinput.value" /></span></p>
+	<p><input type="submit" value = "Appliquer" name="form_scroll_chauffage"></p><br />
 	</form>
 
 	<p><button onclick="scenario()">Créer un scénario</button></p>
