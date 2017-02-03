@@ -99,6 +99,7 @@
         $type_piece = $_POST['logo'];
         $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
         $data = $reponse->fetch();
+        echo($type_piece);
 
 
 

@@ -776,7 +776,7 @@ function formulaireTestParapiece()
        			<input type="radio" name="logo" value="chambre_bebe" id="chambre_bebe"/> <label for="logo7"><img src ="images/chambre_bebe.png" alt="bebe"></label>
        			</p>
 
-       			<input type="submit" value="Ajouter" name="formparapieces2">
+       			<input type="submit" value="Ajouter" name="formparapieces">
 
 
 				
