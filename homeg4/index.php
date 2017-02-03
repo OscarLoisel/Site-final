@@ -930,7 +930,7 @@ if (isset($_POST['formscenario']))
             if(isset($_POST['choix_action']))
             {
                 echo "le 2 isset fonctionne";
-                $action = $_POST['choix_action'];
+                $valeur = $_POST['choix_action'];
                 if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))  // HEURE DU DÉBUT DE SCÉNARIO
                 {
                     $choixh_d = $_POST['choixh_d'];
@@ -943,7 +943,8 @@ if (isset($_POST['formscenario']))
                         //echo $choixh_f.'H'.$choixm_f.'m<br>';
                         $heure_debut = $choixh_d.$choixm_d.'00';
                         $heure_fin = $choixh_f.$choixm_f.'00';
-                        $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1', $id_utilisateur);
+                        $type_scenario = "light";
+                        $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $type_scenario, '1', $id_utilisateur);
                         $msg = "Votre scénario a bien été créer";
                     }
                     if ($choixh_d == $choixh_f AND $choixm_d <= $choixm_f) 
@@ -952,7 +953,8 @@ if (isset($_POST['formscenario']))
                         //echo $choixh_f.'H'.$choixm_f.'m<br>';
                         $heure_debut = $choixh_d.$choixm_d.'00';
                         $heure_fin = $choixh_f.$choixm_f.'00';
-                        $reponse = insert_scenario($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1', $id_utilisateur);
+                        $type_scenario = "light";
+                        $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $type_scenario, '1', $id_utilisateur);
                         $msg = "Votre scénario a bien été créer";
                     }
                     else
@@ -974,7 +976,7 @@ if (isset($_POST['formscenario']))
             if(isset($_POST['choix_action']))
             {
                 //echo "le 2 isset fonctionne";
-                $action = $_POST['choix_action'];
+                $valeur = $_POST['choix_action'];
                 if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))  // HEURE DU DÉBUT DE SCÉNARIO
                 {
                     $choixh_d = $_POST['choixh_d'];
@@ -987,7 +989,8 @@ if (isset($_POST['formscenario']))
                     //echo $choixh_f.'H'.$choixm_f.'m<br>';
                     $heure_debut = $choixh_d.$choixm_d.'00';
                     $heure_fin = $choixh_f.$choixm_f.'00';
-                    $reponse = insert_scenario($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1', $id_utilisateur);
+                    $type_scenario = "light";
+                    $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $type_scenario, '1', $id_utilisateur);
                     $msg = "Votre scénario a bien été créer";             
                 }
                 else
