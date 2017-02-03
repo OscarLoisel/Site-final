@@ -170,6 +170,8 @@
         $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
         $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
         $n_serie2 =htmlspecialchars($_POST['ajout_capteur2']);
+        $type_piece = $_POST['logo'];
+        echo($type_piece);
         $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
         $reponse2 =checkCapteur($bdd, $n_serie2);
         $data = $reponse->fetch();
@@ -286,6 +288,8 @@
         $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
         $n_serie2 =htmlspecialchars($_POST['ajout_capteur2']);
         $n_serie3 =htmlspecialchars($_POST['ajout_capteur3']);
+        $type_piece = $_POST['logo'];
+        echo($type_piece);
         $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
         $reponse2 =checkCapteur($bdd, $n_serie2);
         $reponse3 =checkCapteur($bdd, $n_serie3);
@@ -441,6 +445,8 @@
         $n_serie2 =htmlspecialchars($_POST['ajout_capteur2']);
         $n_serie3 =htmlspecialchars($_POST['ajout_capteur3']);
         $n_serie4 =htmlspecialchars($_POST['ajout_capteur4']);
+        $type_piece = $_POST['logo'];
+        echo($type_piece);
         $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
         $reponse2 =checkCapteur($bdd, $n_serie2);
         $reponse3 =checkCapteur($bdd, $n_serie3);
@@ -643,6 +649,8 @@
         $n_serie3 =htmlspecialchars($_POST['ajout_capteur3']);
         $n_serie4 =htmlspecialchars($_POST['ajout_capteur4']);
         $n_serie5 =htmlspecialchars($_POST['ajout_capteur5']);
+        $type_piece = $_POST['logo'];
+        echo($type_piece);
         $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
         $reponse2 =checkCapteur($bdd, $n_serie2);
         $reponse3 =checkCapteur($bdd, $n_serie3);

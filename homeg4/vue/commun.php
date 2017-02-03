@@ -769,9 +769,9 @@ function formulaireTestParapiece()
 
 				<input type="radio" name="logo" value="logo1" id="logo1"/> <label for="logo1"><img src ="images/salon.png" alt="salon"></label>
        			<input type="radio" name="logo" value="logo2" id="logo2"/> <label for="logo2"><img src ="images/cuisine.png" alt="cuisine"></label>
-       			<input type="radio" name="logo" value="logo3" id="logo3"/> <label for="logo4"><img src ="images/Salle à manger.png" alt="couvert"></label>
-       			<input type="radio" name="logo" value="logo4" id="logo4"/> <label for="logo5"><img src ="images/toilettes.png" alt="toilettes"></label>
-       			<input type="radio" name="logo" value="logo5" id="logo5"/> <label for="logo3"><img src ="images/lit.png" alt="lit"></label>
+       			<input type="radio" name="logo" value="logo3" id="logo3"/> <label for="logo3"><img src ="images/Salle à manger.png" alt="couvert"></label>
+       			<input type="radio" name="logo" value="logo4" id="logo4"/> <label for="logo4"><img src ="images/toilettes.png" alt="toilettes"></label>
+       			<input type="radio" name="logo" value="logo5" id="logo5"/> <label for="logo5"><img src ="images/lit.png" alt="lit"></label>
        			<input type="radio" name="logo" value="logo6" id="logo6"/> <label for="logo6"><img src ="images/chambre_enfant.png" alt="chambre_enfant"></label>
        			<input type="radio" name="logo" value="logo7" id="logo7"/> <label for="logo7"><img src ="images/chambre_bebe.png" alt="bebe"></label>
        			</p>
