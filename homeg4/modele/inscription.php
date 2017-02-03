@@ -1,5 +1,5 @@
 <?php
-	require("connexion_base.php");
+	include_once("connexion_base.php");
 
 	function reqmail($bdd, $mail)
 		{

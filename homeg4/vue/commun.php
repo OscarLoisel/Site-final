@@ -1086,8 +1086,11 @@ function listecapteurchauffage()
 	</div><br />
 
 	<p class="couleur"> Température actuelle </p>
+	<form method="POST" action="">
 	<p class="temperature"><output name="slideroutput" id="slideroutput">20</output>°C<br /><br />
 	<input name="sliderinput" id="sliderinput" type="range" value="20" min="15" max="25" step="0.5" oninput="slideroutput.value = sliderinput.value" /></p>
+	<p><input type="submit" name="form_scroll_chauffage"></p>
+	</form>
 
 	<p><button onclick="scenario()">Créer un scénario</button></p>
 

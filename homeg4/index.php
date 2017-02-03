@@ -1157,7 +1157,7 @@ echo $msg;
          setcookie(session_name(), '', time()-42000, '/');
         }
         session_destroy();
-        include("Vue/page_connexion.php");
+        include_once("Vue/page_connexion.php");
         }
 
     }  
