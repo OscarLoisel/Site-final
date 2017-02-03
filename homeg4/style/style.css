@@ -256,7 +256,7 @@ color:#000;
 	width: 8em;
 	height: 8em;
 	margin-top : 1em;
-    background-color: #314367;
+    background-color: #607C96;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -272,7 +272,7 @@ color:#000;
 .piece_grille:hover {
 	width: 8.1em;
 	height: 8.1em;
-    background-color: #314367;
+    background-color: #359AD8;
     box-shadow: 2px 2px 2px black;
 }
 
