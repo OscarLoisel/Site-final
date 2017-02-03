@@ -205,7 +205,7 @@ function aside($etape,$temperature)
 					</tr>
 
 					<tr>
-						<td class="critere">'$temperature' + '°C'</td>
+						<td class="critere">$temperature + °C</td>
 
 					<tr>
 						<td class="critere">Alarme</td>

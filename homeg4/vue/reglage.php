@@ -2,7 +2,7 @@
 
 $entete = entete("reglage");
 //$aside = asideReglage("edition_profil");
-$aside = aside("cgu",)
+$aside = aside("cgu");
 
 
 $test = read_temp($bdd,$_SESSION["id"]);
@@ -22,8 +22,11 @@ for ($i=0; $i < $nb_capteur; $i++)
 	echo($valeur[0]);
 	echo('<br />');
 	$somme += $valeur[0];
-
+	$nombre = $i+1
 }
+echo($somme);
+echo($nombre);
+
 $contenu ='';
 $pied = pied();
 
