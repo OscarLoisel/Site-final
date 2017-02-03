@@ -22,6 +22,41 @@
                     ?>
                         <strong><?php $contenu .= $data[$i][1]; ?></strong>
                     <?php
+                    if($data[$i][3] == 'logo1')
+                    {
+                        $contenu .= '<br />';
+                        $contenu .= '<img src="images/salon.png" alt = "salon">';
+                    }
+                    if($data[$i][3] == 'logo2')
+                    {
+                        $contenu .= '<br />';
+                        $contenu .= '<img src="images/cuisine.png" alt = "cuisine">';
+                    }
+                    if($data[$i][3] == 'logo3')
+                    {
+                        $contenu .= '<br />';
+                        $contenu .= '<img src="images/Salle à manger.png" alt = "salle à manger">';
+                    }
+                    if($data[$i][3] == 'logo4')
+                    {
+                        $contenu .= '<br />';
+                        $contenu .= '<img src="images/toilettes.png" alt = "toilettes">';
+                    }
+                    if($data[$i][3] == 'logo5')
+                    {
+                        $contenu .= '<br />';
+                        $contenu .= '<img src="images/lit.png" alt = "lit">';
+                    }
+                    if($data[$i][3] == 'logo6')
+                    {
+                        $contenu .= '<br />';
+                        $contenu .= '<img src="images/chambre_enfant.png" alt = "chambre_enfant">';
+                    }
+                    if($data[$i][3] == 'logo7')
+                    {
+                        $contenu .= '<br />';
+                        $contenu .= '<img src="images/chambre_bebe.png" alt = "chambre_bebe">';
+                    }
                 $contenu .= '</div>';
                 $contenu .= '</a>';
                     
