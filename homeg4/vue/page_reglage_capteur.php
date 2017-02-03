@@ -1,9 +1,12 @@
 <?php
 include_once("modele/affichage_reglage_capteur.php");
 
+$moyenne_temp = moyenne_temperature($bdd,$_SESSION['id']);
+$moyenne_hum = moyenne_humidite($bdd,$_SESSION['id']);
+$nb_alarme = nombre_camera_allume($bdd,$_SESSION['id']);
 
 $entete = entete("home");
-$aside = aside("sav");
+$aside = aside("sav",$moyenne_temp,$moyenne_hum,$nb_alarme);
 $contenu = '<h1>Réglages</h1>';
 $contenu .= listecapteurs();
 
