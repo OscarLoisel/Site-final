@@ -16,7 +16,7 @@
         $id = $data[0][0];
         for ($i= 0; $i < $nbrligne ; $i++) 
         {
-                $contenu .= '<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=" >';   
+                $contenu .= '<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=">';   
                 $contenu .= '<div class="piece_grille">';
                     //$contenu .= '<div class="piece_grille">';
                         $contenu .= '<table>';
@@ -111,6 +111,7 @@
     $contenu .= '<div class="piece_grille">';
     $contenu .= '<img src="images/croix.png" title="[imgcroix]">';
     $contenu .= '</a>';
+    $contenu .= '</div>';
     $contenu .= '</div>';
     
     $pied = pied();
