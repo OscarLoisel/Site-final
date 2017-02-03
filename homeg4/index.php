@@ -1158,7 +1158,119 @@ if (isset($_POST['formscenario_chauffage']))
 }
 echo $msg;
 
+// SCENARIO VOLETS 
 
+
+$msg='';
+
+if (isset($_POST['formscenario_volet'])) 
+{
+    $nom_scenario = htmlspecialchars($_POST['nom_scenario']);
+    $date_debut = htmlspecialchars($_POST['date_debut']);
+    $date_fin = htmlspecialchars($_POST['date_fin']);
+    $id_utilisateur = $_SESSION['id'];
+
+    if (!empty($date_debut) AND !empty($date_fin) AND !empty($nom_scenario)) // DATE DE DEBUT ET DE FIN
+    {
+        echo $date_debut.'<br>';
+        echo $date_fin.'<br>';
+        echo $nom_scenario.'<br>';
+
+
+        if ($date_debut == $date_fin) 
+        {
+            echo "date debut = date de fin";
+
+            if(isset($_POST['choix_action']))
+            {
+                echo "le 2 isset fonctionne";
+                $valeur = $_POST['choix_action'];
+                if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))  // HEURE DU DÉBUT DE SCÉNARIO
+                {
+                    $choixh_d = $_POST['choixh_d'];
+                    $choixm_d = $_POST['choixm_d'];
+                    $choixh_f = $_POST['choixh_f'];
+                    $choixm_f = $_POST['choixm_f'];
+                    if ($choixh_d < $choixh_f) 
+                    {
+                        //echo $choixh_d.'H'.$choixm_d.'m<br>';
+                        //echo $choixh_f.'H'.$choixm_f.'m<br>';
+                        $heure_debut = $choixh_d.$choixm_d.'00';
+                        $heure_fin = $choixh_f.$choixm_f.'00';
+                        $type_scenario = "volet";
+                        $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $type_scenario, '1', $id_utilisateur);
+                        $msg = "Votre scénario a bien été créer";
+                    }
+                    if ($choixh_d == $choixh_f AND $choixm_d <= $choixm_f) 
+                    {
+                        //echo $choixh_d.'H'.$choixm_d.'m<br>';
+                        //echo $choixh_f.'H'.$choixm_f.'m<br>';
+                        $heure_debut = $choixh_d.$choixm_d.'00';
+                        $heure_fin = $choixh_f.$choixm_f.'00';
+                        $type_scenario = "volet";
+                        $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $type_scenario, '1', $id_utilisateur);
+                        $msg = "Votre scénario a bien été créer";
+                    }
+                    else
+                    {
+                        $msg ="Veuillez renseigner une heure de début inférieur à l'heure de fin du scénario";
+                    }
+
+                }
+                else
+                {
+                    $msg="Veuillez renseigner l'heure de début et de fin du scénario.";
+                }
+            }
+        }
+
+        elseif ($date_debut < $date_fin) 
+        {
+            //echo "date de debut < date de fin";
+            if(isset($_POST['choix_action']))
+            {
+                //echo "le 2 isset fonctionne";
+                $valeur = $_POST['choix_action'];
+                if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))  // HEURE DU DÉBUT DE SCÉNARIO
+                {
+                    $choixh_d = $_POST['choixh_d'];
+                    $choixm_d = $_POST['choixm_d'];
+                    $choixh_f = $_POST['choixh_f'];
+                    $choixm_f = $_POST['choixm_f'];
+                    
+                    //insert dans la bdd
+                    //echo $choixh_d.'H'.$choixm_d.'m<br>';
+                    //echo $choixh_f.'H'.$choixm_f.'m<br>';
+                    $heure_debut = $choixh_d.$choixm_d.'00';
+                    $heure_fin = $choixh_f.$choixm_f.'00';
+                    $type_scenario = "volet";
+                    $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $type_scenario, '1', $id_utilisateur);
+                    $msg = "Votre scénario a bien été créer";             
+                }
+                else
+                {
+                    $msg="Veuillez renseigner l'heure de début et de fin du scénario.";
+                }
+            }
+        }
+
+        elseif ($date_debut > $date_fin)
+        {
+            echo "date_debut > date_fin";
+            if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))
+            {
+                $msg = "La date de début du scénario doit être inférieur à la date de fin du scénario.";
+            }
+            
+        }
+        
+    }
+    else
+    {
+        $msg="Veuillez renseigner une date de début et de fin du scénario.";
+    }
+}
+echo $msg;
 
 
 
