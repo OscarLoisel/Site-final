@@ -33,19 +33,5 @@ if (isset($_POST['eteindre']))
 	
 }
 
-if (isset($_POST['form_scroll_chauffage'])) 
-{
-	$id_utilisateur = $_SESSION['id'];
-	$valeur = htmlspecialchars($_POST['sliderinput']);
-	
-	$reponse = read_chauffage($bdd, $id_utilisateur);
-	$data = $reponse-> fetchAll();
-	$data_size = sizeof($data);
-	for ($i=0; $i < $data_size ; $i++) 
-	{ 
-		$reponse =update_valeur_chauffage($bdd, $valeur,  $data[$i][0], $id_utilisateur);
-	}
-
-}
 
 ?>

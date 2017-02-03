@@ -24,10 +24,10 @@ function update_chauffage_off ($bbd, $id_capteur)
 	$reponse -> execute(array($id_capteur));
 }
 
-function update_valeur_chauffage ($bdd, $valeur,  $id_capteur, $id_utilisateur)
+function insert_valeur_chauffage ($bdd, $valeur, $date_capteur, $id_capteur, $id_utilisateur)
 {
-	$reponse = $bdd -> prepare('UPDATE donnees SET valeur = ? WHERE id_capteur = ? AND id_utilisateur = ?');
-	$reponse -> execute(array($valeur, $id_capteur, $id_utilisateur));
+	$reponse = $bdd -> prepare('INSERT INTO donnees(valeur, date_capteur, id_capteur, id_utilisateur) VALUES (?, ?, ?, ?)');
+	$reponse -> execute(array($valeur, $date_capteur, $id_capteur, $id_utilisateur));
 }
 
 /*function insert_scenario ($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $etat, $id_utilisateur)
