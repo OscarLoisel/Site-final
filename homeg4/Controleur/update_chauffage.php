@@ -43,7 +43,7 @@ if (isset($_POST['form_scroll_chauffage']))
 	$data_size = sizeof($data);
 	for ($i=0; $i < $data_size ; $i++) 
 	{ 
-		$reponse =update_valeur_chauffage($bdd, $valeur,  $data[$i][0], $id_utilisateur)
+		$reponse =update_valeur_chauffage($bdd, $valeur,  $data[$i][0], $id_utilisateur);
 	}
 
 }
