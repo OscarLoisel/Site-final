@@ -262,9 +262,12 @@ color:#000;
     justify-content: center;
     flex-wrap: wrap;
 }
-.piece_grille table strong
+a .piece_grille table
 {
 	color : white;
+	text-decoration: none;
+	font-size: 1.1em;
+	text-align: center;
 }
 /*.piece_grille a {
 	color: white;
