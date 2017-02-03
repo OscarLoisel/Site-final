@@ -924,6 +924,7 @@ if (isset($_POST['formscenario_lampe']))
     {
         echo $date_debut.'<br>';
         echo $date_fin.'<br>';
+        echo $nom_scenario.'<br>';
 
 
         if ($date_debut == $date_fin) 
