@@ -5,7 +5,7 @@
     $nb_alarme = nombre_camera_allume($bdd,$_SESSION['id']);
 
     $entete = entete("home");
-    $aside = aside("sav",$moyenne_temp,$moyenne_hum);
+    $aside = aside("sav",$moyenne_temp,$moyenne_hum,$nb_alarme);
     $contenu = "<div id='grille_pieces'>";
     try 
     {

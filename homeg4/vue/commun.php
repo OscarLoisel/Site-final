@@ -187,7 +187,7 @@ function enteteAdmin($etape)
 
 
 
-function aside($etape,$moyenne_temperature,$moyenne_hum)
+function aside($etape,$moyenne_temperature,$moyenne_hum,$nb_alarme)
 {
 	ob_start();
 	?>
@@ -205,7 +205,7 @@ function aside($etape,$moyenne_temperature,$moyenne_hum)
 					</tr>
 
 					<tr>
-						<td class="critere">Alarme</td>
+						<td class="critere">Alarme<br /><br /><?php echo($nb_alarme); ?></td>
 						<td class="critere">Caméras</td>
 					</tr>
 
