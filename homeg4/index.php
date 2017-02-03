@@ -99,13 +99,10 @@
         $type_piece = $_POST['logo'];
         $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
         $data = $reponse->fetch();
-        echo($type_piece);
-
 
 
         $test = read_n_tram($bdd, $id);
         $test2 = $test ->fetch();
-        echo($test2['n_tram']);
 
 
         if ($reponse -> rowcount() == 1) // si le capteur existe 
@@ -122,37 +119,31 @@
             {
                 $type = "humidite";
                 $test2 = $test2['n_tram'] + 1;
-                echo($test2);
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
-                echo "enregistrAIENT humidité";
             }
             elseif($data == "T")
             {
                 $type = "temperature";
                 $test2 = $test2['n_tram'] + 1;
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
-                echo "enregistrAIENT Température";
             }
             elseif($data == "L")
             {
                 $type = "light";
                 $test2 = $test2['n_tram'] + 1;
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
-                echo "enregistrAIENT lumiere";
             }
             elseif($data == "P")
             {
                 $type = 'presence';
                 $test2 = $test2['n_tram'] + 1;
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
-                echo "enregistrAIENT présence";
             }
             elseif($data == "V")
             {
                 $type = "volet";
                 $test2 = $test2['n_tram'] + 1;
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
-                echo "enregistrAIENT volet";
             }
         }
         //include'vue/ajout_capteurs.php';
@@ -231,7 +222,6 @@
             {
                 $type = "humidite";
                 $n_tram = $n_tram['n_tram'] + 1;
-                echo($n_tram);
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
             }
             elseif($data2 == "T")
@@ -340,7 +330,6 @@
             {
                 $type = "humidite";
                 $n_tram = $n_tram['n_tram'] + 1;
-                echo($n_tram);
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
             }
             elseif($data2 == "T")
@@ -373,7 +362,6 @@
             {
                 $type = "humidite";
                 $n_tram = $n_tram['n_tram'] + 1;
-                echo($n_tram);
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
             }
             elseif($data3 == "T")
@@ -483,7 +471,6 @@
             {
                 $type = "humidite";
                 $n_tram = $n_tram['n_tram'] + 1;
-                echo($n_tram);
                 insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
             }
             elseif($data2 == "T")

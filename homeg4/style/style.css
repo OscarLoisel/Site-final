@@ -262,7 +262,10 @@ color:#000;
     justify-content: center;
     flex-wrap: wrap;
 }
-
+.piece_grille table strong
+{
+	color : white;
+}
 /*.piece_grille a {
 	color: white;
 	text-decoration: none;
