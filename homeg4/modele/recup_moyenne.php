@@ -84,11 +84,11 @@ function nombre_camera_allume($bdd,$id)
     }
     if($somme == 1 OR $somme == 0)
     {
-    	return $somme.' alarme en marche sur '.$nb_capteur; 	
+    	return $somme.' / '.$nb_capteur; 	
     }
     else
     {
-    	return $somme.' alarmes en marche sur '.$nb_capteur;
+    	return $somme.' / '.$nb_capteur;
     }
 
 }
