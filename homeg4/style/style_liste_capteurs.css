@@ -174,8 +174,8 @@ input[name="allumer"]:hover {
   border: solid #23A62E 3px;
   color: #23A62E;
   font-size: 1em;
-  width: 105px;
-  height: 40px;
+  width: 100px;
+  height: 35px;
 }
 
 input[name="eteindre"] {
@@ -192,8 +192,26 @@ input[name="eteindre"]:hover {
   border: solid #C41616 3px;
   color: #C41616;
   font-size: 1em;
-  width: 105px;
-  height: 40px;
+  width: 100px;
+  height: 35px;
+}
+
+input[name="form_scroll_chauffage"] {
+  background-color: #56718F;
+  border: solid #314367 2px;
+  color: white;
+  font-size: 1em;
+  width: 100px;
+  height: 35px;
+}
+
+input[name="form_scroll_chauffage"]:hover {
+  background-color: #56718F;
+  border: solid #359AD8 3px;
+  color: #359AD8;
+  font-size: 1em;
+  width: 100px;
+  height: 35px;
 }
 
 .onoffswitch {
@@ -253,7 +271,7 @@ input[name="eteindre"]:hover {
     right: 0px;
 }
 
-input[name='formscenario'] {
+input[name='formscenario_lampe'] {
     background-color: #314367;
     border: solid #314367 2px;
     color: white;
@@ -263,7 +281,7 @@ input[name='formscenario'] {
     height: 35px;
 }
 
-input[name='formscenario']:hover {
+input[name='formscenario_lampe']:hover {
     background-color: #314367;
     border: solid #314367 2px;
     color: white;
