@@ -1,7 +1,7 @@
  <?php
 
     $moyenne_temp = moyenne_temperature($bdd,$_SESSION['id']);
-    $moyenne_hum = moyenne_hum($bdd,$_SESSION['id']);
+    $moyenne_hum = moyenne_humidite($bdd,$_SESSION['id']);
 
     $entete = entete("home");
     $aside = aside("sav",$moyenne_temp,$moyenne_hum);
