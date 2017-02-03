@@ -3,7 +3,7 @@
     margin : auto;
     color: black;
     width: 900px;
-    height: 554px;
+    height: 592px;
     margin-top: 2em;
     background-color: rgba(165,191,200,0.6);
     overflow: auto;
@@ -134,6 +134,11 @@ input[type="range"]:after {
     margin: auto;
     background-color: rgb(100,128,154);
     padding-top: 1.5em;
+}
+
+table {
+    padding-left: 1.5em;
+
 }
 
 button[onclick="scenario()"] {
