@@ -206,7 +206,6 @@ function aside($etape,$moyenne_temperature,$moyenne_hum,$nb_alarme)
 
 					<tr>
 						<td class="critere">Alarme<br /><br /><?php echo($nb_alarme); ?></td>
-						<td class="critere">Caméras</td>
 					</tr>
 
 				</table>
@@ -250,16 +249,7 @@ function aside($etape,$moyenne_temperature,$moyenne_hum,$nb_alarme)
 	            {
 	            	echo('<li><a href="index.php?cible=alarme">Alarme</a></li>');
 	            }
-                if($etape=="cameras")
-				{
-                    echo('<a href="index.php?cible=cameras"><li><strong>Caméras</strong></li></a>'); 
-                }
-                else
-	            {
-	            	echo('<li><a href="index.php?cible=cameras">Caméras</a></li>');
-	            }
-
-
+                
 				?>
 					
 				</ul>
@@ -1114,13 +1104,12 @@ function listecapteurvolet()
     <br />
 	<h1>Volet</h1>
 
-	<div class="onoffswitch">
-		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-		<label class="onoffswitch-label" for="myonoffswitch">
-			<span class="onoffswitch-inner"></span>
-			<span class="onoffswitch-switch"></span>
-		</label>
-	</div><br />
+	<div class="onoff">
+		<form method="POST" action="">	
+			<input type="submit" name="ouvrir" value="Ouvrir">
+			<input type="submit" name="fermer" value="Fermer">
+		</form>
+	</div><br /><br />
 
 	<p><button onclick="scenario()">Créer un scénario</button></p>
 
@@ -1159,26 +1148,6 @@ function listecapteuralarme()
     return $listecapteuralarme;
 }
     
-function listecapteurcamera()
-{
-    ob_start();
-    ?>
-
-    <br />
-	<h1>Caméra</h1>
-
-	<div class="onoffswitch">
-		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-		<label class="onoffswitch-label" for="myonoffswitch">
-			<span class="onoffswitch-inner"></span>
-			<span class="onoffswitch-switch"></span>
-		</label>
-	</div>
-
-	<?php
-    $listecapteurcamera = ob_get_clean();
-    return $listecapteurcamera;
-}
 
 function mentionslegales()
 {
