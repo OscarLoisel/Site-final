@@ -903,8 +903,10 @@
 /* -----------------------------------------------------------------------------------------------------------*/
 
 
-
 // FORMULAIRE DE CRATION DE SCENARIO
+
+
+// SCENARIO LAMPE
 
 $msg='';
 
@@ -913,14 +915,12 @@ if (isset($_POST['formscenario']))
     $nom_scenario = htmlspecialchars($_POST['nom_scenario']);
     $date_debut = htmlspecialchars($_POST['date_debut']);
     $date_fin = htmlspecialchars($_POST['date_fin']);
+    $id_utilisateur = $_SESSION['id'];
 
     if (!empty($date_debut) AND !empty($date_fin) AND !empty($nom_scenario)) // DATE DE DEBUT ET DE FIN
     {
         echo $date_debut.'<br>';
         echo $date_fin.'<br>';
-
-
-
 
 
         if ($date_debut == $date_fin) 
@@ -943,7 +943,7 @@ if (isset($_POST['formscenario']))
                         //echo $choixh_f.'H'.$choixm_f.'m<br>';
                         $heure_debut = $choixh_d.$choixm_d.'00';
                         $heure_fin = $choixh_f.$choixm_f.'00';
-                        $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1');
+                        $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1', $id_utilisateur);
                         $msg = "Votre scénario a bien été créer";
                     }
                     if ($choixh_d == $choixh_f AND $choixm_d <= $choixm_f) 
@@ -952,7 +952,7 @@ if (isset($_POST['formscenario']))
                         //echo $choixh_f.'H'.$choixm_f.'m<br>';
                         $heure_debut = $choixh_d.$choixm_d.'00';
                         $heure_fin = $choixh_f.$choixm_f.'00';
-                        $reponse = insert_scenario($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1');
+                        $reponse = insert_scenario($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1', $id_utilisateur);
                         $msg = "Votre scénario a bien été créer";
                     }
                     else
@@ -967,12 +967,6 @@ if (isset($_POST['formscenario']))
                 }
             }
         }
-
-
-
-
-
-
 
         elseif ($date_debut < $date_fin) 
         {
@@ -993,7 +987,7 @@ if (isset($_POST['formscenario']))
                     //echo $choixh_f.'H'.$choixm_f.'m<br>';
                     $heure_debut = $choixh_d.$choixm_d.'00';
                     $heure_fin = $choixh_f.$choixm_f.'00';
-                    $reponse = insert_scenario($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1');
+                    $reponse = insert_scenario($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, '1', $id_utilisateur);
                     $msg = "Votre scénario a bien été créer";             
                 }
                 else
@@ -1002,13 +996,6 @@ if (isset($_POST['formscenario']))
                 }
             }
         }
-
-
-
-
-
-
-
 
         elseif ($date_debut > $date_fin)
         {
@@ -1027,6 +1014,10 @@ if (isset($_POST['formscenario']))
     }
 }
 echo $msg;
+
+//SCENARIO CHAUFFAGE
+
+
 
 
 

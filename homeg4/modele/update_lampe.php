@@ -24,10 +24,10 @@ function update_lampe_off ($bbd, $id_capteur)
 	$reponse -> execute(array($id_capteur));
 }
 
-function insert_scenario ($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, $etat)
+function insert_scenario ($bdd, $nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, $etat, $id_utilisateur)
 {
-	$reponse = $bdd -> prepare('INSERT INTO scenarios(nom_scenario, date_debut, date_fin, heure_debut, heure_fin, action, etat) VALUES(?, ?, ?, ?, ?, ?, ?)');
-	$reponse -> execute(array($nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, $etat));
+	$reponse = $bdd -> prepare('INSERT INTO scenarios(nom_scenario, date_debut, date_fin, heure_debut, heure_fin, action, etat, id_utilisateur) VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
+	$reponse -> execute(array($nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $action, $etat, $id_utilisateur));
 }
 
 ?>
