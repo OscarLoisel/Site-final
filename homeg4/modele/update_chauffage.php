@@ -24,7 +24,7 @@ function update_chauffage_off ($bbd, $id_capteur)
 	$reponse -> execute(array($id_capteur));
 }
 
-function update_valeur_chauffage ($bdd, $id_capteur, $valeur)
+function update_valeur_chauffage ($bdd, $valeur,  $id_capteur, $id_utilisateur)
 {
 	$reponse = $bdd -> prepare('UPDATE donnees SET valeur = ? WHERE id_capteur = ? AND id_utilisateur = ?');
 	$reponse -> execute(array($valeur, $id_capteur, $id_utilisateur));
