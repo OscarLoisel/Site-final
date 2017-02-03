@@ -136,7 +136,7 @@ input[type="range"]:after {
     padding-top: 1.5em;
 }
 
-table {
+.tablecapteur {
     padding-left: 1.7em;
     text-align: right;
 }
@@ -172,7 +172,7 @@ input[name="allumer"] {
 input[name="allumer"]:hover {
   background-color: #56718F;
   border: solid #23A62E 3px;
-  color: white;
+  color: #23A62E;
   font-size: 1em;
   width: 105px;
   height: 40px;
@@ -190,10 +190,11 @@ input[name="eteindre"] {
 input[name="eteindre"]:hover {
   background-color: #56718F;
   border: solid #C41616 3px;
-  color: white;
+  color: #C41616;
   font-size: 1em;
   width: 105px;
   height: 40px;
+}
 
 .onoffswitch {
     margin: auto;
