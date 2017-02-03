@@ -924,6 +924,7 @@ if (isset($_POST['formscenario_lampe']))
     {
         echo $date_debut.'<br>';
         echo $date_fin.'<br>';
+        echo $nom_scenario.'<br>';
 
 
         if ($date_debut == $date_fin) 
@@ -1021,6 +1022,13 @@ if (isset($_POST['formscenario_lampe']))
 }
 echo $msg;
 
+
+
+
+
+
+
+
 //SCENARIO CHAUFFAGE
 
 
@@ -1059,16 +1067,9 @@ if (isset($_POST['formscenario_chauffage']))
 
     if (!empty($nom_scenario) AND !empty($date_debut) AND !empty($date_fin) AND !empty($nom_scenario) AND !empty($valeur)) // DATE DE DEBUT ET DE FIN
     {
-        echo $date_debut.'<br>';
-        echo $date_fin.'<br>';
-        echo $nom_scenario.'<br>';
-        echo $valeur.'<br>';
-        echo "les dates sont bien enregistrés";
-
 
         if ($date_debut == $date_fin) 
         {
-            echo "date debut = date de fin <br>";
                 
             if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))  // HEURE DU DÉBUT DE SCÉNARIO
             {
@@ -1078,11 +1079,11 @@ if (isset($_POST['formscenario_chauffage']))
                 $choixm_f = $_POST['choixm_f'];
                 if ($choixh_d < $choixh_f) 
                 {
-                    echo $choixh_d.'H'.$choixm_d.'m<br>';
-                    echo $choixh_f.'H'.$choixm_f.'m<br>';
+                    //echo $choixh_d.'H'.$choixm_d.'m<br>';
+                    //echo $choixh_f.'H'.$choixm_f.'m<br>';
                     $heure_debut = $choixh_d.$choixm_d.'00';
                     $heure_fin = $choixh_f.$choixm_f.'00';
-                    $type_scenario = "light";
+                    $type_scenario = "temperature";
                     $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $type_scenario, '1', $id_utilisateur);
                     $msg = "Votre scénario a bien été créer";
                 }
@@ -1092,7 +1093,7 @@ if (isset($_POST['formscenario_chauffage']))
                     //echo $choixh_f.'H'.$choixm_f.'m<br>';
                     $heure_debut = $choixh_d.$choixm_d.'00';
                     $heure_fin = $choixh_f.$choixm_f.'00';
-                    $type_scenario = "light";
+                    $type_scenario = "temperature";
                     $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $type_scenario, '1', $id_utilisateur);
                     $msg = "Votre scénario a bien été créer";
                 }
@@ -1125,7 +1126,7 @@ if (isset($_POST['formscenario_chauffage']))
                 //echo $choixh_f.'H'.$choixm_f.'m<br>';
                 $heure_debut = $choixh_d.$choixm_d.'00';
                 $heure_fin = $choixh_f.$choixm_f.'00';
-                $type_scenario = "light";
+                $type_scenario = "temperature";
                 $reponse = insert_scenario($bdd,$nom_scenario, $date_debut, $date_fin, $heure_debut, $heure_fin, $valeur, $type_scenario, '1', $id_utilisateur);
                 $msg = "Votre scénario a bien été créer";             
             }
