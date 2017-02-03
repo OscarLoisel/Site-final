@@ -1135,13 +1135,12 @@ function listecapteuralarme()
     <br />
 	<h1>Alarme</h1>
 
-	<div class="onoffswitch">
-		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-		<label class="onoffswitch-label" for="myonoffswitch">
-			<span class="onoffswitch-inner"></span>
-			<span class="onoffswitch-switch"></span>
-		</label>
-	</div>
+	<div class="onoff">
+		<form method="POST" action="">	
+			<input type="submit" name="allumer" value="Allumer">
+			<input type="submit" name="eteindre" value="Eteindre">
+		</form>
+	</div><br /><br />
 
 	<?php
     $listecapteuralarme = ob_get_clean();

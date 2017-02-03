@@ -1,4 +1,5 @@
 <?php
+include_once("controleur/update_alarme.php");
     
     $moyenne_temp = moyenne_temperature($bdd,$_SESSION['id']);
     $moyenne_hum = moyenne_humidite($bdd,$_SESSION['id']);
