@@ -237,9 +237,10 @@ input[name='formscenario']:hover {
 
 /* TEST PAGE CAPTEUR COMMUN */
 
-#sous_contenu
-{
-    display : flex;
+#sous_contenu {
+    margin : auto;
+    padding: auto;
+    /*display : flex;
     flex-direction: column;
-    justify-content : center;
+    justify-content : center;*/
 }
