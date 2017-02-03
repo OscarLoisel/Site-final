@@ -129,7 +129,7 @@ input[type="range"]:after {
 }
 
 .cadre {
-    width: 35%;
+    width: 40%;
     height: 440px;
     margin: auto;
     background-color: rgb(100,128,154);
@@ -137,8 +137,8 @@ input[type="range"]:after {
 }
 
 table {
-    padding-left: 1.5em;
-
+    padding-left: 1.7em;
+    text-align: right;
 }
 
 button[onclick="scenario()"] {
