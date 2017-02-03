@@ -6,7 +6,7 @@ $nb_alarme = nombre_camera_allume($bdd,$_SESSION['id']);
 
 $entete = entete("reglage");
 //$aside = asideReglage("edition_profil");
-$aside = aside("cgu",$moyenne_temp,$moyenne_hum,$nb_alarme);
+$aside = asideReglage("cgu",$moyenne_temp,$moyenne_hum,$nb_alarme);
 
 
 
