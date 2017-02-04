@@ -47,12 +47,13 @@ while ($donnees = $reponse->fetch())
 
 	$contenu .='</td>';
 	$contenu .='<td>';
-	$contenu .='<input type="checkbox" name="supprimer" onclick="show()">';
-	$contenu .='<script>';
+	$contenu .='<input type="submit" name="supprimer" onclick="confirm_suppr()" value = "Supprimer">';
+	$contenu .= '<script src="JS/js.js"></script>';
+	/*$contenu .='<script>';
 	$contenu .='function show(){';
 	$contenu .='confirm("Voulez vous vraiment supprimer ce capteur de la liste ?"){';
 	$contenu .='}';
-	$contenu .='</script>';
+	$contenu .='</script>';*/
 
 	$contenu .='</td>';
 	$contenu .='</tr>';

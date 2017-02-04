@@ -64,3 +64,8 @@ function test2()
 	
 
 }
+
+function confirm_suppr()
+{
+	confirm('Voulez vous vraiment supprimer ce capteur ?');
+}
