@@ -47,16 +47,7 @@ while ($donnees = $reponse->fetch())
 
 	$contenu .='</td>';
 	$contenu .='<td>';
-	$contenu .='<form method="POST" action="">';
-	$contenu .='<input type="submit" name="supprimer" value = "supprimer" onclick ="confirm_suppr()" id="supprimer">';
-	$contenu .='</form>';
-	$contenu .= '<script src="JS/js.js"></script>';
-	/*$contenu .='<script>';
-	$contenu .='function show(){';
-	$contenu .='confirm("Voulez vous vraiment supprimer ce capteur de la liste ?"){';
-	$contenu .='}';
-	$contenu .='</script>';*/
-
+	$contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'&amp;delete='.$id_capteur.'"><img src="images/croix_supprimer.png"></a>';
 	$contenu .='</td>';
 	$contenu .='</tr>';
 	

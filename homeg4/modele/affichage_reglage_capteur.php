@@ -14,4 +14,12 @@ function affichage_table_donnees($bdd, $id_capteur)
 	$req -> execute(array($id_capteur));
 	return $req;
 }
+
+if(isset($_GET['delete']) AND !empty($_GET['delete']))
+{
+	$delete = (int) $_GET['delete'];
+
+	$reponse = $bdd-> prepare('DELETE FROM capteurs WHERE id = ?');
+	$reponse-> execute(array($delete));
+}
 ?>

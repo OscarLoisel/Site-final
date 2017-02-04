@@ -1495,6 +1495,12 @@ echo $msg;
             $type = $_GET['type'];
             include("vue/page_reglage_capteur.php");
         }
+        elseif ($_GET['cible'] == 'supprimer_capteur') 
+        {
+            $id_piece = $_GET['id_piece'];
+            $type = $_GET['type'];
+            include("vue/page_reglage_capteur.php");
+        }
 
 
         elseif ($_GET['cible'] == 'reglage') // REGLAGE
