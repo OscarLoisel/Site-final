@@ -47,7 +47,9 @@ while ($donnees = $reponse->fetch())
 
 	$contenu .='</td>';
 	$contenu .='<td>';
-	$contenu .='<input type="submit" name="supprimer" onclick="confirm_suppr()" value = "Supprimer">';
+	$contenu .='<form method="POST" action="">';
+	$contenu .='<input type="submit" name="supprimer" value = "supprimer" onclick ="confirm_suppr()" id="supprimer">';
+	$contenu .='</form>';
 	$contenu .= '<script src="JS/js.js"></script>';
 	/*$contenu .='<script>';
 	$contenu .='function show(){';

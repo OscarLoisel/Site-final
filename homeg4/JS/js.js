@@ -67,5 +67,16 @@ function test2()
 
 function confirm_suppr()
 {
-	confirm('Voulez vous vraiment supprimer ce capteur ?');
+	var bla = confirm('Voulez vous vraiment supprimer ce capteur ?');
+	//if (confirm('Voulez vous vraiment supprimer ce capteur ?'))
+	if(bla == true)
+	{
+		alert('bla');
+		return true;
+	}
+	else
+	{
+		alert('lul')
+		return false;
+	}
 }
