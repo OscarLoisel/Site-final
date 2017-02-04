@@ -38,11 +38,11 @@ while ($donnees = $reponse->fetch())
 
 	if ($donnees['etat'] == 1) //TABLE CAPTEUR
 	{
-		$contenu .= "vert";
+		$contenu .= '<img src="images/etat_vert.png">';
 	}
 	else
 	{
-		$contenu .= "rouge";
+		$contenu .= '<img src="images/etat_rouge.png">';
 	}
 
 	$contenu .='</td>';
