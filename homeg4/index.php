@@ -352,7 +352,7 @@
                 $n_tram = $test ->fetch();
                 if ($reponse -> rowcount() == 1 AND $reponse2 -> rowcount() == 1 AND $reponse3 -> rowcount() == 1 AND  $n_serie != $n_serie2 AND $n_serie != $n_serie3 AND $n_serie3 != $n_serie2) // si le capteur existe
                 {
-                    insertpiece($bdd, $piece, $id); // La piece est créée
+                    insertpiece($bdd, $piece, $id,$type_piece); // La piece est créée
                     $id_new_piece = idNewPiece($bdd, $id,$type_piece);
                     $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
                     //echo($id_new_piece2[0]);
