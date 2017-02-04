@@ -719,13 +719,13 @@ function formulaireParapiece()
 	return $paraPieces;
 }
 
-function formulaireTestParapiece()
+function formulaireTestParapiece($erreur)
 {
 	ob_start();
 	?>
 	<div id="parametrage">
 	<script src="JS/js.js"></script>
-		<form method="POST" action="">
+		<form method="POST" action="index.php?cible=ajout_piece_erreur">
 			<table id="tableau_parametrage_pieces">
 
 				<div id="test2">
@@ -786,9 +786,16 @@ function formulaireTestParapiece()
 
        			<input type="submit" value="Ajouter" name="formparapieces">
 
+       			<br />
+       			<br />
+       			<h3> <?php echo($erreur) ?> </h3>
+
+
 
 				
 				</div>
+
+
 
 
 			    

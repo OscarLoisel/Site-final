@@ -69,7 +69,7 @@
                 }
                 else
                 {
-                    $erreur ="Votre adresse email ne correspond pas !";
+                    $erreur ="Vos adresses email ne correspondent pas !";
                     include('vue/inscription_erreur.php');
                 }
             }
@@ -93,62 +93,96 @@
 
     if (isset($_POST['formparapieces'])) 
     {
-        $id = intval($_SESSION['id']); // id de session
-        $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
-        $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
-        $type_piece = $_POST['logo'];
-        $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
-        $data = $reponse->fetch();
-
-
-        $test = read_n_tram($bdd, $id);
-        $test2 = $test ->fetch();
-
-
-        if ($reponse -> rowcount() == 1) // si le capteur existe 
+        if(!empty($_POST['ajout_piece']) AND !empty($_POST['ajout_capteur']))
         {
+            $id = intval($_SESSION['id']); // id de session
+            $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
+            $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
 
-            insertpiece($bdd, $piece, $id, $type_piece); // La piece est créée
-            $id_new_piece = idNewPiece($bdd, $id);
-            $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
-            //echo($id_new_piece2[0]);
-            $data = "$data[1]";
-            $data = "$data[1]"; // == H T L P ou V
-            //echo($data); == H T L P ou V
-            if($data == "H")
+            if(!empty($_POST['logo']))
             {
-                $type = "humidite";
-                $test2 = $test2['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                $type_piece = $_POST['logo'];
+                $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
+                $data = $reponse->fetch();
+
+
+                $test = read_n_tram($bdd, $id);
+                $test2 = $test ->fetch();
+
+                if ($reponse -> rowcount() == 1) // si le capteur existe 
+                {
+                    insertpiece($bdd, $piece, $id, $type_piece); // La piece est créée
+                    $id_new_piece = idNewPiece($bdd, $id);
+                    $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
+                    //echo($id_new_piece2[0]);
+                    $data = "$data[1]";
+                    $data = "$data[1]"; // == H T L P ou V
+                    //echo($data); == H T L P ou V
+                    if($data == "H")
+                    {
+                        $type = "humidite";
+                        $test2 = $test2['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data == "T")
+                    {
+                        $type = "temperature";
+                        $test2 = $test2['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data == "L")
+                    {
+                        $type = "light";
+                        $test2 = $test2['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data == "P")
+                    {
+                        $type = 'presence';
+                        $test2 = $test2['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data == "V")
+                    {
+                        $type = "volet";
+                        $test2 = $test2['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                }
+                else
+                {
+                    $msg = "Le numéro de série renseigné est erroné";
+                    include('vue/ajout_piece_erreur.php');
+                }
             }
-            elseif($data == "T")
+            else
             {
-                $type = "temperature";
-                $test2 = $test2['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
-            }
-            elseif($data == "L")
-            {
-                $type = "light";
-                $test2 = $test2['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
-            }
-            elseif($data == "P")
-            {
-                $type = 'presence';
-                $test2 = $test2['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
-            }
-            elseif($data == "V")
-            {
-                $type = "volet";
-                $test2 = $test2['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                $msg = 'Veuillez chosir un logo pour votre pièce';
+                include('vue/ajout_piece_erreur.php');
             }
         }
-        //include'vue/ajout_capteurs.php';
+        else
+        {
+            $msg = 'Veuillez remplir tous les champs !';
+            include('vue/ajout_piece_erreur.php'); 
+        }
+    }
+
         
-    } 
+
+        
+
+        
 
 
 
@@ -157,98 +191,133 @@
 
     if (isset($_POST['formparapieces2'])) 
     {
-        $id = intval($_SESSION['id']); // id de session
-        $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
-        $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
-        $n_serie2 =htmlspecialchars($_POST['ajout_capteur2']);
-        $type_piece = $_POST['logo'];
-        $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
-        $reponse2 =checkCapteur($bdd, $n_serie2);
-        $data = $reponse->fetch();
-        $data2 = $reponse2 -> fetch();
-
-
-        $test = read_n_tram($bdd, $id);
-        $n_tram = $test ->fetch();
-
-
-        if ($reponse -> rowcount() == 1 AND $reponse2 -> rowcount() == 1 AND $n_serie != $n_serie2) // si le capteur existe 
+        if(!empty($_POST['ajout_piece']) AND !empty($_POST['ajout_capteur']) AND !empty($_POST['ajout_capteur2']))
         {
-
-            insertpiece($bdd, $piece, $id,$type_piece); // La piece est créée
-            $id_new_piece = idNewPiece($bdd, $id);
-            $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
-            //echo($id_new_piece2[0]);
-            $data = "$data[1]";
-            $data = "$data[1]"; // == H T L P ou V
-            $data2 = "$data2[1]";
-            $data2 = "$data2[1]";
-
-            //echo($data); == H T L P ou V
-            if($data == "H")
+            $id = intval($_SESSION['id']); // id de session
+            $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
+            $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
+            $n_serie2 =htmlspecialchars($_POST['ajout_capteur2']);
+            if(!empty($_POST['logo']))
             {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "T")
-            {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
+                $type_piece = $_POST['logo'];
+                $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
+                $reponse2 =checkCapteur($bdd, $n_serie2);
+                $data = $reponse->fetch();
+                $data2 = $reponse2 -> fetch();
 
 
+                $test = read_n_tram($bdd, $id);
+                $n_tram = $test ->fetch();
+                if ($reponse -> rowcount() == 1 AND $reponse2 -> rowcount() == 1 AND $n_serie != $n_serie2) // si le capteur existe 
+                {
 
-            if($data2 == "H")
-            {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    insertpiece($bdd, $piece, $id,$type_piece); // La piece est créée
+                    $id_new_piece = idNewPiece($bdd, $id);
+                    $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
+                    //echo($id_new_piece2[0]);
+                    $data = "$data[1]";
+                    $data = "$data[1]"; // == H T L P ou V
+                    $data2 = "$data2[1]";
+                    $data2 = "$data2[1]";
+
+                    //echo($data); == H T L P ou V
+                    if($data == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+
+
+
+                    if($data2 == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data2 == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data2 == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data2 == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data2 == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                }
+                else
+                {
+                    $msg = "il y a un problème avec l'un des numeros de série renseignés";
+                    include('vue/ajout_piece_erreur.php');
+                }
             }
-            elseif($data2 == "T")
+            else
             {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                $msg = 'Veuillez chosir un logo pour votre pièce';
+                include('vue/ajout_piece_erreur.php');
             }
-            elseif($data2 == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
+
         }
+        else
+        {
+            $msg = 'Veuillez remplir tous les champs !';
+            include('vue/ajout_piece_erreur.php');
+        }
+        
+
+
+
+        
         //include'vue/ajout_capteurs.php';
         
     } 
@@ -260,310 +329,370 @@
 
     if (isset($_POST['formparapieces3'])) 
     {
-        $id = intval($_SESSION['id']); // id de session
-        $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
-        $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
-        $n_serie2 =htmlspecialchars($_POST['ajout_capteur2']);
-        $n_serie3 =htmlspecialchars($_POST['ajout_capteur3']);
-        $type_piece = $_POST['logo'];
-        $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
-        $reponse2 =checkCapteur($bdd, $n_serie2);
-        $reponse3 =checkCapteur($bdd, $n_serie3);
-        $data = $reponse->fetch();
-        $data2 = $reponse2 -> fetch();
-        $data3 = $reponse3 -> fetch();
-
-
-        $test = read_n_tram($bdd, $id);
-        $n_tram = $test ->fetch();
-
-
-        if ($reponse -> rowcount() == 1 AND $reponse2 -> rowcount() == 1 AND $reponse3 -> rowcount() == 1 AND  $n_serie != $n_serie2 AND $n_serie != $n_serie3 AND $n_serie3 != $n_serie2) // si le capteur existe 
+        if(!empty($_POST['ajout_piece']) AND !empty($_POST['ajout_capteur']) AND !empty($_POST['ajout_capteur2']) AND !empty($_POST['ajout_capteur3']))
         {
+            $id = intval($_SESSION['id']); // id de session
+            $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
+            $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
+            $n_serie2 =htmlspecialchars($_POST['ajout_capteur2']);
+            $n_serie3 =htmlspecialchars($_POST['ajout_capteur3']);
 
-            insertpiece($bdd, $piece, $id); // La piece est créée
-            $id_new_piece = idNewPiece($bdd, $id,$type_piece);
-            $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
-            //echo($id_new_piece2[0]);
-            $data = "$data[1]";
-            $data = "$data[1]"; // == H T L P ou V
-            $data2 = "$data2[1]";
-            $data2 = "$data2[1]";
-            $data3 = "$data3[1]";
-            $data3 = "$data3[1]";
-
-            //echo($data); == H T L P ou V
-            if($data == "H")
+            if(!empty($_POST['logo']))
             {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "T")
-            {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
+                $type_piece = $_POST['logo'];
+                $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
+                $reponse2 =checkCapteur($bdd, $n_serie2);
+                $reponse3 =checkCapteur($bdd, $n_serie3);
+                $data = $reponse->fetch();
+                $data2 = $reponse2 -> fetch();
+                $data3 = $reponse3 -> fetch();
 
 
+                $test = read_n_tram($bdd, $id);
+                $n_tram = $test ->fetch();
+                if ($reponse -> rowcount() == 1 AND $reponse2 -> rowcount() == 1 AND $reponse3 -> rowcount() == 1 AND  $n_serie != $n_serie2 AND $n_serie != $n_serie3 AND $n_serie3 != $n_serie2) // si le capteur existe
+                {
+                    insertpiece($bdd, $piece, $id); // La piece est créée
+                    $id_new_piece = idNewPiece($bdd, $id,$type_piece);
+                    $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
+                    //echo($id_new_piece2[0]);
+                    $data = "$data[1]";
+                    $data = "$data[1]"; // == H T L P ou V
+                    $data2 = "$data2[1]";
+                    $data2 = "$data2[1]";
+                    $data3 = "$data3[1]";
+                    $data3 = "$data3[1]";
 
-            if($data2 == "H")
-            {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "T")
-            {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
+                    //echo($data); == H T L P ou V
+                    if($data == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
 
 
-            if($data3 == "H")
-            {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+
+                    if($data2 == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+
+
+                    if($data3 == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data3 == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data3 == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data3 == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data3 == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                }
+                else
+                {
+                    $msg = "il y a un problème avec l'un des numeros de série renseignés";
+                    include('vue/ajout_piece_erreur.php');
+                }
+        
             }
-            elseif($data3 == "T")
+            else
             {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
-            elseif($data3 == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
-            elseif($data3 == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
-            elseif($data3 == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                $msg = 'Veuillez chosir un logo pour votre pièce';
+                include('vue/ajout_piece_erreur.php');
             }
         }
-        //include'vue/ajout_capteurs.php';
-        
+        else
+        {
+            $msg = 'Veuillez remplir tous les champs !';
+            include('vue/ajout_piece_erreur.php');
+        }
     }
+        
+        
+
 
 // ---------------------------------------------------------------------------------------------------//
     if (isset($_POST['formparapieces4'])) 
     {
-        $id = intval($_SESSION['id']); // id de session
-        $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
-        $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
-        $n_serie2 =htmlspecialchars($_POST['ajout_capteur2']);
-        $n_serie3 =htmlspecialchars($_POST['ajout_capteur3']);
-        $n_serie4 =htmlspecialchars($_POST['ajout_capteur4']);
-        $type_piece = $_POST['logo'];
-        $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
-        $reponse2 =checkCapteur($bdd, $n_serie2);
-        $reponse3 =checkCapteur($bdd, $n_serie3);
-        $reponse4 =checkCapteur($bdd, $n_serie4);
-        $data = $reponse->fetch();
-        $data2 = $reponse2 -> fetch();
-        $data3 = $reponse3 -> fetch();
-        $data4 = $reponse4 -> fetch();
-
-
-        $test = read_n_tram($bdd, $id);
-        $n_tram = $test ->fetch();
-
-
-        if ($reponse -> rowcount() == 1 AND $reponse2 -> rowcount() == 1 AND $reponse3 -> rowcount() == 1 AND $reponse4 -> rowcount() ==1 AND $n_serie != $n_serie2 AND $n_serie != $n_serie3 AND $n_serie != $n_serie4 AND $n_serie2 != $n_serie3 AND $n_serie2 != $n_serie4 AND $n_serie3 != $n_serie4) // si le capteur existe 
+        if(!empty($_POST['ajout_piece']) AND !empty($_POST['ajout_capteur']) AND !empty($_POST['ajout_capteur2']) AND !empty($_POST['ajout_capteur3']) AND !empty($_POST['ajout_capteur4']))
         {
+            $id = intval($_SESSION['id']); // id de session
+            $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
+            $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
+            $n_serie2 =htmlspecialchars($_POST['ajout_capteur2']);
+            $n_serie3 =htmlspecialchars($_POST['ajout_capteur3']);
+            $n_serie4 =htmlspecialchars($_POST['ajout_capteur4']);
 
-            insertpiece($bdd, $piece, $id,$type_piece); // La piece est créée
-            $id_new_piece = idNewPiece($bdd, $id);
-            $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
-            //echo($id_new_piece2[0]);
-            $data = "$data[1]";
-            $data = "$data[1]"; // == H T L P ou V
-            $data2 = "$data2[1]";
-            $data2 = "$data2[1]";
-            $data3 = "$data3[1]";
-            $data3 = "$data3[1]";
-            $data4 = "$data4[1]";
-            $data4 = "$data4[1]";
-
-            //echo($data); == H T L P ou V
-            if($data == "H")
+            if(!empty($_POST['logo']))
             {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "T")
-            {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
+                $type_piece = $_POST['logo'];
+                $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
+                $reponse2 =checkCapteur($bdd, $n_serie2);
+                $reponse3 =checkCapteur($bdd, $n_serie3);
+                $reponse4 =checkCapteur($bdd, $n_serie4);
+                $data = $reponse->fetch();
+                $data2 = $reponse2 -> fetch();
+                $data3 = $reponse3 -> fetch();
+                $data4 = $reponse4 -> fetch();
 
 
+                $test = read_n_tram($bdd, $id);
+                $n_tram = $test ->fetch();
 
-            if($data2 == "H")
-            {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "T")
-            {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
+                if ($reponse -> rowcount() == 1 AND $reponse2 -> rowcount() == 1 AND $reponse3 -> rowcount() == 1 AND $reponse4 -> rowcount() ==1 AND $n_serie != $n_serie2 AND $n_serie != $n_serie3 AND $n_serie != $n_serie4 AND $n_serie2 != $n_serie3 AND $n_serie2 != $n_serie4 AND $n_serie3 != $n_serie4) // si le capteur existe 
+                {
+                    insertpiece($bdd, $piece, $id,$type_piece); // La piece est créée
+                    $id_new_piece = idNewPiece($bdd, $id);
+                    $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
+                    //echo($id_new_piece2[0]);
+                    $data = "$data[1]";
+                    $data = "$data[1]"; // == H T L P ou V
+                    $data2 = "$data2[1]";
+                    $data2 = "$data2[1]";
+                    $data3 = "$data3[1]";
+                    $data3 = "$data3[1]";
+                    $data4 = "$data4[1]";
+                    $data4 = "$data4[1]";
 
-
-            if($data3 == "H")
-            {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
-            elseif($data3 == "T")
-            {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
-            elseif($data3 == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
-            elseif($data3 == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
-            elseif($data3 == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
+                    //echo($data); == H T L P ou V
+                    if($data == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
 
 
 
-            if($data4 == "H")
-            {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                    if($data2 == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+
+
+                    if($data3 == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                    }
+                    elseif($data3 == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                    }
+                    elseif($data3 == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                    }
+                    elseif($data3 == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                    }
+                    elseif($data3 == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                    }
+
+
+
+                    if($data4 == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data4 == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data4 == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data4 == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data4 == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                }
+                else
+                {
+                    $msg = "il y a un problème avec l'un des numeros de série renseignés";
+                    include('vue/ajout_piece_erreur.php');
+                }
             }
-            elseif($data4 == "T")
+            else
             {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
-            }
-            elseif($data4 == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
-            }
-            elseif($data4 == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
-            }
-            elseif($data4 == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                $msg = 'Veuillez chosir un logo pour votre pièce';
+                include('vue/ajout_piece_erreur.php');
             }
         }
-        //include'vue/ajout_capteurs.php';
+        else
+        {
+            $msg = 'Veuillez remplir tous les champs !';
+            include('vue/ajout_piece_erreur.php');
+        }
         
     }
 
@@ -573,208 +702,245 @@
 
     if (isset($_POST['formparapieces5'])) 
     {
-        $id = intval($_SESSION['id']); // id de session
-        $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
-        $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
-        $n_serie2 =htmlspecialchars($_POST['ajout_capteur2']);
-        $n_serie3 =htmlspecialchars($_POST['ajout_capteur3']);
-        $n_serie4 =htmlspecialchars($_POST['ajout_capteur4']);
-        $n_serie5 =htmlspecialchars($_POST['ajout_capteur5']);
-        $type_piece = $_POST['logo'];
-        $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
-        $reponse2 =checkCapteur($bdd, $n_serie2);
-        $reponse3 =checkCapteur($bdd, $n_serie3);
-        $reponse4 =checkCapteur($bdd, $n_serie4);
-        $reponse5 =checkCapteur($bdd, $n_serie5);
-        $data = $reponse->fetch();
-        $data2 = $reponse2 -> fetch();
-        $data3 = $reponse3 -> fetch();
-        $data4 = $reponse4 -> fetch();
-        $data5 = $reponse5 -> fetch();
-
-
-        $test = read_n_tram($bdd, $id);
-        $n_tram = $test ->fetch();
-
-
-        if ($reponse -> rowcount() == 1 AND $reponse2 -> rowcount() == 1 AND $reponse3 -> rowcount() == 1 AND $reponse4 -> rowcount() ==1 AND $reponse5 -> rowcount() == 1 AND $n_serie != $n_serie2 AND $n_serie != $n_serie3 AND $n_serie != $n_serie4 AND $n_serie != $n_serie5 AND $n_serie2 != $n_serie3 AND $n_serie2 != $n_serie4 AND $n_serie2 != $n_serie5 AND $n_serie3 != $n_serie4 AND $n_serie3 != $n_serie5 AND $n_serie4 != $n_serie5) // si le capteur existe 
+        if(!empty($_POST['ajout_piece']) AND !empty($_POST['ajout_capteur']) AND !empty($_POST['ajout_capteur2']) AND !empty($_POST['ajout_capteur3']) AND !empty($_POST['ajout_capteur4']))
         {
+            $id = intval($_SESSION['id']); // id de session
+            $piece = htmlspecialchars($_POST['ajout_piece']); // nom de la piece
+            $n_serie = htmlspecialchars($_POST['ajout_capteur']); // n° de serie donné
+            $n_serie2 =htmlspecialchars($_POST['ajout_capteur2']);
+            $n_serie3 =htmlspecialchars($_POST['ajout_capteur3']);
+            $n_serie4 =htmlspecialchars($_POST['ajout_capteur4']);
+            $n_serie5 =htmlspecialchars($_POST['ajout_capteur5']);
 
-            insertpiece($bdd, $piece, $id,$type_piece); // La piece est créée
-            $id_new_piece = idNewPiece($bdd, $id);
-            $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
-            //echo($id_new_piece2[0]);
-            $data = "$data[1]";
-            $data = "$data[1]"; // == H T L P ou V
-            $data2 = "$data2[1]";
-            $data2 = "$data2[1]";
-            $data3 = "$data3[1]";
-            $data3 = "$data3[1]";
-            $data4 = "$data4[1]";
-            $data4 = "$data4[1]";
-            $data5 = "$data5[1]";
-            $data5 = "$data5[1]";
+            if(!isset($_POST['logo']))
+            {
+                $type_piece = $_POST['logo'];
+                $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
+                $reponse2 =checkCapteur($bdd, $n_serie2);
+                $reponse3 =checkCapteur($bdd, $n_serie3);
+                $reponse4 =checkCapteur($bdd, $n_serie4);
+                $reponse5 =checkCapteur($bdd, $n_serie5);
+                $data = $reponse->fetch();
+                $data2 = $reponse2 -> fetch();
+                $data3 = $reponse3 -> fetch();
+                $data4 = $reponse4 -> fetch();
+                $data5 = $reponse5 -> fetch();
 
-            //echo($data); == H T L P ou V
-            if($data == "H")
-            {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "T")
-            {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
-            elseif($data == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
-            }
+                $test = read_n_tram($bdd, $id);
+                $n_tram = $test ->fetch();
+                if ($reponse -> rowcount() == 1 AND $reponse2 -> rowcount() == 1 AND $reponse3 -> rowcount() == 1 AND $reponse4 -> rowcount() ==1 AND $reponse5 -> rowcount() == 1 AND $n_serie != $n_serie2 AND $n_serie != $n_serie3 AND $n_serie != $n_serie4 AND $n_serie != $n_serie5 AND $n_serie2 != $n_serie3 AND $n_serie2 != $n_serie4 AND $n_serie2 != $n_serie5 AND $n_serie3 != $n_serie4 AND $n_serie3 != $n_serie5 AND $n_serie4 != $n_serie5) // si le capteur existe 
+                {
+                    insertpiece($bdd, $piece, $id,$type_piece); // La piece est créée
+                    $id_new_piece = idNewPiece($bdd, $id);
+                    $id_new_piece2 = $id_new_piece -> fetch(); // On récupère l'id de la nouvelle piece
+                    //echo($id_new_piece2[0]);
+                    $data = "$data[1]";
+                    $data = "$data[1]"; // == H T L P ou V
+                    $data2 = "$data2[1]";
+                    $data2 = "$data2[1]";
+                    $data3 = "$data3[1]";
+                    $data3 = "$data3[1]";
+                    $data4 = "$data4[1]";
+                    $data4 = "$data4[1]";
+                    $data5 = "$data5[1]";
+                    $data5 = "$data5[1]";
 
-
-
-            if($data2 == "H")
-            {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "T")
-            {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-            elseif($data2 == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
-            }
-
-
-            if($data3 == "H")
-            {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
-            elseif($data3 == "T")
-            {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
-            elseif($data3 == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
-            elseif($data3 == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
-            elseif($data3 == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
-            }
+                    //echo($data); == H T L P ou V
+                    if($data == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
+                    elseif($data == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                    }
 
 
 
-            if($data4 == "H")
-            {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
-            }
-            elseif($data4 == "T")
-            {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
-            }
-            elseif($data4 == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
-            }
-            elseif($data4 == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
-            }
-            elseif($data4 == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
-            }
+                    if($data2 == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
+                    elseif($data2 == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                    }
 
-            if($data5 == "H")
-            {
-                $type = "humidite";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+
+                    if($data3 == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                    }
+                    elseif($data3 == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                    }
+                    elseif($data3 == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                    }
+                    elseif($data3 == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                    }
+                    elseif($data3 == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                    }
+
+
+
+                    if($data4 == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                    }
+                    elseif($data4 == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                    }
+                    elseif($data4 == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                    }
+                    elseif($data4 == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                    }
+                    elseif($data4 == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                    }
+
+                    if($data5 == "H")
+                    {
+                        $type = "humidite";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data5 == "T")
+                    {
+                        $type = "temperature";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data5 == "L")
+                    {
+                        $type = "light";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data5 == "P")
+                    {
+                        $type = 'presence';
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                    elseif($data5 == "V")
+                    {
+                        $type = "volet";
+                        $n_tram = $n_tram['n_tram'] + 1;
+                        insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+                        $msg = 'Votre piece a bien été créée !';
+                        include('vue/ajout_piece_erreur.php');
+                    }
+                }
+                else
+                {
+                    $msg = "il y a un problème avec l'un des numeros de série renseignés";
+                    include('vue/ajout_piece_erreur.php');
+                }
+
             }
-            elseif($data5 == "T")
+            else
             {
-                $type = "temperature";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+                $msg = 'Veuillez chosir un logo pour votre pièce';
+                include('vue/ajout_piece_erreur.php');
             }
-            elseif($data5 == "L")
-            {
-                $type = "light";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
-            }
-            elseif($data5 == "P")
-            {
-                $type = 'presence';
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
-            }
-            elseif($data5 == "V")
-            {
-                $type = "volet";
-                $n_tram = $n_tram['n_tram'] + 1;
-                insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
-            }
+        }
+        else
+        {
+            $msg = 'Veuillez remplir tous les champs !';
+            include('vue/ajout_piece_erreur.php');
+        }
+
+
+
+
+       
+
+            
         }
         //include'vue/ajout_capteurs.php';
         
