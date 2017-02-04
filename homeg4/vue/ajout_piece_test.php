@@ -6,7 +6,7 @@
 
     $entete = entete("home");
     $aside = aside("sav",$moyenne_temp,$moyenne_hum,$nb_alarme);
-    $contenu = formulaireTestParapiece('pas derreur');
+    $contenu = formulaireTestParapiece('');
     $pied = pied();
 
     include 'gabarit.php';
