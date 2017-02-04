@@ -16,6 +16,7 @@
         $id = $data[0][0];
         for ($i= 0; $i < $nbrligne ; $i++) 
         {
+                $id = $data[$i][0];
                 $contenu .= '<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=">';   
                 $contenu .= '<div class="piece_grille">';
                     //$contenu .= '<div class="piece_grille">';
@@ -97,7 +98,7 @@
                     
                 
 
-                $id++;     
+                     
         }
         $reponse->closeCursor();
 
