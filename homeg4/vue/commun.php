@@ -572,7 +572,11 @@ function edition_profil()
 	<div id="editionprofil">
 		<form method="POST" action="">
 			<table id="tableau_editionprofil">
-
+				<tr>
+					<td colspan="2">
+						<h1>Édition Profil</h1>
+					</td>
+				</tr>
 				<tr>
 					<td>
 						<label for="newmail">Nouveaux mail :</label>

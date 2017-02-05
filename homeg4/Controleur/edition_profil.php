@@ -95,7 +95,7 @@ if (isset($_SESSION['id']))
 
 		if (isset($_POST['newmail']) AND !empty($_POST['newmail']) AND isset($_POST['newmail2']) AND !empty($_POST['newmail2']))
 		{
-			echo('1er if');
+			//echo('1er if');
 			$mail = htmlspecialchars($_POST['newmail']);
 			$mail2 = htmlspecialchars($_POST['newmail2']);
 
@@ -114,7 +114,7 @@ if (isset($_SESSION['id']))
 		{
 			$mdp = htmlspecialchars($_POST['newmdp']);
 			$mdp2 = htmlspecialchars($_POST['newmdp2']);
-			echo('2e if');
+			//echo('2e if');
 			if ($mdp == $mdp2) 
 			{
 				$reponse = editmdp($bdd, $mdp, $_SESSION['id']);	
