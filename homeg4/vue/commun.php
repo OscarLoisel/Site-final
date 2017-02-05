@@ -19,7 +19,7 @@ function entete($etape)
 			</div>
 
 			<nav>
-				<ul id ="menu-accordeon">
+				<ul class ="menu-accordeon">
 
 					<?php
 
@@ -143,7 +143,7 @@ function enteteAdmin($etape)
 				<a href="index.php?cible=home"><img src="images/logo.png" alt= "logo"></a>
 			</div>
 			<nav>
-				<ul id ="menu-accordeon">
+				<ul class ="menu-accordeon">
 					<?php
 
 					if($etape=="home")
