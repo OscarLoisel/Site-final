@@ -1528,7 +1528,7 @@ if (isset($_POST['form_scroll_chauffage_piece']))
         elseif ($_GET['cible'] == 'reglage') // REGLAGE
         {
             $id = $_SESSION["id"];
-            include("vue/reglage.php");
+            include("vue/scenario.php");
         }
         elseif ($_GET['cible'] == 'securite') 
         {

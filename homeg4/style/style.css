@@ -42,7 +42,7 @@ nav {
 
 /* - - MENU ACCORDEON - - */
 
-#menu-accordeon{
+.menu-accordeon{
 	position : relative;
 	margin-top: 4em;
 	/*justify-content: space-around;*/
@@ -51,7 +51,7 @@ nav {
 	height : 10%;*/
 }
 
-#menu-accordeon, #menu-accordeon ul{
+.menu-accordeon, .menu-accordeon ul{
 padding:0;
 list-style:none;
 text-align:center;
@@ -60,7 +60,7 @@ width: 900px;
 }
 
 
-#menu-accordeon li{
+.menu-accordeon li{
 	float: left;
 /*display : inline-block;*/
 /*position:relative;
@@ -73,7 +73,7 @@ background-image:linear-gradient(to bottom,  #DBEAE9 0%, #7B8EA1 100%);
 }
 
 
-#menu-accordeon a{
+.menu-accordeon a{
 text-decoration:none;
 display:block;
 /*padding:8px 32px;*/
@@ -646,6 +646,10 @@ input[name=bouton_inscription] {
 	color: white;
 	text-decoration: none;
 	font-size: 1.5em;
+}
+
+#grille_scenario h2 {
+	text-align: center;
 }
 
 

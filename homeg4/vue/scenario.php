@@ -6,6 +6,7 @@ $entete = entete("scenario");
 $aside = asideReglage("scenarios");
 
 $contenu = "<div id='grille_scenario'>";
+$contenu .= "<h2> Liste des scenarios : </h2>";
 try 
     {
         $reponse = select_scenario($bdd, $_SESSION['id']);
@@ -56,10 +57,21 @@ try
                         $contenu .= '</tr>';
                         $contenu .= '<tr>';
                         $contenu .= '<td>';
-                        $contenu .= 'Valeur :'
-                        ?>
-                        <p><?php $contenu .= $data[$i][6]; ?></p>
-                    <?php
+                        $contenu .= 'Valeur :';
+                        if($data[$i][6]== 1)
+                        {
+                        	$contenu .= 'Allumé';
+                        }
+                        elseif($data[$i][6] == 0)
+                        {
+                        	$contenu .= 'Eteins';
+                        }
+                        else
+                        {
+                        	?>
+                        	<p><?php $contenu .= $data[$i][6]; ?></p>
+                    		<?php
+                        }
                     	$contenu .= '</td>';
                     	$contenu .= '<td>';
                     	$contenu .= 'Scenario : '
