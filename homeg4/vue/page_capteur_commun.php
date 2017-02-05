@@ -432,6 +432,8 @@ include_once("controleur/update_light_commun.php");
                 
             }       
         }
+        $contenu .= '<td>';
+        $contenu .= '<a href = "index.php?cible=page_capteur_commun&amp;id_piece='.$id_piece.'&amp;etat=capteur"> <img src = "images/round_add_button.png"></a>';
         $contenu .= '</tr>';
         $contenu .='</table>';
         $contenu .='<br />';

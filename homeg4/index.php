@@ -1489,7 +1489,13 @@ if (isset($_POST['form_scroll_chauffage_piece']))
 /* -----------------------------------------------------------------------------------------------------------*/
 
 
-
+    if(isset($_GET['etat']))
+    {
+        if ($_GET['etat'] == 'capteur') 
+        {
+            include("vue/capteur.php");
+        }
+    }
 
 
     if (isset($_GET['cible'])) 

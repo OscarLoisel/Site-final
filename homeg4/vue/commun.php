@@ -813,6 +813,68 @@ function formulaireTestParapiece($erreur)
 	return $paraPieces;
 }
 
+function formulaireAjoutCapteur($erreur)
+{
+	ob_start();
+	?>
+	<div id="parametrage">
+	<script src="JS/js.js"></script>
+		<form method="POST" action="index.php?cible=ajout_piece_erreur">
+			<table id="tableau_parametrage_pieces">
+
+				<div id="test2">
+				<tr>
+					<td>
+			       	<label for="nb_capteur">Combien de capteurs voulez vous ajouter ?</label><br />
+			       	
+			       	</td>
+			       	<td>
+			        <select name="nb_capteur" id="nb_capteur" onchange="test3()">
+			           <option value="1">1</option>
+			           <option value="2">2</option>
+			           <option value="3">3</option>
+			           <option value="4">4</option>
+			           <option value="5">5</option>
+			       </select>
+			       </td>
+			       				
+				<tr>
+					<td>
+						<label for="ajout_capteur">Ajouter un capteur :</label>
+					</td>
+					<td>
+						<input type="text" name="ajout_capteur" id="ajout_capteur" placeholder="n° de série">
+					</td>
+				</tr>
+
+				</table>
+
+
+       			<input type="submit" value="Ajouter" name="formcapteur">
+
+       			<br />
+       			<br />
+       			<h3> <?php echo($erreur) ?> </h3>
+
+
+
+				
+				</div>
+
+
+
+
+			    
+
+				
+			
+		</form>
+	</div>
+
+	<?php
+	$paraPieces = ob_get_clean();
+	return $paraPieces;
+}
 
 function formulaireParacapteurs ($piece = '')
 {
