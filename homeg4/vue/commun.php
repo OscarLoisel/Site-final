@@ -994,7 +994,7 @@ function listecapteurs()
 				<td> ID CAPTEUR </td>
 				<td>NUMÉRO DE SÉRIE </td>
 				<td>VALEUR </td>
-				<td> BATTERIE </td>
+				<!--<td> BATTERIE </td>-->
 				<td> DATE </td>
 				<td> ETAT </td>
 				<td></td>
