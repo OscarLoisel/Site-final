@@ -443,7 +443,7 @@ require("modele/affichagepiece.php");
         { 
             if ($liste[$i] == 'true_volet')
             {
-
+                $type= 'volet';
                 $contenu .='<tr>';
                 $contenu .= '<td>';
                 $contenu .='<div class=console_reglage>';
@@ -462,8 +462,8 @@ require("modele/affichagepiece.php");
 
             elseif ($liste[$i] == 'true_light')
             {
+                $type= 'light';
                 $contenu .= '<tr>';
-
                 $contenu .= '<td>';
                 $contenu .='<div class=console_reglage>';
                 $contenu .=console_light();
@@ -480,8 +480,8 @@ require("modele/affichagepiece.php");
 
             elseif ($liste[$i] == 'true_temperature')
             {
+                $type= 'temperature';
                 $contenu .= '<tr>';
-
                 $contenu .= '<td>';
                 $contenu .='<div class=console_reglage>';
                 $contenu .=console_temperature();
@@ -498,8 +498,8 @@ require("modele/affichagepiece.php");
 
             elseif ($liste[$i] == 'true_humidite')
             {
+                $type= 'humidite';
                 $contenu .= '<tr>';
-
                 $contenu .= '<td>';
                 $contenu .='<div class=console_reglage>';
                 $contenu .=console_humidite();
@@ -516,8 +516,8 @@ require("modele/affichagepiece.php");
 
             elseif ($liste[$i] == 'true_presence')
             {
+                $type = 'presence';
                 $contenu .= '<tr>';
-
                 $contenu .= '<td>';
                 $contenu .='<div class=console_reglage>';
                 $contenu .=console_presence();
@@ -534,8 +534,8 @@ require("modele/affichagepiece.php");
 
             elseif ($liste[$i] == 'true_cam')
             {
+                $type= 'cam';
                 $contenu .= '<tr>';
-
                 $contenu .= '<td>';
                 $contenu .='<div class=console_reglage>';
                 $contenu .=console_cam();
