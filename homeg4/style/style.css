@@ -632,3 +632,37 @@ input[name=bouton_inscription] {
 {
 	margin : auto;
 }
+
+#grille_scenario {
+	padding: 3em;
+	display: flex;
+	justify-content: space-between;
+	/*width: 8em;
+	height: 15em;*/
+	flex-wrap: wrap;
+}
+
+#grille_scenario a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.5em;
+}
+
+
+.piece_scenario {
+	width: 800px;
+	height: 8em;
+	margin-top : 1em;
+    background-color: #607C96;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+a .piece_scenario table
+{
+	width : 800px;
+	color : white;
+	text-decoration: none;
+	font-size: 1.1em;
+	text-align: center;
