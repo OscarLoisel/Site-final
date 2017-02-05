@@ -624,7 +624,9 @@ input[name=bouton_inscription] {
 }
 
 #cgu {
+	margin-top: 70em;
 	padding: 2em;
+	text-decoration-style: justify;
 }
 
 #choix_logo{

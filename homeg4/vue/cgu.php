@@ -5,7 +5,7 @@
     $nb_alarme = nombre_camera_allume($bdd,$_SESSION['id']);
 
     $entete = entete("CGU");
-    $aside = aside("cgu",$moyenne_temp,$moyenne_hum,$nb_alarme);
+    $aside = asideReglage("cgu",$moyenne_temp,$moyenne_hum,$nb_alarme);
     $contenu = mentionslegales();
     $pied = pied();
 
