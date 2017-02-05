@@ -1,7 +1,7 @@
 <?php
 
     $entete = entete("Newsletter");
-    $aside = aside("Newsletter");
+    $aside = asideContact("Newsletter");
     $contenu = '<div class="titre_bienvenue">';
     $contenu .= "<h1> NewsLetter 01/12/16 </h1>";
 	$contenu .="<p> Bienvenue sur la première monture du nouveau site d'HOMEG4. </p>";

@@ -1558,7 +1558,7 @@ if (isset($_POST['form_scroll_chauffage_piece']))
         }
         elseif ($_GET['cible'] == 'contact') // CONTACT
         {
-            include("vue/contact.php");
+            include("vue/newsletter.php");
         }
         elseif ($_GET['cible'] == 'newsletter') 
         {
