@@ -7,7 +7,7 @@
 	$contenu .= '<div id="titre">';
 	$contenu .= '<h2>Gestion des membres</h2>';
 	$contenu .= '</div>';
-	$reponse = $bdd->query('SELECT * FROM utilisateur ORDER BY id DESC');
+	$reponse = $bdd->query('SELECT * FROM utilisateur ORDER BY id ');
 	$contenu .='<table id="utilisateur_table">';
 	while ($utilisateur = $reponse ->fetch()) 
 	{

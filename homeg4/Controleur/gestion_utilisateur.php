@@ -13,7 +13,18 @@ if(isset($_GET['delete']) AND !empty($_GET['delete']))
 {
 	$delete = (int) $_GET['delete'];
 
-	$reponse = $bdd-> prepare('DELETE FROM utilisateur WHERE id = ?');
+	$reponse = $bdd-> prepare('DELETE FROM utilisateur WHERE id = ? ');
+	$reponse-> execute(array($delete));
+	$reponse = $bdd-> prepare('DELETE FROM pieces WHERE id_utilisateur = ?');
+	$reponse-> execute(array($delete));
+	$reponse = $bdd-> prepare('DELETE FROM donnees WHERE id_utilisateur = ?');
+	$reponse-> execute(array($delete));
+	$reponse = $bdd-> prepare('DELETE FROM donnees_reçu WHERE id_utilisateur = ?');
+	$reponse-> execute(array($delete));
+	$reponse = $bdd-> prepare('DELETE FROM scenarios WHERE id_utilisateur = ?');
 	$reponse-> execute(array($delete));
 }
+
 ?>
+ 
+
