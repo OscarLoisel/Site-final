@@ -817,13 +817,13 @@ function formulaireTestParapiece($erreur)
 	return $paraPieces;
 }
 
-function formulaireAjoutCapteur($erreur)
+function formulaireAjoutCapteur($id_piece,$erreur)
 {
 	ob_start();
 	?>
 	<div id="parametrage">
 	<script src="JS/js.js"></script>
-		<form method="POST" action="index.php?cible=ajout_piece_erreur">
+		<form method="POST" action="">
 			<table id="tableau_parametrage_pieces">
 
 				<div id="test2">

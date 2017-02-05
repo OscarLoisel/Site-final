@@ -7,7 +7,7 @@
 
     $entete = entete("home");
     $aside = aside("sav",$moyenne_temp,$moyenne_hum,$nb_alarme);
-    $contenu = formulaireAjoutCapteur($id_piece,'');
+    $contenu = formulaireAjoutCapteur($id_piece,$msg);
     $pied = pied();
 
     include 'gabarit.php';
