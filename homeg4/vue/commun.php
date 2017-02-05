@@ -882,15 +882,14 @@ function console_volet()
 {
 	ob_start();
 	?>
-	<form >
-		<input type="radio" name="fermer">FERMER
-		<input type="radio" name="ouvrir">OUVRIR
-		<script type="text/javascript">
-			$('input[name$="fermer"]').click(function(){
-			});
-			$('input[name$="ouvrir"]').click(function(){});
-		</script>
-	</form>
+	
+	<div class="onoff">
+		<form method="POST" action="">	
+			<input type="submit" name="ouvrir" value="Ouvrir">
+			<input type="submit" name="fermer" value="Fermer">
+		</form>
+	</div><br />
+	
 
 	
 	<?php
@@ -902,12 +901,12 @@ function console_light()
 {
 	ob_start();
 	?>
-	<a href="">
-		<div class="bouton_allumer">ALLUMER</div>
-	</a>
-	<a href="">
-		<div class="bouton_eteindre">ETEINDRE</div>
-	</a>
+	<div class="onoff">
+		<form method="POST" action="">	
+			<input type="submit" name="allumer_light" value="Allumer">
+			<input type="submit" name="eteindre_light" value="Eteindre">
+		</form>
+	</div><br />
 	<?php
 	$console_light = ob_get_clean();
 	return $console_light;
@@ -917,21 +916,22 @@ function console_temperature()
 {
 	ob_start();
 	?>
-	<div id="valeur_temperature">
-		<!-- <?php echo $data['valeur']; ?> -->
-	</div>
 
-	<form action="" method="POST">
-		<input type="range" name="curseur_temperature" id="curseur_temperature">
-		<input type="submit" name="formvaleur_temperature" value="Actualiser">
+	<div class="onoff">
+		<form method="POST" action="">	
+			<input type="submit" name="allumer_temperature" value="Allumer">
+			<input type="submit" name="eteindre_temperature" value="Eteindre">
+		</form>
+	</div><br /><br />
+
+
+	<span class="couleur"> Température actuelle </span>
+	<form method="POST" action="">
+		<span class="temperature"><output name="slideroutput" id="slideroutput">20</output>°C<br />
+		<input name="sliderinput" id="sliderinput" type="range" value="20" min="5" max="35" step="0.5" oninput="slideroutput.value = sliderinput.value" /></span><br /><br />
+		<input type="submit" value = "Appliquer" name="form_scroll_chauffage_piece"><br />
 	</form>
 
-	<a href="">
-		<div class="bouton_allumer">ALLUMER</div>
-	</a>
-	<a href="">
-		<div class="bouton_eteindre">ETEINDRE</div>
-	</a>
 	<?php
 	$console_temperature = ob_get_clean();
 	return $console_temperature;
@@ -1092,7 +1092,7 @@ function listecapteurchauffage()
 	<p><span class="couleur"> Température actuelle </span>
 	<form method="POST" action="">
 	<span class="temperature"><output name="slideroutput" id="slideroutput">20</output>°C<br />
-	<input name="sliderinput" id="sliderinput" type="range" value="20" min="15" max="25" step="0.5" oninput="slideroutput.value = sliderinput.value" /></span></p>
+	<input name="sliderinput" id="sliderinput" type="range" value="20" min="5" max="35" step="0.5" oninput="slideroutput.value = sliderinput.value" /></span></p>
 	<p><input type="submit" value = "Appliquer" name="form_scroll_chauffage"></p><br />
 	</form>
 
