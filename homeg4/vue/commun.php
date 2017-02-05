@@ -1268,6 +1268,26 @@ function newspost()
 
 	<?php
     $listecapteurcamera = ob_get_clean();
+    return $listecapteurcamera;
 }
 
-    
+/*function affichage_scenario()
+{
+	ob_start();
+    ?>
+
+    <table id="liste_scenarios">
+			<tr>
+				<td> Nom scenario </td>
+				<td>Date de début</td>
+				<td>Date de fin </td>
+				<!--<td> BATTERIE </td>-->
+				<td> Heure de début </td>
+				<td> Heure de fin </td>
+				<td> Valeur </td>
+			</tr>
+	<?php
+	$scenario = ob_get_clean();
+	return $scenario;
+	?>
+}*/
