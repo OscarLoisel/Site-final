@@ -1566,6 +1566,10 @@ echo $msg;
         {
             include("vue/liste_capteur_alarme.php");
         }
+        elseif ($_GET['cible'] == 'scenario') 
+        {
+            include("vue/scenario.php");
+        }
         elseif ($_GET['cible'] == 'cameras') 
         {
             include("vue/liste_capteur_camera.php");
@@ -1595,10 +1599,10 @@ echo $msg;
         {
         // Détruit toutes les variables de session
         $_SESSION = array();
-        /*if (isset($_COOKIE[session_name()])) 
+        if (isset($_COOKIE[session_name()])) 
         {
          setcookie(session_name(), '', time()-42000, '/');
-        }*/
+        }
         session_destroy();
         include_once("Vue/page_connexion.php");
         }
