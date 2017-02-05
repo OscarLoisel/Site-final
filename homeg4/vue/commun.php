@@ -1051,7 +1051,7 @@ function listecapteurs()
 {
 	ob_start();
 	?>
-		<table id="listecapteurs">
+		<table class="listecapteurs">
 			<tr>
 				<td> ID CAPTEUR </td>
 				<td>NUMÉRO DE SÉRIE </td>
