@@ -1470,17 +1470,18 @@ echo $msg;
 if (isset($_POST['form_scroll_chauffage_piece'])) 
 {
     $id_utilisateur = $_SESSION['id'];
+    $id_piece =$_GET['id_piece'];
     $valeur = htmlspecialchars($_POST['sliderinput']);
     $date_capteur = date("Y-m-d H:i");
     //echo($date_capteur);
     
-    $reponse = read_chauffage($bdd, $id_utilisateur);
+    $reponse = read_chauffage_commun($bdd,$id_piece, $id_utilisateur);
     $data = $reponse-> fetchAll();
     $data_size = sizeof($data);
     for ($i=0; $i < $data_size ; $i++) 
     { 
         $reponse =insert_valeur_commun($bdd, $valeur, $date_capteur, $data[$i][0], $id_utilisateur);
-        echo "Les valeurs de chauffage ont étaient modifiés !";
+        //echo "Les valeurs de chauffage ont étaient modifiés !";
     }
 }
 
