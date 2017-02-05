@@ -1,6 +1,5 @@
 <?php 
     session_start();
-    include('modele/update_lampe.php');
     include_once("modele/connexion_base.php"); 
     include_once("vue/commun.php");
     include_once("modele/inscription.php");
@@ -14,6 +13,7 @@
     include_once("modele/update_lampe.php");
     include_once('modele/update_chauffage.php');
     include_once("modele/recup_moyenne.php");
+    include_once("modele/update_chauffage_commun.php");
 
     //require("modele/para_capteurs.php");*/
     if(!isset($_SESSION["id"]))
@@ -1461,7 +1461,27 @@ if (isset($_POST['formscenario_alarme']))
 }
 echo $msg;
 
- 
+ /* -----------------------------------------------------------------------------------------------------------*/
+
+
+// UPDATE CHAUFFAGE COMMUN
+
+if (isset($_POST['form_scroll_chauffage_piece'])) 
+{
+    $id_utilisateur = $_SESSION['id'];
+    $valeur = htmlspecialchars($_POST['sliderinput']);
+    $date_capteur = date("Y-m-d H:i");
+    //echo($date_capteur);
+    
+    $reponse = read_chauffage($bdd, $id_utilisateur);
+    $data = $reponse-> fetchAll();
+    $data_size = sizeof($data);
+    for ($i=0; $i < $data_size ; $i++) 
+    { 
+        $reponse =insert_valeur_chauffage_commun($bdd, $valeur, $date_capteur, $data[$i][0], $id_utilisateur);
+        echo "Les valeurs de chauffage ont étaient modifiés !";
+    }
+}
 
 
 /* -----------------------------------------------------------------------------------------------------------*/
