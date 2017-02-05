@@ -16,7 +16,7 @@ try
         {
             if($nbrligne != 0)
             {
-            	$contenu .= '<a href="">';   
+            	$contenu .= '<a href="index.php?cible=scenario&amp;id_scenario='.$data[$i][0].'">';   
                 $contenu .= '<div class="piece_scenario">';
                     //$contenu .= '<div class="piece_grille">';
                         $contenu .= '<table>';
@@ -44,9 +44,14 @@ try
 
                     	$contenu .= '</td>';
                         $contenu .= '<td>';
-                        ?>
-                        <p><?php $contenu .= $data[$i][8]; ?></p>
-                    <?php
+                        if($data[$i][8]== 1)
+                        {
+                        	$contenu .= '<img src = "images/icone_vert_scenario.png">';
+                        }
+                        else
+                        {
+                        	$contenu .= '<img src ="images/icone_rouge_scenario.png">';
+                        }
                     	$contenu .= '</td>';
                         $contenu .= '</tr>';
                         $contenu .= '<tr>';

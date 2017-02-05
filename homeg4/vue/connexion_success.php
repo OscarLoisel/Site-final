@@ -4,7 +4,7 @@
     $contenua = '<div class="titre_bienvenue_success">';
     $contenua .= '<h2>Inscription réussie !</h2>';
     $contenua .= $erreur;
-    $contenua .= '<p>Veuillez vous connectez !</p>';
+    $contenua .= '<p>Veuillez vous connecter !</p>';
     $contenua .='</div>';
     $pied = pied();
 
