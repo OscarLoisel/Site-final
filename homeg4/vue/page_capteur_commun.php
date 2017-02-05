@@ -1,6 +1,7 @@
 <?php
-require("modele/affichagetypecapteurs_commun.php");
-require("modele/affichagepiece.php");
+include_once("modele/affichagetypecapteurs_commun.php");
+include_once("modele/affichagepiece.php");
+include_once("controleur/update_chauffage_commun.php");
 
     $moyenne_temp = moyenne_temperature($bdd,$_SESSION['id']);
     $moyenne_hum = moyenne_humidite($bdd,$_SESSION['id']);
