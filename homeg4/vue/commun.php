@@ -1078,7 +1078,7 @@ function listecapteurlampe()
     return $listecapteurlampe;
 }
     
-function listecapteurchauffage()
+function listecapteurchauffage($temp)
 {
     ob_start();
 	?>
@@ -1094,8 +1094,8 @@ function listecapteurchauffage()
 
 	<p><span class="couleur"> Température actuelle </span>
 	<form method="POST" action="">
-	<span class="temperature"><output name="slideroutput" id="slideroutput">20</output>°C<br />
-	<input name="sliderinput" id="sliderinput" type="range" value="20" min="5" max="35" step="0.5" oninput="slideroutput.value = sliderinput.value" /></span></p>
+	<span class="temperature"><output name="slideroutput" id="slideroutput"><?php echo($temp); ?></output>°C<br />
+	<input name="sliderinput" id="sliderinput" type="range" value="<?php $temp ?>" min="5" max="35" step="0.5" oninput="slideroutput.value = sliderinput.value" /></span></p>
 	<p><input type="submit" value = "Appliquer" name="form_scroll_chauffage"></p><br />
 	</form>
 

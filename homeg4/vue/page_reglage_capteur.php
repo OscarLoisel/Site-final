@@ -32,7 +32,7 @@ while ($donnees = $reponse->fetch())
 	//$contenu .= $donnees['batterie']; //TABLE CAPTEUR
 	$contenu .= '</td>';
 	$contenu .= '<td>';
-	$contenu .= $data['date']; //TABLE DONNEES
+	$contenu .= $data['date_capteur']; //TABLE DONNEES
 	$contenu .= '</td>';
 	$contenu .= '<td>';
 
