@@ -3,7 +3,7 @@
 
 	function select_scenario($bdd, $id)
 		{
-			$reponse= $bdd->prepare("SELECT * FROM scenario WHERE id = ?");
+			$reponse= $bdd->prepare("SELECT * FROM scenarios WHERE id = ?");
 		    $reponse->execute(array($id));
 		    return $reponse;
 		}

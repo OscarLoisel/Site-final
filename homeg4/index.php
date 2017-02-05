@@ -14,6 +14,7 @@
     include_once('modele/update_chauffage.php');
     include_once("modele/recup_moyenne.php");
     include_once("modele/update_chauffage_commun.php");
+    include_once("modele/select_scenario.php");
 
     //require("modele/para_capteurs.php");*/
     if(!isset($_SESSION["id"]))
@@ -1478,7 +1479,7 @@ if (isset($_POST['form_scroll_chauffage_piece']))
     $data_size = sizeof($data);
     for ($i=0; $i < $data_size ; $i++) 
     { 
-        $reponse =insert_valeur_chauffage_commun($bdd, $valeur, $date_capteur, $data[$i][0], $id_utilisateur);
+        $reponse =insert_valeur_commun($bdd, $valeur, $date_capteur, $data[$i][0], $id_utilisateur);
         echo "Les valeurs de chauffage ont étaient modifiés !";
     }
 }
