@@ -47,7 +47,7 @@ while ($donnees = $reponse->fetch())
 
 	$contenu .='</td>';
 	$contenu .='<td>';
-	$contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'&amp;delete='.$id_capteur.'"><img src="images/croix_supprimer.png"></a>';
+	$contenu .='<a href="index.php?cible=supprimer_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'&amp;delete='.$id_capteur.'"><img src="images/croix_supprimer.png"></a>';
 	$contenu .='</td>';
 	$contenu .='</tr>';
 	
