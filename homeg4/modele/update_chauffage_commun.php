@@ -6,7 +6,8 @@ function read_chauffage_commun($bdd, $id_piece, $id_utilisateur) // Renvoi tous 
 	$reponse = $bdd -> prepare('SELECT capteurs.id 
 		FROM capteurs, pieces 
 		WHERE capteurs.id_piece = ? 
-		AND capteurs.type = "temperature"');
+		AND capteurs.type = "temperature"
+		AND pieces.id_utilisateur = ? ');
 	$reponse->execute(array($id_piece, $id_utilisateur));
 	return $reponse;
 }

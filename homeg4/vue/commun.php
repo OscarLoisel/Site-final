@@ -888,8 +888,8 @@ function console_volet()
 	
 	<div class="onoff">
 		<form method="POST" action="">	
-			<input type="submit" name="ouvrir" value="Ouvrir">
-			<input type="submit" name="fermer" value="Fermer">
+			<input type="submit" name="ouvrir_volet" value="Ouvrir">
+			<input type="submit" name="fermer_volet" value="Fermer">
 		</form>
 	</div><br />
 	
