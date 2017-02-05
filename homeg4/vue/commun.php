@@ -476,7 +476,7 @@ function pieda()
 
 /*PAGE D'INSCRIPTION */
 
-function forminscription()
+function forminscription($msg)
 {
 	ob_start();
 	?>
@@ -545,12 +545,15 @@ function forminscription()
 				<td colspan="2">
 					<br/><br/>
 					<div id="msg_erreur">
-					<?php if (isset($erreur)) { echo '<font color="red">'.$erreur.'</font>';}?>
+						<h3> <?php echo($msg); ?> </h3>
+					
 					</div>
 				</td>
 			</tr>
 		</table>	
 	</form>
+
+	
 	<?php
 	$forminscription = ob_get_clean();
 	return $forminscription;
