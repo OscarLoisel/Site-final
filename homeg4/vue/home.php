@@ -13,9 +13,10 @@
         //while ($data = $reponse->fetch(); TRANSFORMER 
         $data = $reponse->fetchAll();
         $nbrligne = sizeof($data);
-        $id = $data[0][0];
         for ($i= 0; $i < $nbrligne ; $i++) 
         {
+            if($nbrligne != 0)
+            {
                 $id = $data[$i][0];
                 $contenu .= '<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=">';   
                 $contenu .= '<div class="piece_grille">';
@@ -95,6 +96,7 @@
                 $contenu .= '</table>';
                 $contenu .= '</div>';
                 $contenu .= '</a>';
+            }
                     
                 
 
