@@ -2534,6 +2534,10 @@ if (isset($_POST['bouton_news']))
         {
             include("vue/gestion_utilisateur.php"); 
         }
+        elseif ($_GET['cible'] == "reglages_generaux") // OK
+        {
+            include("vue/reglages_generaux.php"); 
+        }
         elseif ($_GET['cible'] == "confirme") // OK
         {
             $id_mbr = $_GET['confirme'];
@@ -2551,6 +2555,11 @@ if (isset($_POST['bouton_news']))
         {
             $id_mbr = $_GET['delete'];
             include("vue/gestion_utilisateur.php");
+        }
+        elseif ($_GET['cible'] == "delete_piece") // OK
+        {
+            $id_mbr = $_GET['delete_piece'];
+            include("vue/reglages_generaux.php");
         }
         elseif ($_GET['cible'] == "info_utilisateur") 
         {

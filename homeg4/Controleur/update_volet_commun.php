@@ -6,7 +6,7 @@ include_once("modele/update_volet_commun.php");
 $id_utilisateur = $_SESSION['id'];
 //echo $id_piece;
 
-if (isset($_POST['ouvrir_volet'])) 
+if (isset($_POST['ouvrir'])) 
 {
 	//echo "le bouton a été appuyer";
 	$reponse = read_volet_commun($bdd, $id_piece, $id_utilisateur);
@@ -21,7 +21,7 @@ if (isset($_POST['ouvrir_volet']))
 	}
 }
     
-if (isset($_POST['fermer_volet']))
+if (isset($_POST['fermer']))
 {	
 	$reponse = read_volet_commun($bdd, $id_piece, $id_utilisateur);
 	$data = $reponse-> fetchAll();
