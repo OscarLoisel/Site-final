@@ -134,100 +134,9 @@ function enteteConnexion()
 
 
 
-function enteteAdmin($etape)
-{
-	ob_start();
-	?>
-	<header>
-			<div class="logo">
-				<a href="index.php?cible=home"><img src="images/logo.png" alt= "logo"></a>
-			</div>
-			<nav>
-				<ul class ="menu-accordeon">
-					<?php
 
-					if($etape=="home")
-					{
-	                    echo('<li><a href="index.php?cible=home_admin"><strong>Home</strong></a></li>');
-	                }
-	                else
-	                {
-	                	echo('<li><a href="index.php?cible=home_admin">Home</a></li>');
-	                }
-	                if($etape=="utilisateur")
-					{
-	                    echo('<li><a href="index.php?cible=utilisateur"><strong>Utilisateur</strong></a></li>');
-	                }
-	                else
-	                {
-	                	echo('<li><a href="index.php?cible=utilisateur">Utilisateur</a></li>');
-	                }
-	                if($etape=="reglages_admin")
-					{
-	                    echo('<li><a href="index.php?cible=reglages_admin"><strong>Réglages</strong></a></li>');
-	                }
-	                else
-	                {
-	                	echo('<li><a href="index.php?cible=reglages_admin">Réglages</a></li>');
-	                }
-	                if($etape=="deconnexion") 
-					{
-	                    echo('<li><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
-	                }
-	                else
-	                {
-	                	echo('<li><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
-	                }
 
-					?>
-						
-				</ul>
-			</nav>
-	</header>
 
-	<?php 
-	$entete = ob_get_clean();
-	return $entete;
-}
-
-function AsideAdmin ($etape)
-{
-	ob_start();
-	?>
-	<div id="menu_capteurs">
-			<div class="liste_capteurs">
-				<ul>
-
-				<?php
-
-				if($etape=="insertion_tram")
-				{
-                    echo('<li><a href="index.php?cible=insertion_tram"><strong>Insertion TRAM</strong></a></li>'); 
-                }
-                else
-	            {
-	            	echo('<li><a href="index.php?cible=insertion_tram">Insertion TRAM</a></li>');
-	            }
-                if($etape=="edition_newsletter")
-				{
-                    echo('<a href="index.php?cible=edition_newsletter"><li><strong>Edition Newsletter</strong></li></a>'); 
-                }
-                else
-	            {
-	            	echo('<li><a href="index.php?cible=edition_newsletter">Edition Newsletter</a></li>');
-	            }
-                
-				?>
-					
-				</ul>
-			</div> 
-			
-		</div>
-
-	<?php 
-	$entete = ob_get_clean();
-	return $entete;
-}
 
 
 
@@ -1111,7 +1020,104 @@ function listecapteurs()
 // FONCTION ADMINISTRATEUR
 
 
+function enteteAdmin($etape)
+{
+	ob_start();
+	?>
+	<header>
+			<div class="logo">
+				<a href="index.php?cible=home"><img src="images/logo.png" alt= "logo"></a>
+			</div>
+			<nav>
+				<ul class ="menu-accordeon">
+					<?php
 
+					if($etape=="home")
+					{
+	                    echo('<li><a href="index.php?cible=home_admin"><strong>Home</strong></a></li>');
+	                }
+	                else
+	                {
+	                	echo('<li><a href="index.php?cible=home_admin">Home</a></li>');
+	                }
+	                if($etape=="utilisateur")
+					{
+	                    echo('<li><a href="index.php?cible=utilisateur"><strong>Utilisateur</strong></a></li>');
+	                }
+	                else
+	                {
+	                	echo('<li><a href="index.php?cible=utilisateur">Utilisateur</a></li>');
+	                }
+	                if($etape=="reglages_admin")
+					{
+	                    echo('<li><a href="index.php?cible=reglages_admin"><strong>Réglages</strong></a></li>');
+	                }
+	                else
+	                {
+	                	echo('<li><a href="index.php?cible=reglages_admin">Réglages</a></li>');
+	                }
+	                if($etape=="deconnexion") 
+					{
+	                    echo('<li><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
+	                }
+	                else
+	                {
+	                	echo('<li><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
+	                }
+
+					?>
+						
+				</ul>
+			</nav>
+	</header>
+
+	<?php 
+	$entete = ob_get_clean();
+	return $entete;
+}
+
+
+
+
+
+function AsideAdmin ($etape)
+{
+	ob_start();
+	?>
+	<div id="menu_capteurs">
+			<div class="liste_capteurs">
+				<ul>
+
+				<?php
+
+				if($etape=="insertion_tram")
+				{
+                    echo('<li><a href="index.php?cible=insertion_tram"><strong>Insertion TRAM</strong></a></li>'); 
+                }
+                else
+	            {
+	            	echo('<li><a href="index.php?cible=insertion_tram">Insertion TRAM</a></li>');
+	            }
+                if($etape=="edition_newsletter")
+				{
+                    echo('<a href="index.php?cible=edition_newsletter"><li><strong>Edition Newsletter</strong></li></a>'); 
+                }
+                else
+	            {
+	            	echo('<li><a href="index.php?cible=edition_newsletter">Edition Newsletter</a></li>');
+	            }
+                
+				?>
+					
+				</ul>
+			</div> 
+			
+		</div>
+
+	<?php 
+	$entete = ob_get_clean();
+	return $entete;
+}
 
 
 function acceuiladmin()
