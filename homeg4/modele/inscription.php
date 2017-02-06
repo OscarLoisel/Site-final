@@ -22,7 +22,7 @@
 
 	function update_etat_produit($bdd,$n_serie)
 	{
-		$reponse = $bdd->prepare("UPDATE produit SET etat = 1 WHERE $n_serie = ?");
+		$reponse = $bdd->prepare("UPDATE produit SET etat = 1 WHERE n_serie = ?");
 		$reponse->execute(array($n_serie));
 	}
 ?>
