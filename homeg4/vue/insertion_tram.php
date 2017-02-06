@@ -16,7 +16,7 @@ $contenu .='<select name="deroulant_user">';
 for ($i=0; $i < $size_user; $i++) 
 {
 	$nom_utilisateur = $data[$i][3];
-	$contenu .= '<option value="test">';
+	$contenu .= '<option value='.$data[$i][0].'>';
 	$contenu .= $nom_utilisateur;
 	$contenu .= '</option>';
 }
