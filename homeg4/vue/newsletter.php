@@ -4,7 +4,6 @@
     $aside = asideContact("Newsletter");
     $contenu = '<div id="form_newsletter">';
     $contenu .='<h1>Newsletter</h1>';
-    $contenu .= '</div>';
   
 	$reponse = $bdd->query('SELECT titre, message FROM news ORDER BY ID DESC LIMIT 0, 10');
 
