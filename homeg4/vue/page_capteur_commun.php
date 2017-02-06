@@ -492,16 +492,16 @@ include_once("controleur/update_light_commun.php");
                 $contenu .='<div class=console_reglage>';
                 $reponse = recup_last_valeur_schroll($bdd, $id_piece, $id_utilisateur);
                 $data = $reponse -> fetch();
-                echo($data[0]).'<br>';
-                echo($id_utilisateur).'<br>';
-                echo $id_piece.'<br>';
+                //echo($data[0]).'<br>';
+                //echo($id_utilisateur).'<br>';
+                //echo $id_piece.'<br>';
                 if ($data[0]!='')
                 {
-                    $contenu .=console_temperature($data[0]);
+                    $contenu .=console_temperature($data[0]).'<br>';
                 }
                 else
                 {
-                    $contenu .= console_temperature(20);
+                    $contenu .= console_temperature(20).'<br>';
                 }
                 $contenu .='</div>';
                 $contenu .= '</td>';
