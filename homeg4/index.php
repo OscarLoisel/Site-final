@@ -2249,7 +2249,6 @@ if (isset($_POST['form_scroll_chauffage_piece']))
 
 if (isset($_POST['bouton_news'])) 
 {
-    $pseudo = htmlspecialchars($_POST['pseudo']);
     $titre = htmlspecialchars($_POST['titre']);
     $message= htmlspecialchars($_POST['message']);
     
