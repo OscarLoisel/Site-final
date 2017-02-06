@@ -1,8 +1,8 @@
 <?php
 
 	$reponse = nbr_utilisateur($bdd);
-	$nbr_utilisateur = sizeof($reponse);
-	echo $nbr_utilisateur;
+	$data = $reponse->fetchAll();
+	$nbr_utilisateur = sizeof($data);
 
 	$entete = enteteAdmin("home_admin");
 	$aside = asideAdmin2($nbr_utilisateur);
