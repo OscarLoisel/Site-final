@@ -8,7 +8,7 @@
     $contenu .= '</div>';
    
     
-    $reponse = $bdd->query('SELECT titre, message FROM news ORDER BY ID DESC LIMIT 0, 10');
+    $reponse = $bdd->query('SELECT titre, message FROM news ORDER BY ID DESC LIMIT 0, 1');
 
     
     $contenu .='<div id= "contenu_message">';
