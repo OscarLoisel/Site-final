@@ -196,7 +196,7 @@ color:#000;
 	color: black;
 	width: 880px;
 	height: 590px;
-	margin-top: 30px;
+	margin-top: 3em;
 	background-color: rgba(165,191,200,0.9);
 	overflow: auto;
 	position: absolute;
@@ -293,12 +293,15 @@ a .piece_grille table
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+	padding: auto;
 }
 
 .console_reglage {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	height: 335px;
+	width: 224px;
 }
 
 .console_reglage form {
@@ -310,6 +313,11 @@ a .piece_grille table
 .console_reglage .onoff form {
   display: flex;
   flex-direction: row;
+}
+
+tr td .logo_reglage {
+	margin-top: 0px;
+	position: absolute;
 }
 
 /*form
@@ -447,8 +455,8 @@ aside {
 	/*width: 16.1em;
 	height: 10em;*/
 	padding: 1em;
-	margin-left: 20px;
-	margin-top: 30px;
+	margin-left: 2em;
+	margin-top: 3em;
 	background-color: rgba(165,191,200,0.8);
 }
 
@@ -491,7 +499,7 @@ td[colspan="2"] {
 	width: 16.1em;
 	margin-top: 2em;
 	background-color: rgba(165,191,200,0.8);
-	margin-left: 1em;
+	margin-left: 2em;
 	padding: 1em;
 }
 

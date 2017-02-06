@@ -506,7 +506,7 @@ include_once("controleur/update_light_commun.php");
                 $contenu .='</div>';
                 $contenu .= '</td>';
 
-                $contenu .= '<td>';
+                $contenu .= '<td class="logo_reglage">';
                 $contenu .='<a href="index.php?cible=reglage_capteur&amp;id_piece='.$id_piece.'&amp;type='.$type.'">';
                 $contenu .='<img src="images/reglage.png">';
                 $contenu .='</a>';
