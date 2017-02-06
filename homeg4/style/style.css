@@ -512,13 +512,13 @@ td[colspan="2"] {
 /*PIED */
 
 footer{
+	position: absolute;
 	display : flex;
 	justify-content: center;
-	margin-top : 6em;
+	top: 800px;
+	margin-left: 40px;
 	border-top : #314367 solid 1px;
-	width : 90%;
-	margin-left : auto;
-	margin-right: auto;
+	width : 1220px;
 	color :#314367 ;
 }
 footer div{
