@@ -9,7 +9,7 @@
 		}
 	function read_n_serie($bdd, $n_serie)
 		{
-			$reponse= $bdd->prepare("SELECT n_serie FROM produit WHERE n_serie= ?");
+			$reponse= $bdd->prepare("SELECT n_serie FROM produit WHERE n_serie= ? AND etat = 0");
 			$reponse->execute(array($n_serie));
 			return $reponse;
 		}
@@ -19,5 +19,11 @@
 			$reponse = $bdd -> prepare('INSERT INTO utilisateur(mail, mdp) VALUES ( ?, ?)');
 			$reponse -> execute(array($mail, $mdp));
 		}
+
+	function update_etat_produit($bdd,$n_serie)
+	{
+		$reponse = $bdd->prepare("UPDATE produit SET etat = 1 WHERE $n_serie = ?");
+		$reponse->execute(array($n_serie));
+	}
 ?>
 
