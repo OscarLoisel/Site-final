@@ -778,9 +778,13 @@ input[name=bouton_inscription] {
 	text-align: center;
 }
 
+/* REGLAGES GENERAUX */
 
-
-
+#table_gestion td {
+	background-color: rgb(100,128,154);
+	padding: 0.4em;
+	
+}
 
 
 
@@ -797,6 +801,17 @@ input[name=bouton_inscription] {
 #form_newsletter {
 	display: flex;
 	flex-direction: column;
+}
+
+.police_titre {
+	background-color: rgb(100,128,154);
+	border: solid black 2px;
+}
+
+.small_police {
+	margin-bottom: 1em;
+	border: solid black 2px;
+	border-top: none;
 }
 
 
