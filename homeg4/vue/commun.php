@@ -1067,7 +1067,6 @@ function AsideAdmin ($etape)
 	?>
 	<div id="menu_capteurs">
 			<div class="liste_capteurs">
-				<ul>
 
 				<?php
 
@@ -1090,7 +1089,6 @@ function AsideAdmin ($etape)
                 
 				?>
 					
-				</ul>
 			</div> 
 			
 		</div>
