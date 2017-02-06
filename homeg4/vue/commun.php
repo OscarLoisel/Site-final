@@ -1415,7 +1415,10 @@ function news_topic()
     				<label for="message">Message : </label>
     			</td>
     			<td>
-    				<input type="text" name="message" id="message" />
+    				
+    				<textarea name="message" id="message" rows="10" cols="50">
+      
+       				</textarea>
     			</td>
     		</tr>
     		<tr>
