@@ -5,7 +5,7 @@
 	$aside = asideHorsConnexion();
 	$contenu ='<div id="table_gestion">';
 	$contenu .= '<div id="titre">';
-	$contenu .= '<h2>Gestion des membres</h2>';
+	$contenu .= '<h1>Gestion des membres</h1>';
 	$contenu .= '</div>';
 	$reponse = $bdd->query('SELECT * FROM utilisateur ORDER BY id ');
 	$contenu .='<table id="utilisateur_table">';
