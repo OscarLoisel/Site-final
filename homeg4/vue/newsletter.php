@@ -3,7 +3,6 @@
     $entete = entete("Newsletter");
     $aside = asideContact("Newsletter");
     $contenu = '<div id="form_newsletter">';
-    $contenu .= news_topic();
     $contenu .= '</div>';
    
 	
