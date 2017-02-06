@@ -401,14 +401,6 @@ function asideContact($etape)
             		{
             			echo('<li><a href="index.php?cible=newsletter">Newsletter</a></li>');
             		}
-	                if($etape=="forum")
-					{
-	                    echo('<li id="contact_2"><a href="index.php?cible=forum"><strong>Forum</strong></a></li>'); 
-	                }
-	                else
-            		{
-            			echo('<li><a href="index.php?cible=forum">Forum</a></li>');
-            		}
 	                if($etape=="sav")
 					{
 	                    echo('<li id="contact_3"><a href="index.php?cible=sav"><strong>S.A.V</strong></a></li>'); 
