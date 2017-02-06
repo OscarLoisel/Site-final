@@ -9,35 +9,15 @@
 	$contenu .="<p> Vous pourrez retrouver ici toutes les annonces de nos mises à jour du site et d'autres informations importantes. </p>";
 	$contenu .="<p> Pour être sûr d'être mis au courant, vous pouvez vous vous inscrire à notre liste mail pour recevoir immédiatement sur votre adresse tous nos messages.</p>";
     $contenu .= '</div>';
-    $pied = pied();
 
+    $pied = pied();
+    $contenu = news_topic();
     include 'gabarit.php';
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Mini-chat</title>
-    </head>
-    <style>
-    form
-    {
-        text-align:center;
-    }
-    </style>
-    <body>
-    
-    <form action="news_post.php" method="post">
-        <p>
-        <label for="pseudo">Pseudo</label> : <input type="text" name="pseudo" id="pseudo" /><br />
-        <label for="titre">Titre</label> :  <input type="text" name="titre" id="titre" /><br />
-        <label for="message">Message</label> :  <input type="text" name="message" id="message" /><br />
 
-        <input type="submit" value="Envoyer" />
-	</p>
-    </form>
 
 <?php
+
 // Connexion à la base de données
 try
 {
@@ -60,5 +40,3 @@ while ($donnees = $reponse->fetch())
 $reponse->closeCursor();
 
 ?>
-    </body>
-</html>

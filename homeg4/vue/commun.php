@@ -1357,3 +1357,29 @@ function newspost()
 	return $scenario;
 	?>
 }*/
+
+function news_topic()
+{
+    ob_start();
+    ?>
+
+  
+    <div>
+    
+    <form action="news_post.php" method="post">
+        <p>
+        <label for="pseudo">Pseudo</label> : <input type="text" name="pseudo" id="pseudo" /><br />
+        <label for="titre">Titre</label> :  <input type="text" name="titre" id="titre" /><br />
+        <label for="message">Message</label> :  <input type="text" name="message" id="message" /><br />
+
+        <input type="submit" value="Envoyer" />
+	</p>
+    </form>
+    </div>
+
+	
+
+	<?php
+    $listecapteuralarme = ob_get_clean();
+    return $listecapteuralarme;
+}
