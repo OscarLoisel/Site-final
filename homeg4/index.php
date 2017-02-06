@@ -2244,6 +2244,24 @@ if (isset($_POST['form_scroll_chauffage_piece']))
     }
 }
 
+/* -----------------------------------------------Mon domaine-------------------------------------------------*/
+
+if (isset($_POST['bouton_news'])) 
+{
+    $pseudo = htmlspecialchars($_POST['pseudo']);
+    $titre = htmlspecialchars($_POST['titre']);
+    $message= htmlspecialchars($_POST['message']);
+    
+    $reponse = read_chauffage_commun($bdd,$id_piece, $id_utilisateur);
+    $data = $reponse-> fetchAll();
+    $data_size = sizeof($data);
+    for ($i=0; $i < $data_size ; $i++) 
+    { 
+        $reponse =insert_valeur_commun($bdd, $valeur, $date_capteur, $data[$i][0], $id_utilisateur);
+        //echo "Les valeurs de chauffage ont étaient modifiés !";
+    }
+}
+
 
 /* -----------------------------------------------------------------------------------------------------------*/
 
@@ -2382,10 +2400,6 @@ if (isset($_POST['form_scroll_chauffage_piece']))
             $id_mbr = $_GET['delete'];
             include("vue/gestion_utilisateur.php");
         }
-        elseif ($_GET['cible'] == "test_tram") // OK
-        {
-            include("vue/scenario.php");
-        }
         else if ($_GET['cible'] == "deconnexion") // OK
         {
         // Détruit toutes les variables de session
@@ -2397,6 +2411,7 @@ if (isset($_POST['form_scroll_chauffage_piece']))
         session_destroy();
         include_once("Vue/page_connexion.php");
         }
+=
 
     }  
 
