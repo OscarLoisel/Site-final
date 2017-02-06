@@ -1,9 +1,16 @@
 <?php
+include_once("modele/insertion_tram.php");
 
 $entete = entete("reglage");
 $aside = asideReglage("securite");
 $msg = "";
 $contenu ='<form method="POST" action="">';
+$contenu .='<label>';
+$contenu .='Choisir un utilisateur';
+$contenu .='</label>';
+$reponse = readutilisateur();
+$contenu .='<select name="deroulant_user" size="'.$size_user.'"';
+$contenu .= '<option>'.$nom_utilisateur;
 $contenu .='<label>';
 $contenu .='Renseigner une tram';
 $contenu .='</label>';
