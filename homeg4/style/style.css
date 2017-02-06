@@ -95,6 +95,10 @@ color: #314367;
 border-radius: 10px;
 }
 
+.menu-accordeon li:hover{
+background:#BDCCD3;
+}
+
 .radiusl {
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
@@ -110,10 +114,56 @@ border-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
 
-.menu-accordeon li:hover{
-background:#BDCCD3;
+.menu-accordeon-admin{
+	position : relative;
+	margin-top: 40px;
+	/*justify-content: space-around;*/
+	margin-left : 8em;
+	/*width : 900px;
+	height : 10%;*/
 }
 
+.menu-accordeon-admin, .menu-accordeon-admin ul{
+padding:0;
+list-style:none;
+text-align:center;
+height: 50px;
+width: 900px;
+}
+
+
+.menu-accordeon-admin li{
+	float: left;
+/*display : inline-block;*/
+/*position:relative;
+margin-left : 25px;
+margin-left : 25px;*/
+background-color: #729EBF;
+/*background-image: -webkit-linear-gradient(top, #64809A 0%, #30ABDD 100%);*/
+background-image:linear-gradient(to bottom,  #DBEAE9 0%, #7B8EA1 100%);
+/*border-radius:8px 8px 0 0;*/
+}
+
+
+.menu-accordeon-admin a{
+text-decoration:none;
+display:block;
+/*padding:8px 32px;*/
+
+background-image: url(navi_bg_divider.png);
+background-repeat: no-repeat;
+background-position: right;
+padding-right: 67px;
+padding-left: 67px;
+line-height: 50px;
+font-size: 21px;
+color: #314367;
+border-radius: 10px;
+}
+
+.menu-accordeon-admin li:hover{
+background:#BDCCD3;
+}
 /*#menu-accordeon ul li:hover{
 border-radius:0;
 }
@@ -508,7 +558,13 @@ input[name="formeditionprofil"]:hover {
 	float: bottom left;
 }
 
-
+.asidehorsconnexion {
+	border: solid black 3px;
+	width: 16.1em;
+	margin-top: 3em;
+	margin-left: 2em;
+	padding: 1em;
+}
 
 .liste_capteurs {
 	width: 16.1em;

@@ -208,6 +208,7 @@ function aside($etape,$moyenne_temperature,$moyenne_hum,$nb_alarme)
 					
 				</ul>
 			</div> 
+
 			
 		</div>
 
@@ -225,12 +226,12 @@ function asideHorsConnexion()
 {
 	ob_start();
 	?>
-
+		<div id="asidehorsconnexion">
+		</div>
 	<?php
 	$asideHorsConnexion= ob_get_clean();
 	return $asideHorsConnexion;
 }
-
 
 function asideReglage($etape)
 {
@@ -1024,52 +1025,58 @@ function enteteAdmin($etape)
 {
 	ob_start();
 	?>
+
 	<header>
+
 			<div class="logo">
 				<a href="index.php?cible=home"><img src="images/logo.png" alt= "logo"></a>
 			</div>
+
 			<nav>
-				<ul class ="menu-accordeon">
+				<ul class ="menu-accordeon-admin">
+
 					<?php
 
-					if($etape=="home")
+					if($etape == "home")
 					{
-	                    echo('<li class="radiusl"><a href="index.php?cible=home_admin"><strong>Home</strong></a></li>');
-	                }
-	                else
-	                {
-	                	echo('<li class="radiusl"><a href="index.php?cible=home_admin">Home</a></li>');
-	                }
-	                if($etape=="utilisateur")
+		                echo('<li class="radiusl"><a href="index.php?cible=home_admin"><strong>Home</strong></a></li>');
+		            }
+		            else
+		            {
+		            	echo('<li class="radiusl"><a href="index.php?cible=home_admin">Home</a></li>');
+		            }
+		            if($etape == "utilisateur")
+		            {
+		            	echo('<li id="divider"><a href="index.php?cible=utilisateur"><strong>Utilisateur</strong></a></li>');
+		            }
+		            else
+		            {
+		            	echo('<li id="divider"><a href="index.php?cible=utilisateur">Utilisateur</a></li>');
+		            }
+		            if ($etape == "reglages_admin") 
+		            {
+		            	echo('<li id="divider"><a href="index.php?cible=reglages_admin"><strong>Réglages</strong></a></li>');
+		            }
+		            else
+		            {
+		            	echo('<li id="divider"><a href="index.php?cible=reglages_admin">Réglages</a></li>');
+		            }
+					if($etape == "deconnexion") //AND isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id'])
 					{
-	                    echo('<li id="divider"><a href="index.php?cible=utilisateur"><strong>Utilisateur</strong></a></li>');
-	                }
-	                else
-	                {
-	                	echo('<li id="divider"><a href="index.php?cible=utilisateur">Utilisateur</a></li>');
-	                }
-	                if($etape=="reglages_admin")
-					{
-	                    echo('<li id="divider"><a href="index.php?cible=reglages_admin"><strong>Réglages</strong></a></li>');
-	                }
-	                else
-	                {
-	                	echo('<li id="divider"><a href="index.php?cible=reglages_admin">Réglages</a></li>');
-	                }
-	                if($etape=="deconnexion") 
-					{
-	                    echo('<li class="radiusr"><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
-	                }
-	                else
-	                {
-	                	echo('<li class="radiusr"><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
-	                }
+		                echo('<li class="radiusr"><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
+		            }
+		            else
+		            {
+		            	echo('<li class="radiusr"><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
+		            }
 
 					?>
-						
+					
 				</ul>
 			</nav>
-	</header>
+
+		</header>
+	
 
 	<?php 
 	$entete = ob_get_clean();
