@@ -539,9 +539,10 @@ input[name="formeditionprofil"] {
 }
 
 input[name="formeditionprofil"]:hover {
-	width: 205px;
-    height: 40px;
+	box-shadow: 2px 2px 2px black;
+
 }
+
 
 
 
@@ -766,12 +767,33 @@ input[name=formconnexion] {
 	border-radius: 5px;
 }
 
+input[name=formconnexion]:hover {
+    box-shadow: 1px 1px 1px black;
+}
+
 input[name=bouton_inscription] {
 	border: 1px #3C99D7 solid;
 	border-radius: 5px;
 	background-color: white;
 }
 
+input[name=bouton_inscription]:hover {
+    box-shadow: 1px 1px 1px black;
+}
+
+input[name="forminscription"] {
+	background-color: #314367;
+    border: solid #314367 2px;
+    color: white;
+    font-size: 1em;
+    border-radius: 10px;
+    width: 200px;
+    height: 35px;
+}
+
+input[name="forminscription"]:hover {
+    box-shadow: 2px 2px 2px black;
+}
 
 
 #msg_erreur {
