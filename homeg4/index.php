@@ -2252,7 +2252,7 @@ if (isset($_POST['bouton_news']))
     $titre = htmlspecialchars($_POST['titre']);
     $message= htmlspecialchars($_POST['message']);
     
-    insert_newss ($bdd, $pseudo , $titre, $message);
+    insert_newss ($bdd, $titre, $message);
 }
 
 
