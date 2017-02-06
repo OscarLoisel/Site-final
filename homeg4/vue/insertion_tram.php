@@ -1,22 +1,22 @@
 <?php
 include_once("modele/insertion_tram.php");
 
-$entete = entete("reglage");
-$aside = asideReglage("securite");
+$entete = enteteAdmin("insertion_tram");
+$aside = asideHorsConnexion();
 $msg = "";
 $contenu ='<form method="POST" action="">';
-$contenu .='<label>';
+$contenu .='<label for="deroulant_user">';
 $contenu .='Choisir un utilisateur';
 $contenu .='</label>';
 $reponse = readutilisateurs($bdd);
 $data = $reponse -> fetchAll();
 $size_user = sizeof($data);
 echo $size_user;
-$contenu .='<select name="deroulant_user" size="'.$size_user.'"';
+$contenu .='<select name="deroulant_user">';
 for ($i=0; $i < $size_user; $i++) 
 {
 	$nom_utilisateur = $data[$i][3];
-	$contenu .= '<option>';
+	$contenu .= '<option value="test">';
 	$contenu .= $nom_utilisateur;
 	$contenu .= '</option>';
 }
