@@ -1365,7 +1365,6 @@ function newspost()
 	return $scenario;
 	?>
 }*/
-
 function news_topic()
 {
     ob_start();
@@ -1381,7 +1380,7 @@ function news_topic()
         <label for="message">Message</label> :  <input type="text" name="message" id="message" /><br />
 
         <input type="submit" value="Envoyer" name="bouton_news" />
-	</p>
+		</p>
     </form>
     </div>
 
@@ -1389,5 +1388,8 @@ function news_topic()
 	<?php
     $news_topic = ob_get_clean();
     return $news_topic;
-    ?>
+   
 }
+
+?>
+
