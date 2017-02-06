@@ -282,8 +282,8 @@ a .piece_grille table
 }*/
 
 .piece_grille:hover {
-	width: 8.1em;
-	height: 8.1em;
+	width: 8em;
+	height: 8em;
     background-color: #359AD8;
     box-shadow: 2px 2px 2px black;
 }
