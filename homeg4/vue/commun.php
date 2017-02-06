@@ -1087,7 +1087,7 @@ function listecapteurs()
 
 
 
-function accueiladmin()
+function acceuiladmin()
 {
 	ob_start();
 	?>
