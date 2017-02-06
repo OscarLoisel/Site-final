@@ -1377,14 +1377,6 @@ function news_topic()
        	<table>
     		<tr>
     			<td>
-    				<label for="pseudo">Pseudo : </label>
-    			</td>
-    			<td>
-    				<input type="text" name="pseudo" id="pseudo" />
-    			</td>
-    		</tr>
-    			<tr>
-    			<td>
     				<label for="titre">Titre : </label>
     			</td>
     			<td>
