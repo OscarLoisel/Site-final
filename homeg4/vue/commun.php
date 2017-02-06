@@ -162,6 +162,14 @@ function enteteAdmin($etape)
 	                {
 	                	echo('<li><a href="index.php?cible=utilisateur">Utilisateur</a></li>');
 	                }
+	                if($etape=="test_tram")
+					{
+	                    echo('<li><a href="index.php?cible=test_tram"><strong>Test TRAM</strong></a></li>');
+	                }
+	                else
+	                {
+	                	echo('<li><a href="index.php?cible=test_tram">Test TRAM</a></li>');
+	                }
 	                if($etape=="deconnexion") 
 					{
 	                    echo('<li><a href="index.php?cible=deconnexion">Déconnexion</a></li>');

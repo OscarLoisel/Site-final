@@ -2382,6 +2382,10 @@ if (isset($_POST['form_scroll_chauffage_piece']))
             $id_mbr = $_GET['delete'];
             include("vue/gestion_utilisateur.php");
         }
+        elseif ($_GET['cible'] == "test_tram") // OK
+        {
+            include("vue/scenario.php");
+        }
         else if ($_GET['cible'] == "deconnexion") // OK
         {
         // Détruit toutes les variables de session

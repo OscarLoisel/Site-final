@@ -13,7 +13,7 @@ if (isset($_POST['ouvrir']))
 	//echo 'taille :<br>'.$data_size;
 	for ($i=0; $i < $data_size; $i++)   
 	{
-		echo $data[$i][0];
+		//echo $data[$i][0];
 		$reponse = update_volet_on($bdd, $data[$i][0]);
 	}
 }
@@ -26,7 +26,7 @@ if (isset($_POST['fermer']))
 	//echo 'taille :<br>'.$data_size;
 	for ($i=0; $i < $data_size; $i++)   
 	{
-		echo $data[$i][0];
+		//echo $data[$i][0];
 		$reponse = update_volet_off($bdd, $data[$i][0]);
 	}
 	
