@@ -1,7 +1,7 @@
 <?php
 
-    $entete = entete("Newsletter");
-    $aside = asideContact("Newsletter");
+    $entete = enteteAdmin("Newsletter");
+    $aside = asideAdmin("Newsletter");
     $contenu = '<div id="form_newsletter">';
     $contenu .= '</div>';
    

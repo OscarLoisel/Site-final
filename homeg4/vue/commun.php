@@ -162,13 +162,13 @@ function enteteAdmin($etape)
 	                {
 	                	echo('<li><a href="index.php?cible=utilisateur">Utilisateur</a></li>');
 	                }
-	                if($etape=="insertion_tram")
+	                if($etape=="reglages_admin")
 					{
-	                    echo('<li><a href="index.php?cible=insertion_tram"><strong>Insertion TRAM</strong></a></li>');
+	                    echo('<li><a href="index.php?cible=reglages_admin"><strong>Réglages</strong></a></li>');
 	                }
 	                else
 	                {
-	                	echo('<li><a href="index.php?cible=insertion_tram">Insertion TRAM</a></li>');
+	                	echo('<li><a href="index.php?cible=reglages_admin">Réglages</a></li>');
 	                }
 	                if($etape=="deconnexion") 
 					{
@@ -177,14 +177,6 @@ function enteteAdmin($etape)
 	                else
 	                {
 	                	echo('<li><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
-	                }
-	                 if($etape=="Newsletter") 
-					{
-	                    echo('<li><a href="index.php?cible=newslettera">Newsletter</a></li>');
-	                }
-	                else
-	                {
-	                	echo('<li><a href="index.php?cible=newslettera">Newsletter</a></li>');
 	                }
 
 					?>
@@ -198,7 +190,44 @@ function enteteAdmin($etape)
 	return $entete;
 }
 
+function AsideAdmin ($etape)
+{
+	ob_start();
+	?>
+	<div id="menu_capteurs">
+			<div class="liste_capteurs">
+				<ul>
 
+				<?php
+
+				if($etape=="insertion_tram")
+				{
+                    echo('<li><a href="index.php?cible=insertion_tram"><strong>Insertion TRAM</strong></a></li>'); 
+                }
+                else
+	            {
+	            	echo('<li><a href="index.php?cible=insertion_tram">Insertion TRAM</a></li>');
+	            }
+                if($etape=="edition_newsletter")
+				{
+                    echo('<a href="index.php?cible=edition_newsletter"><li><strong>Edition Newsletter</strong></li></a>'); 
+                }
+                else
+	            {
+	            	echo('<li><a href="index.php?cible=edition_newsletter">Edition Newsletter</a></li>');
+	            }
+                
+				?>
+					
+				</ul>
+			</div> 
+			
+		</div>
+
+	<?php 
+	$entete = ob_get_clean();
+	return $entete;
+}
 
 
 
