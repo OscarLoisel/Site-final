@@ -9,17 +9,14 @@
 	$contenu .="<p> Vous pourrez retrouver ici toutes les annonces de nos mises à jour du site et d'autres informations importantes. </p>";
 	$contenu .="<p> Pour être sûr d'être mis au courant, vous pouvez vous vous inscrire à notre liste mail pour recevoir immédiatement sur votre adresse tous nos messages.</p>";
     $contenu .= '</div>';
-
+    $contenu .= news_topic();
     $pied = pied();
-    $contenu = news_topic();
+
     include 'gabarit.php';
-?>
 
-
-<?php
 
 // Connexion à la base de données
-try
+/*try
 {
 	$bdd = new PDO('mysql:host=localhost;dbname=homeg4;charset=utf8', 'root', '');
 }
@@ -40,3 +37,4 @@ while ($donnees = $reponse->fetch())
 $reponse->closeCursor();
 
 ?>
+*/

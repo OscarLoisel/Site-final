@@ -15,6 +15,7 @@
     include_once("modele/recup_moyenne.php");
     include_once("modele/update_chauffage_commun.php");
     include_once("modele/select_scenario.php");
+    include_once("modele/insert_news.php");
 
     //require("modele/para_capteurs.php");*/
     if(!isset($_SESSION["id"]))
@@ -2252,14 +2253,7 @@ if (isset($_POST['bouton_news']))
     $titre = htmlspecialchars($_POST['titre']);
     $message= htmlspecialchars($_POST['message']);
     
-    $reponse = read_chauffage_commun($bdd,$id_piece, $id_utilisateur);
-    $data = $reponse-> fetchAll();
-    $data_size = sizeof($data);
-    for ($i=0; $i < $data_size ; $i++) 
-    { 
-        $reponse =insert_valeur_commun($bdd, $valeur, $date_capteur, $data[$i][0], $id_utilisateur);
-        //echo "Les valeurs de chauffage ont étaient modifiés !";
-    }
+    insert_newss ($bdd, $pseudo , $titre, $message);
 }
 
 
