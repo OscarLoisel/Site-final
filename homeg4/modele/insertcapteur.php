@@ -4,7 +4,7 @@
 
 	function checkCapteur($bdd, $n_serie)
 	{
-		$reponse = $bdd -> prepare('SELECT * FROM produit WHERE n_serie = ?');
+		$reponse = $bdd -> prepare('SELECT * FROM produit WHERE n_serie = ? AND etat = 0');
 		$reponse -> execute(array($n_serie));
 		return $reponse;
 	}

@@ -126,6 +126,7 @@
                         $type = "humidite";
                         $test2 = $test2['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                        update_etat_produit($bdd,$n_serie);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -134,6 +135,7 @@
                         $type = "temperature";
                         $test2 = $test2['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                        update_etat_produit($bdd,$n_serie);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -142,6 +144,7 @@
                         $type = "light";
                         $test2 = $test2['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                        update_etat_produit($bdd,$n_serie);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -150,6 +153,7 @@
                         $type = 'presence';
                         $test2 = $test2['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                        update_etat_produit($bdd,$n_serie);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -158,13 +162,14 @@
                         $type = "volet";
                         $test2 = $test2['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $test2);
+                        update_etat_produit($bdd,$n_serie);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
                 }
                 else
                 {
-                    $msg = "Le numéro de série renseigné est erroné";
+                    $msg = "Le numéro de série renseigné est erroné ou déjà utilisé";
                     include('vue/ajout_piece_erreur.php');
                 }
             }
@@ -229,30 +234,35 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "T")
                     {
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "L")
                     {
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "P")
                     {
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "V")
                     {
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
 
 
@@ -262,6 +272,7 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -270,6 +281,7 @@
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -278,6 +290,7 @@
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -286,6 +299,7 @@
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -294,6 +308,7 @@
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -372,30 +387,35 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "T")
                     {
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "L")
                     {
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "P")
                     {
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "V")
                     {
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
 
 
@@ -405,30 +425,35 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "T")
                     {
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "L")
                     {
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "P")
                     {
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "V")
                     {
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
 
 
@@ -437,6 +462,7 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -445,6 +471,7 @@
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -453,6 +480,7 @@
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -461,6 +489,7 @@
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -469,6 +498,7 @@
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -545,30 +575,35 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "T")
                     {
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "L")
                     {
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "P")
                     {
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "V")
                     {
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
 
 
@@ -578,30 +613,35 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "T")
                     {
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "L")
                     {
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "P")
                     {
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "V")
                     {
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
 
 
@@ -610,30 +650,35 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                     }
                     elseif($data3 == "T")
                     {
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                     }
                     elseif($data3 == "L")
                     {
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                     }
                     elseif($data3 == "P")
                     {
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                     }
                     elseif($data3 == "V")
                     {
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                     }
 
 
@@ -643,6 +688,7 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        update_etat_produit($bdd,$n_serie4);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -651,6 +697,7 @@
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        update_etat_produit($bdd,$n_serie4);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -659,6 +706,7 @@
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        update_etat_produit($bdd,$n_serie4);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -667,6 +715,7 @@
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        update_etat_produit($bdd,$n_serie4);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -675,6 +724,7 @@
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        update_etat_produit($bdd,$n_serie4);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -754,30 +804,35 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "T")
                     {
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "L")
                     {
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "P")
                     {
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
                     elseif($data == "V")
                     {
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie, $n_tram);
+                        update_etat_produit($bdd,$n_serie);
                     }
 
 
@@ -787,30 +842,35 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "T")
                     {
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "L")
                     {
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "P")
                     {
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
                     elseif($data2 == "V")
                     {
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie2, $n_tram);
+                        update_etat_produit($bdd,$n_serie2);
                     }
 
 
@@ -819,30 +879,35 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                     }
                     elseif($data3 == "T")
                     {
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                     }
                     elseif($data3 == "L")
                     {
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                     }
                     elseif($data3 == "P")
                     {
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                     }
                     elseif($data3 == "V")
                     {
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie3, $n_tram);
+                        update_etat_produit($bdd,$n_serie3);
                     }
 
 
@@ -852,30 +917,35 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        update_etat_produit($bdd,$n_serie4);
                     }
                     elseif($data4 == "T")
                     {
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        update_etat_produit($bdd,$n_serie4);
                     }
                     elseif($data4 == "L")
                     {
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        update_etat_produit($bdd,$n_serie4);
                     }
                     elseif($data4 == "P")
                     {
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        update_etat_produit($bdd,$n_serie4);
                     }
                     elseif($data4 == "V")
                     {
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie4, $n_tram);
+                        update_etat_produit($bdd,$n_serie4);
                     }
 
                     if($data5 == "H")
@@ -883,6 +953,7 @@
                         $type = "humidite";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+                        update_etat_produit($bdd,$n_serie5);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -891,6 +962,7 @@
                         $type = "temperature";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+                        update_etat_produit($bdd,$n_serie5);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -899,6 +971,7 @@
                         $type = "light";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+                        update_etat_produit($bdd,$n_serie5);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -907,6 +980,7 @@
                         $type = 'presence';
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+                        update_etat_produit($bdd,$n_serie5);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
@@ -915,6 +989,7 @@
                         $type = "volet";
                         $n_tram = $n_tram['n_tram'] + 1;
                         insertcapteur($bdd,$id_new_piece2[0], $type, $n_serie5, $n_tram);
+                        update_etat_produit($bdd,$n_serie5);
                         $msg = 'Votre piece a bien été créée !';
                         include('vue/ajout_piece_erreur.php');
                     }
