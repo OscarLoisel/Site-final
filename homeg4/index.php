@@ -2376,7 +2376,7 @@ if (isset($_POST['bouton_news']))
 
         //ADMIN
 
-        elseif ($_GET['cible'] == "home_admin") //OK
+        elseif ($_GET['cible'] == "home_admin" AND isset($_SESSION["id"]) AND $_SESSION['id'] == 7) //OK
         {
             include("vue/home_admin.php");
         }
