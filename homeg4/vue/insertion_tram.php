@@ -5,10 +5,11 @@
 	$aside = asideAdmin("insertion_tram");
 	$msg = "";
 
-	$contenu ='<h1>Insertion TRAM</h1>';
+	$contenu ='<div id="insert_tram">';
+	$contenu .='<h1>Insertion TRAM</h1>';
 	$contenu .='<form method="POST" action="">';
 	$contenu .='<label for="deroulant_user">';
-	$contenu .='Choisir un utilisateur';
+	$contenu .='Choisir un utilisateur : ';
 	$contenu .='</label>';
 
 	$reponse = readutilisateurs($bdd);
@@ -27,12 +28,13 @@
 	
 	$contenu .='</select><br><br>';
 	$contenu .='<label>';
-	$contenu .='Renseigner une tram';
+	$contenu .='Renseigner une tram : ';
 	$contenu .='</label>';
-	$contenu .='<input type="text" name="tram">';
+	$contenu .='<input type="text" name="tram"><br><br>';
 	$contenu .='<input type="submit" name="form_insert_valeur" value="Insérer">';
 	$contenu .= '</form>';
 	$contenu .= $msg;
+	$contenu .='</div>';
 
 	$pied = pied();
 
