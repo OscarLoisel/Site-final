@@ -1719,7 +1719,7 @@ if (isset($_POST['formcapteur4']))
         $tram = htmlspecialchars($_POST['tram']);
         if (!empty($tram)) 
         {
-            $id_utilisateur = intval($_SESSION['id']);
+            //$id_utilisateur = intval($_SESSION['id']);
 
             $type_tram = substr($tram, 0, 1); //1 - TYPE DE TRAM UTILISÉ - toujours la premiere tram
             $objet = substr($tram, 1, 4); //4 - NUMERO D'EQUIPE - ne change jamais
