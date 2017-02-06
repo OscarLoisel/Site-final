@@ -18,7 +18,7 @@
 		$contenu .= $utilisateur['id'];  
 		$contenu .='</td>';
 		$contenu .='<td>';
-		$contenu .= '<a href="index.php?cible=info_utilisateur">'.$mail.'<a>';
+		$contenu .= '<a href="index.php?cible=info_utilisateur&amp;id_membre='.$id_mbr.'">'.$mail.'<a>';
 		$contenu .='</td>';
 		/*if ($utilisateur['confirme'] == 0) 
 		{
