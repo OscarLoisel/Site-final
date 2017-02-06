@@ -495,7 +495,7 @@ function pieda()
             
             <div id="reseaux_pied">
                 <h2>Nous suivre sur :</h2>
-                <a href="https://www.facebook.com/Homeg4-1704397496541016/"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="https://www.facebook.com/Homeg4-737236603101801/"><img src="images/facebook.png" alt="Facebook"></a>
                 <a href="https://twitter.com/Homeg_4"><img src="images/twitter.png" alt="Twitter"></a>
             </div>
          
