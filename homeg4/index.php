@@ -46,8 +46,8 @@
                     {
                         $truc = read_n_serie($bdd, $n_serie);
                         $data = $reponse->fetch();
-                        echo($data[0]);
-                        echo($data[1]);
+                        /*echo($data[0]);
+                        echo($data[1]);*/
                 
                         if ($truc -> rowcount() == 1) 
                         {
@@ -85,7 +85,7 @@
         {
             $erreur = "Veuillez remplir tous les champs !";
             $test = $erreur[1];
-            echo($test);
+            //echo($test);
             include('vue/inscription_erreur.php');
         }
 
@@ -1769,7 +1769,7 @@ if (isset($_POST['formscenario_lampe']))
 
             if(isset($_POST['choix_action']))
             {
-                echo "le 2 isset fonctionne";
+                //echo "le 2 isset fonctionne";
                 $valeur = $_POST['choix_action'];
                 if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))  // HEURE DU DÉBUT DE SCÉNARIO
                 {
@@ -1856,7 +1856,7 @@ if (isset($_POST['formscenario_lampe']))
         $msg="Veuillez renseigner une date de début et de fin du scénario.";
     }
 }
-echo $msg;
+//echo $msg;
 
 
 
@@ -1883,7 +1883,7 @@ if (isset($_POST['form_scroll_chauffage']))
     for ($i=0; $i < $data_size ; $i++) 
     { 
         $reponse =insert_valeur_chauffage($bdd, $valeur, $date_capteur, $data[$i][0], $id_utilisateur);
-        echo "Les valeurs de chauffage ont étaient modifiés !";
+        //echo "Les valeurs de chauffage ont étaient modifiés !";
     }
 
 }
@@ -1894,7 +1894,7 @@ $msg='';
 
 if (isset($_POST['formscenario_chauffage'])) 
 {
-    echo "le form a bien était validé !";
+    //echo "le form a bien était validé !";
     $nom_scenario = htmlspecialchars($_POST['nom_scenario']);
     $date_debut = htmlspecialchars($_POST['date_debut']);
     $date_fin = htmlspecialchars($_POST['date_fin']);
@@ -1989,7 +1989,7 @@ if (isset($_POST['formscenario_chauffage']))
         $msg="Veuillez renseigner une date de début et de fin du scénario.";
     }
 }
-echo $msg;
+//echo $msg;
 
 // SCENARIO VOLETS 
 
@@ -2103,7 +2103,7 @@ if (isset($_POST['formscenario_volet']))
         $msg="Veuillez renseigner une date de début et de fin du scénario.";
     }
 }
-echo $msg;
+//echo $msg;
 
 
 
@@ -2219,7 +2219,7 @@ if (isset($_POST['formscenario_alarme']))
         $msg="Veuillez renseigner une date de début et de fin du scénario.";
     }
 }
-echo $msg;
+//echo $msg;
 
  /* -----------------------------------------------------------------------------------------------------------*/
 
