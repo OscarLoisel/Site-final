@@ -2461,11 +2461,7 @@ if (isset($_POST['bouton_news']))
         {
             include("vue/insertion_valeur.php");
         }
-        elseif ($_GET['cible'] == 'systeme') 
-        {
-            include("#");
-        }
-           elseif ($_GET['cible'] == 'cguA') 
+        elseif ($_GET['cible'] == 'cguA') 
         {
             include("vue/cguA.php");
         }
@@ -2484,10 +2480,6 @@ if (isset($_POST['bouton_news']))
         elseif ($_GET['cible'] == 'newsletter') 
         {
             include("vue/newsletter.php");
-        }
-        elseif ($_GET['cible'] == 'forum') 
-        {
-            include("#");
         }
         elseif ($_GET['cible'] == 'sav') 
         {

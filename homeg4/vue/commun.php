@@ -221,7 +221,6 @@ function aside($etape,$moyenne_temperature,$moyenne_hum,$nb_alarme)
 
 
 
-
 function asideHorsConnexion()
 {
 	ob_start();
@@ -298,8 +297,8 @@ function asideContact($etape)
 {
 	ob_start();
 	?>
-	<div id="menu_capteurs">
-			<div class="liste_capteurs">
+	<div id="menu_capteurs_contact">
+			<div class="liste_capteurs_contact">
 
 				<?php
 

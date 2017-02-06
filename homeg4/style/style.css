@@ -551,7 +551,7 @@ input[name="formeditionprofil"]:hover {
 /* - - MENU CAPTEURS - - */
 
 
-#menu_capteurs {
+#menu_capteurs, #menu_capteurs_contact {
 	border: 2px;
 	width: 16.1em;
 	height: 16em;
@@ -566,7 +566,7 @@ input[name="formeditionprofil"]:hover {
 	padding: 1em;
 }
 
-.liste_capteurs {
+.liste_capteurs, .liste_capteurs_contact {
 	width: 16.1em;
 	margin-top: 3em;
 	background-color: rgba(165,191,200,0.8);
@@ -574,12 +574,12 @@ input[name="formeditionprofil"]:hover {
 	padding: 1em;
 }
 
-.liste_capteurs ul {
+.liste_capteurs ul, .liste_capteurs_contact ul {
 	list-style-type: none;
 	
 }
 
-.liste_capteurs li{
+.liste_capteurs li, .liste_capteurs_contact li {
 	border-collapse: collapse;
 	text-align: center;
 	margin-bottom: 1em;
@@ -589,16 +589,17 @@ input[name="formeditionprofil"]:hover {
 	padding: 0.6em;
 }
 
-.liste_capteurs li:hover {
+.liste_capteurs li:hover, .liste_capteurs_contact li:hover {
 	background-color: #359AD8;
     box-shadow: 1px 1px 1px black;
 }
 
 
-.liste_capteurs a {
+.liste_capteurs a, .liste_capteurs_contact a {
 	text-decoration: none;
 	color: white;
 }
+
 
 
 #tableau_bouton_inscription{
