@@ -1,8 +1,9 @@
 <?php
 
-    $entete = entete("Newsletter");
-    $aside = asideContact("Newsletter");
+    $entete = enteteAdmin("reglages_admin");
+    $aside = asideAdmin("Newsletter");
     $contenu = '<div id="form_newsletter">';
+    $contenu .='<h1>Newsletter</h1>';
     $contenu .= news_topic();
     $contenu .= '</div>';
    
