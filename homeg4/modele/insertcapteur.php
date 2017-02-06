@@ -32,7 +32,7 @@
 
 	function read_n_tram($bdd, $id_utilisateur)
 	{
-		$reponse = $bdd-> prepare("SELECT n_tram FROM capteurs INNER JOIN pieces WHERE pieces.id_utilisateur = ? ORDER BY n_tram DESC");
+		$reponse = $bdd-> prepare("SELECT capteurs.n_tram FROM capteurs,pieces WHERE pieces.id_utilisateur = ? ORDER BY capteurs.n_tram DESC LIMIT 1");
 		$reponse-> execute(array($id_utilisateur));
 		return $reponse;
 	}
