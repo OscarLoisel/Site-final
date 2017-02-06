@@ -989,7 +989,7 @@ function console_light()
 	return $console_light;
 }
 
-function console_temperature()
+function console_temperature($temp)
 {
 	ob_start();
 	?>
@@ -1004,7 +1004,7 @@ function console_temperature()
 
 	<span class="couleur"> Température actuelle </span>
 	<form method="POST" action="">
-		<span class="temperature"><output name="slideroutput" id="slideroutput">20</output>°C<br />
+		<span class="temperature"><output name="slideroutput" id="slideroutput"><?php echo $temp; ?></output>°C<br />
 		<input name="sliderinput" id="sliderinput" type="range" value="20" min="5" max="35" step="0.5" oninput="slideroutput.value = sliderinput.value" /></span><br /><br />
 		<input type="submit" value = "Appliquer" name="form_scroll_chauffage_piece"><br />
 	</form>
@@ -1152,7 +1152,7 @@ function listecapteurlampe()
     return $listecapteurlampe;
 }
     
-function listecapteurchauffage($temp)
+function listecapteurchauffage($valeur)
 {
     ob_start();
 	?>
@@ -1168,7 +1168,7 @@ function listecapteurchauffage($temp)
 
 	<p><span class="couleur"> Température actuelle </span>
 	<form method="POST" action="">
-	<span class="temperature"><output name="slideroutput" id="slideroutput"><?php echo($temp); ?></output>°C<br />
+	<span class="temperature"><output name="slideroutput" id="slideroutput"><?php echo($valeur); ?></output>°C<br />
 	<input name="sliderinput" id="sliderinput" type="range" value="<?php $temp ?>" min="5" max="35" step="0.5" oninput="slideroutput.value = sliderinput.value" /></span></p>
 	<p><input type="submit" value = "Appliquer" name="form_scroll_chauffage"></p><br />
 	</form>
