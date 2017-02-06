@@ -7,7 +7,8 @@ $nb_alarme = nombre_camera_allume($bdd,$_SESSION['id']);
 
 $entete = entete("home");
 $aside = aside("sav",$moyenne_temp,$moyenne_hum,$nb_alarme);
-$contenu = '<h1>Réglages</h1>';
+$contenu = '<div id = "reglage_tableau">';
+$contenu .= '<h1>Réglages</h1>';
 $contenu .= listecapteurs();
 
 $reponse = affichage_table_capteur($bdd, $id_piece, $type);
@@ -54,6 +55,7 @@ while ($donnees = $reponse->fetch())
 	
 }
 $contenu .='</table>';
+$contenu .= '</div>';
 
 // NOM_CAPTEURS - NUMERO DE SERIE - DONNEES DU CAPTEUR - BATTERIE DU CAPTEUR - VERT/ROUGE - SUPPRIMER
 
