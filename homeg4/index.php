@@ -2264,7 +2264,8 @@ if (isset($_POST['bouton_news']))
     {
         if ($_GET['etat'] == 'capteur') 
         {
-            include("vue/capteur.php");
+            $msg ='';
+            include_once("vue/capteur_erreur.php");
         }
     }
 
