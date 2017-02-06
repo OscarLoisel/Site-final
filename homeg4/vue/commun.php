@@ -162,7 +162,7 @@ function enteteAdmin($etape)
 	                {
 	                	echo('<li><a href="index.php?cible=utilisateur">Utilisateur</a></li>');
 	                }
-	                if($etape=="test_tram")
+	                if($etape=="insertion_tram")
 					{
 	                    echo('<li><a href="index.php?cible=insertion_tram"><strong>Insertion TRAM</strong></a></li>');
 	                }
