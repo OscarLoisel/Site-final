@@ -2400,6 +2400,10 @@ if (isset($_POST['bouton_news']))
         }
         else if ($_GET['cible'] == "deconnexion") // OK
         {
+        elseif ($_GET['cible'] == 'newslettera') 
+        {
+            include("vue/newslettera.php");
+        }
         // Détruit toutes les variables de session
         $_SESSION = array();
         /*if (isset($_COOKIE[session_name()])) 

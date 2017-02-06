@@ -178,6 +178,14 @@ function enteteAdmin($etape)
 	                {
 	                	echo('<li><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
 	                }
+	                 if($etape=="Newsletter") 
+					{
+	                    echo('<li><a href="index.php?cible=newslettera">Newsletter</a></li>');
+	                }
+	                else
+	                {
+	                	echo('<li><a href="index.php?cible=newslettera">Newsletter</a></li>');
+	                }
 
 					?>
 						
