@@ -587,6 +587,7 @@ input[name="formeditionprofil"]:hover {
 	position: relative;
 	right:10%;
 	padding: 0.6em;
+	list-style-type: none;
 }
 
 .liste_capteurs li:hover, .liste_capteurs_contact li:hover {

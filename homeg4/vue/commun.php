@@ -304,7 +304,7 @@ function asideContact($etape)
 
 					if($etape=="newsletter")
 					{
-	                    echo('<li id="contact_1"><a href="index.php?cible=newsletter"><strong>Newsletter</strong></a></li>'); 
+	                    echo('<li><a href="index.php?cible=newsletter"><strong>Newsletter</strong></a></li>'); 
 	                }
 	                else
             		{
@@ -312,7 +312,7 @@ function asideContact($etape)
             		}
 	                if($etape=="sav")
 					{
-	                    echo('<li id="contact_3"><a href="index.php?cible=sav"><strong>S.A.V</strong></a></li>'); 
+	                    echo('<li><a href="index.php?cible=sav"><strong>S.A.V</strong></a></li>'); 
 	                }
 	                else
             		{

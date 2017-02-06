@@ -1,13 +1,12 @@
 #contenuc {
     text-align: center;
-    margin-left: 27em;
+    margin-left: 7em;
     color: black;
     width: 880px;
     height: 605px;
     margin-top: 3em;
     background-color: rgba(165,191,200,0.9);
     overflow: auto;
-    position: absolute;
 }
 
 h1 {
