@@ -33,23 +33,23 @@ function entete($etape)
 		            }
 		            if($etape == "reglage")
 		            {
-		            	echo('<li id="reglage"><a href="index.php?cible=reglage"><strong>Réglage</strong></a>');
+		            	echo('<li id="divider"><a href="index.php?cible=reglage"><strong>Réglage</strong></a></li>');
 		            }
 		            else
 		            {
-		            	echo('<li id="reglage"><a href="index.php?cible=reglage">Réglage</a>');
+		            	echo('<li id="divider"><a href="index.php?cible=reglage">Réglage</a></li>');
 		            }
 		            if ($etape == "contact") 
 		            {
-		            	echo('<li class="divider"><a href="index.php?cible=contact"><strong>Contact</strong></a></li>');
+		            	echo('<li id="divider"><a href="index.php?cible=contact"><strong>Contact</strong></a></li>');
 		            }
 		            else
 		            {
-		            	echo('<li id="reglage"><a href="index.php?cible=contact">Contact</a>');
+		            	echo('<li id="divider"><a href="index.php?cible=contact">Contact</a></li>');
 		            }
 					if($etape == "deconnexion") //AND isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id'])
 					{
-		                echo('<li><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
+		                echo('<li class="radiusr"><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
 		            }
 		            else
 		            {
@@ -1034,35 +1034,35 @@ function enteteAdmin($etape)
 
 					if($etape=="home")
 					{
-	                    echo('<li><a href="index.php?cible=home_admin"><strong>Home</strong></a></li>');
+	                    echo('<li class="radiusl"><a href="index.php?cible=home_admin"><strong>Home</strong></a></li>');
 	                }
 	                else
 	                {
-	                	echo('<li><a href="index.php?cible=home_admin">Home</a></li>');
+	                	echo('<li class="radiusl"><a href="index.php?cible=home_admin">Home</a></li>');
 	                }
 	                if($etape=="utilisateur")
 					{
-	                    echo('<li><a href="index.php?cible=utilisateur"><strong>Utilisateur</strong></a></li>');
+	                    echo('<li id="divider"><a href="index.php?cible=utilisateur"><strong>Utilisateur</strong></a></li>');
 	                }
 	                else
 	                {
-	                	echo('<li><a href="index.php?cible=utilisateur">Utilisateur</a></li>');
+	                	echo('<li id="divider"><a href="index.php?cible=utilisateur">Utilisateur</a></li>');
 	                }
 	                if($etape=="reglages_admin")
 					{
-	                    echo('<li><a href="index.php?cible=reglages_admin"><strong>Réglages</strong></a></li>');
+	                    echo('<li id="divider"><a href="index.php?cible=reglages_admin"><strong>Réglages</strong></a></li>');
 	                }
 	                else
 	                {
-	                	echo('<li><a href="index.php?cible=reglages_admin">Réglages</a></li>');
+	                	echo('<li id="divider"><a href="index.php?cible=reglages_admin">Réglages</a></li>');
 	                }
 	                if($etape=="deconnexion") 
 					{
-	                    echo('<li><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
+	                    echo('<li class="radiusr"><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
 	                }
 	                else
 	                {
-	                	echo('<li><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
+	                	echo('<li class="radiusr"><a href="index.php?cible=deconnexion">Déconnexion</a></li>');
 	                }
 
 					?>
