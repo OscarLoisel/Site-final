@@ -1011,7 +1011,7 @@ function enteteAdmin($etape)
 
 					<?php
 
-					if($etape == "home")
+					if($etape == "home_admin")
 					{
 		                echo('<li class="radiusl"><a href="index.php?cible=home_admin"><strong>Home</strong></a></li>');
 		            }
