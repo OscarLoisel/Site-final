@@ -1720,7 +1720,6 @@ if (isset($_POST['formcapteur4']))
         if (!empty($tram)) 
         {
             $id_utilisateur = intval($_POST['deroulant_user']);
-
             $type_tram = substr($tram, 0, 1); //1 - TYPE DE TRAM UTILISÉ - toujours la premiere tram
             $objet = substr($tram, 1, 4); //4 - NUMERO D'EQUIPE - ne change jamais
             $requete = substr($tram, 5, 1); //1 - IDENTIFIE LA COMMANDE - modifie l'etat du capteur
@@ -2283,7 +2282,7 @@ if (isset($_POST['bouton_news']))
         {
             include("vue/home.php");
         }
-        elseif ($_GET['cible'] == 'page_capteur_commun') 
+        elseif ($_GET['cible'] == 'page_capteur_commun' AND $_GET['etat'] != 'capteur') 
         {
             $id_piece = $_GET['id_piece'];
             include("vue/page_capteur_commun.php");
