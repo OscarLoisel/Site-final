@@ -7,7 +7,7 @@ include_once("controleur/update_lampe.php");
     $entete = entete("home");
     $aside = aside("sav",$moyenne_temp,$moyenne_hum,$nb_alarme);
     $contenuc = listecapteurlampe();
-    $contenuc .= $smg;
+    $contenuc .= $msg;
     $pied = pied();
     
     include('gabarit_capteur.php');

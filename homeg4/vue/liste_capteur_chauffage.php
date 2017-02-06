@@ -8,7 +8,7 @@ include_once("controleur/update_chauffage.php");
     $entete = entete("home");
     $aside = aside("sav",$moyenne_temp,$moyenne_hum,$nb_alarme);
     $contenuc = listecapteurchauffage($moyenne_temp);
-    $contenuc .= $smg;
+    $contenuc .= $msg;
     $pied = pied();
     
     include('gabarit_capteur.php');
