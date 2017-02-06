@@ -122,6 +122,7 @@ input[type="range"]:after {
     color: #314367;
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
 }
 
 .couleur {
@@ -250,6 +251,8 @@ input[name="fermer"]:hover {
   width: 100px;
   height: 35px;
 }
+
+
 
 .onoffswitch {
     margin: auto;

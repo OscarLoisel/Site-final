@@ -291,6 +291,25 @@ a .piece_grille table
 #grille_capteurs tbody tr {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.console_reglage {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.console_reglage form {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.console_reglage .onoff form {
+  display: flex;
+  flex-direction: row;
 }
 
 /*form
