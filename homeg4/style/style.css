@@ -190,7 +190,7 @@ color:#000;
 	/*width: 60%;*/
 	color: black;
 	width: 900px;
-	height: 630px;
+	height: 560px;
 	margin-top: 2em;
 	background-color: rgba(165,191,200,0.6);
 	overflow: auto;
@@ -222,20 +222,20 @@ color:#000;
 .titre_bienvenue {
 	/*text-shadow: 2px 2px 10px #000000;*/
 	font-size: 2em;
-	border-top: black solid;
-	border-bottom: black solid;
+	border-top: #314367 solid;
+	border-bottom: #314367 solid;
 }
 
 .titre_bienvenue_erreur {
 	font-size: 2em;
-	border-top: black solid;
-	border-bottom: black solid;
+	border-top: #314367 solid;
+	border-bottom: #314367 solid;
 }
 
 .titre_bienvenue_success {
 	font-size: 2em;
-	border-top: black solid;
-	border-bottom: black solid;
+	border-top: #314367 solid;
+	border-bottom: #314367 solid;
 }
 #grille_pieces {
 	padding: 3em;
@@ -411,11 +411,11 @@ footer{
 	display : flex;
 	justify-content: center;
 	margin-top : 6em;
-	border-top : black solid 1px;
+	border-top : #314367 solid 1px;
 	width : 90%;
 	margin-left : auto;
 	margin-right: auto;
-	text-shadow: 3px 3px 2px #FFFFFF;
+	color :#314367 ;
 }
 footer div{
 	
@@ -426,17 +426,19 @@ footer div{
 #contact_pied ul, #mentions_pied ul{
 	list-style: none;
 	padding-left: 0px;
-
 }
 
 #contact_pied li, #mentions_pied li {
 	line-height: 1.5em;	
-
 }
 
 #contact_pied a, #mentions_pied a {
-	color: black;
 	text-decoration: none;
+	color: #314367;
+}
+
+#contact_pied a:hover, #mentions_pied a:hover {
+	text-decoration: underline;
 }
 
 #reseaux a {
