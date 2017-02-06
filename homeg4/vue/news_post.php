@@ -8,7 +8,7 @@ catch(Exception $e)
         die('Erreur : '.$e->getMessage());
 }
 
-$req = $bdd->prepare('INSERT INTO news (pseudo, titre, message) VALUES(?, ?, ?)');
-$req->execute(array($_POST['pseudo'], $_POST['titre'], $_POST['message']));
+$req = $bdd->prepare('INSERT INTO news (titre, message) VALUES(?, ?)');
+$req->execute(array($_POST['titre'], $_POST['message']));
 header('Location: newsletter.php');
 ?>
