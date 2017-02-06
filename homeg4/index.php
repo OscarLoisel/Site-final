@@ -765,7 +765,7 @@
             $n_serie4 =htmlspecialchars($_POST['ajout_capteur4']);
             $n_serie5 =htmlspecialchars($_POST['ajout_capteur5']);
 
-            if(!isset($_POST['logo']))
+            if(!empty($_POST['logo']))
             {
                 $type_piece = $_POST['logo'];
                 $reponse = checkCapteur($bdd, $n_serie); // Verifie que le capteur existe dans la bdd
