@@ -20,7 +20,7 @@ while ($donnees = $reponse->fetch())
 	
 	$contenu .= '<tr>';
 	$contenu .= '<td>';
-	$contenu .=	$donnees['n_tram']; // TABLE CAPTEUR 	
+	$contenu .=	$data['id_capteur']; // TABLE CAPTEUR 	
 	$contenu .= '</td>';
 	$contenu .= '<td>';
 	$contenu .= $donnees['n_serie']; //TABLE CAPTEUR

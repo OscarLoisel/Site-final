@@ -8,9 +8,9 @@ function affichage_table_capteur($bdd, $id_piece, $type)
 	return $reponse;
 }
 
-function affichage_table_donnees($bdd, $id_capteur)
+function 	affichage_table_donnees($bdd, $id_capteur)
 {
-	$req = $bdd ->prepare('SELECT * FROM donnees WHERE id_capteur = ?');
+	$req = $bdd ->prepare('SELECT * FROM donnees WHERE id_capteur = ? ORDER BY date_capteur DESC');
 	$req -> execute(array($id_capteur));
 	return $req;
 }
