@@ -195,7 +195,7 @@ color:#000;
 	/*width: 60%;*/
 	color: black;
 	width: 880px;
-	height: 590px;
+	height: 605px;
 	margin-top: 3em;
 	background-color: rgba(165,191,200,0.9);
 	overflow: auto;
@@ -218,6 +218,7 @@ color:#000;
 	/*margin-right:2em;
 	margin-left:2em;*/
 	margin : auto;
+	margin-top: 4em;
 	/*width: 60%;*/
 	color: black;
 }
@@ -478,6 +479,26 @@ td[colspan="2"] {
 	/*flex-wrap: wrap;*/
 }
 
+input[name="formeditionprofil"] {
+	background-color: #314367;
+    border: solid #314367 2px;
+    color: white;
+    font-size: 1em;
+    border-radius: 10px;
+    width: 200px;
+    height: 35px;
+}
+
+input[name="formeditionprofil"]:hover {
+	background-color: #314367;
+    border: solid #314367 2px;
+    color: white;
+    font-size: 1em;
+    border-radius: 10px;
+    width: 205px;
+    height: 40px;
+}
+
 
 
 
@@ -497,7 +518,7 @@ td[colspan="2"] {
 
 .liste_capteurs {
 	width: 16.1em;
-	margin-top: 2em;
+	margin-top: 3em;
 	background-color: rgba(165,191,200,0.8);
 	margin-left: 2em;
 	padding: 1em;
@@ -547,7 +568,7 @@ footer{
 	position: absolute;
 	display : flex;
 	justify-content: center;
-	top: 800px;
+	top: 850px;
 	margin-left: 40px;
 	border-top : #314367 solid 1px;
 	width : 1220px;
