@@ -5,7 +5,6 @@
     $contenu = '<div id="form_newsletter">';
     $contenu .='<h1>Edition Newsletter</h1>';
     $contenu .= news_topic();
-    $contenu .= '</div>';
    
     
     $reponse = $bdd->query('SELECT titre, message FROM news ORDER BY ID DESC LIMIT 0, 1');
