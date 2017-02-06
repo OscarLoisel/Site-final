@@ -12,33 +12,43 @@
 	$contenu .= '<h1>Gestion des membres</h1>';
 	$contenu .= '</div>';
 	$reponse = $bdd->query('SELECT * FROM utilisateur ORDER BY id ');
-	$contenu .='<table id="utilisateur_table">';
+	$contenu .='<table class="utilisateur_table">';
 	while ($utilisateur = $reponse ->fetch()) 
 	{
-		$contenu .='<tr>';
-		$contenu .='<td>';
 		$id_mbr = $utilisateur['id'];
 		$mail = $utilisateur['mail'];
-		$contenu .= $utilisateur['id'];  
-		$contenu .='</td>';
-		$contenu .='<td>';
-		$contenu .= '<a href="index.php?cible=info_utilisateur&amp;id_membre='.$id_mbr.'">'.$mail.'<a>';
-		$contenu .='</td>';
-		/*if ($utilisateur['confirme'] == 0) 
+		
+		if ($id_mbr != 7) 
 		{
-			$contenu .='<td>';	
-			$contenu .= '<a href="index.php?cible=confirme&amp;confirme='.$id_mbr.'">Confirmer</a>';
+			$contenu .='<tr>';
+			$contenu .='<td>';
+			$contenu .= $id_mbr;  
 			$contenu .='</td>';
+			$contenu .='<td>';
+			$contenu .= '<a href="index.php?cible=info_utilisateur&amp;id_membre='.$id_mbr.'">'.$mail.'<a>';
+			$contenu .='</td>';
+		
+			$contenu .='<td>';
+			$contenu .= '<a href="index.php?cible=delete&amp;delete='.$id_mbr.'"> <img src="images/delete.png"></a>';
+			$contenu .='</td>';
+			$contenu .='</tr>';
 		}
 		else
 		{
+			$contenu .='<tr>';
 			$contenu .='<td>';
+			$contenu .= $id_mbr;  
 			$contenu .='</td>';
-		}*/
-		$contenu .='<td>';
-		$contenu .= '<a href="index.php?cible=delete&amp;delete='.$id_mbr.'"> <img src="images/delete.png"></a>';
-		$contenu .='</td>';
-		$contenu .='</tr>';
+			$contenu .='<td>';
+			$contenu .= $mail;
+			$contenu .='</td>';
+		
+			$contenu .='<td>';
+			$contenu .='ADMIN';
+			$contenu .='</td>';
+			$contenu .='</tr>';
+		}
+	
 
 	}
 	$contenu .='</table>';

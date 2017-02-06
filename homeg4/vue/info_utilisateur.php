@@ -1,20 +1,28 @@
 <?php
-include_once("modele/info_utilisateur.php");
-$entete = enteteAdmin("utilisateur");
-$aside = asideHorsConnexion();
+	include_once("modele/info_utilisateur.php");
 
-	$contenu = '<h1>Informations de l\'utilisateur : <h1>';
+	$reponse = nbr_utilisateur($bdd);
+	$data = $reponse->fetchAll();
+	$nbr_utilisateur = sizeof($data);
+
+	$entete = enteteAdmin("utilisateur");
+	$aside = asideAdmin2($nbr_utilisateur);
+
+	$contenu = '<div id= table_info>';
+	
 	
 	$id_utilisateur = $_GET['id_membre'];
-	echo $id_utilisateur;
+	//echo $id_utilisateur;
 	$reponse = read_info_utilisateur($bdd, $id_utilisateur);
 	$size_info = sizeof($reponse);
+	//echo $size_info;
 	if ($size_info == 0) 
 	{
 		$contenu .= "Cet utilisateur  n'a pas de capteurs !";
 	}
 	else
 	{
+		$contenu = '<h1>Informations de l\'utilisateur : <h1>';
 		$contenu .= '<table id = "info_utilisateur">';
 		while($data = $reponse->fetch())
 		{
@@ -45,6 +53,7 @@ $aside = asideHorsConnexion();
 		}
 
 		$contenu .= '</table>';
+		$contenu .= '<div>';
 	}
 
 $pied = pied();
