@@ -2552,6 +2552,10 @@ if (isset($_POST['bouton_news']))
             $id_mbr = $_GET['delete'];
             include("vue/gestion_utilisateur.php");
         }
+        elseif ($_GET['cible'] == "info_utilisateur") 
+        {
+            include("vue/info_utilisateur.php");
+        }
         elseif ($_GET['cible'] == 'edition_newsletter') 
         {
             include("vue/newslettera.php");

@@ -14,10 +14,11 @@
 		$contenu .='<tr>';
 		$contenu .='<td>';
 		$id_mbr = $utilisateur['id'];
+		$mail = $utilisateur['mail'];
 		$contenu .= $utilisateur['id'];  
 		$contenu .='</td>';
 		$contenu .='<td>';
-		$contenu .= $utilisateur['mail'];
+		$contenu .= '<a href="index.php?cible=info_utilisateur">'.$mail.'<a>';
 		$contenu .='</td>';
 		/*if ($utilisateur['confirme'] == 0) 
 		{
