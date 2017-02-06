@@ -30,7 +30,7 @@
         $mail2 = htmlspecialchars($_POST['mail2']);
         $mdp = sha1($_POST['mdp']);
         $mdp2 = sha1($_POST['mdp2']);
-        $n_serie = htmlspecialchars($_POST['n_serie']); 
+        $n_serie = htmlspecialchars($_POST['n_serie']);
         
         if (!empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2']) AND !empty($_POST['n_serie'])) 
         {

@@ -424,7 +424,7 @@ function pied()
             
             <div id="reseaux_pied">
                 <h2>Nous suivre sur :</h2>
-                <a href="https://www.facebook.com/Homeg4-1704397496541016/"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="https://www.facebook.com/Homeg4-737236603101801/"><img src="images/facebook.png" alt="Facebook"></a>
                 <a href="https://twitter.com/Homeg_4"><img src="images/twitter.png" alt="Twitter"></a>
             </div>
          
@@ -1372,7 +1372,7 @@ function news_topic()
         <label for="titre">Titre</label> :  <input type="text" name="titre" id="titre" /><br />
         <label for="message">Message</label> :  <input type="text" name="message" id="message" /><br />
 
-        <input type="submit" value="Envoyer" />
+        <input type="submit" value="Envoyer" name="bouton_news" />
 	</p>
     </form>
     </div>
