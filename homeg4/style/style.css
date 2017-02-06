@@ -288,6 +288,11 @@ a .piece_grille table
     box-shadow: 2px 2px 2px black;
 }
 
+#grille_capteurs tbody tr {
+	display: flex;
+	flex-direction: row;
+}
+
 /*form
 {
 	width :21em;
@@ -561,10 +566,14 @@ footer div{
 #nom_piece {
 	display: flex;
 	margin-top: 0px;
+	justify-content: center;
 }
 
-#grille_capteur {
+#grille_capteurs {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 
