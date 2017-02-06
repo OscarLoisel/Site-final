@@ -51,7 +51,7 @@
                 
                         if ($truc -> rowcount() == 1) 
                         {
-                            update_etat_produit($bdd, $n_serie)
+                            update_etat_produit($bdd, $n_serie);
                             insertutilisateur($bdd, $mail, $mdp);
                             $erreur = "Votre compte a bien été créé !";
                             include('vue/connexion_success.php');
