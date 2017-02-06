@@ -296,19 +296,19 @@ function asideContact($etape)
 
 					if($etape=="newsletter")
 					{
-	                    echo('<li><a href="index.php?cible=newsletter"><strong>Newsletter</strong></a></li>'); 
+	                    echo('<a href="index.php?cible=newsletter"><li><strong>Newsletter</strong></li></a>'); 
 	                }
 	                else
             		{
-            			echo('<li><a href="index.php?cible=newsletter">Newsletter</a></li>');
+            			echo('<a href="index.php?cible=newsletter"><li>Newsletter</li></a>');
             		}
 	                if($etape=="sav")
 					{
-	                    echo('<li><a href="index.php?cible=sav"><strong>S.A.V</strong></a></li>'); 
+	                    echo('<a href="index.php?cible=sav"><li><strong>S.A.V</strong></li></a>'); 
 	                }
 	                else
             		{
-            			echo('<li><a href="index.php?cible=sav">S.A.V</a></li>');
+            			echo('<a href="index.php?cible=sav"><li>S.A.V</li></a>');
             		}
 
                 ?>
