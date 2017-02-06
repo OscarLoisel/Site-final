@@ -556,6 +556,7 @@ input[name="formeditionprofil"]:hover {
 	width: 16.1em;
 	height: 16em;
 	float: bottom left;
+	margin-right: 4em;
 }
 
 .asidehorsconnexion {
@@ -802,6 +803,10 @@ input[name=bouton_inscription] {
 	text-align: justify;
 }
 
+#form_newsletter {
+	display: flex;
+	flex-direction: column;
+}
 
 
 
