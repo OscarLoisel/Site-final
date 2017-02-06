@@ -2,7 +2,7 @@
 
 	$entete = enteteAdmin("home_admin");
 	$aside = asideHorsConnexion();
-	$contenu = acceuiladmin();
+	$contenu = accueiladmin();
 	$pied = pied();
 
 	include'gabarit.php';
