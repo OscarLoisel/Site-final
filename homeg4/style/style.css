@@ -52,7 +52,7 @@ nav {
 	position : relative;
 	margin-top: 40px;
 	/*justify-content: space-around;*/
-	margin-left : 105px;
+	margin-left : 8em;
 	/*width : 900px;
 	height : 10%;*/
 }
@@ -191,7 +191,7 @@ color:#000;
 	word-wrap : break-word;
 	/*margin-right:2em;
 	margin-left:2em;*/
-	margin-left: 410px;
+	margin-left: 27em;
 	/*width: 60%;*/
 	color: black;
 	width: 880px;
