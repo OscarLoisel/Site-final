@@ -30,4 +30,11 @@ function insert_valeur_commun ($bdd, $valeur, $date_capteur, $id_capteur, $id_ut
 	$reponse -> execute(array($valeur, $date_capteur, $id_capteur, $id_utilisateur));
 }
 
+
+function recup_last_valeur_schroll ($bdd, $id_piece, $id_utilisateur)
+{
+	$reponse = $bdd -> prepare('SELECT donnees.valeur FROM donnees, pieces WHERE pieces.id = ? AND donnees.id_utilisateur = ? ORDER BY donnees.id DESC');
+	$reponse -> execute(array($id_piece, $id_utilisateur));
+	return $reponse;
+}
 ?>

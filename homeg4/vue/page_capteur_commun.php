@@ -9,7 +9,7 @@ include_once("controleur/update_light_commun.php");
     $moyenne_hum = round(moyenne_humidite($bdd,$_SESSION['id']),1);
     $nb_alarme = nombre_camera_allume($bdd,$_SESSION['id']);
 
-
+    $id_utilisateur = $_SESSION['id'];
     $entete = entete("home");
     $aside = aside("sav",$moyenne_temp,$moyenne_hum,$nb_alarme);
 
@@ -489,9 +489,13 @@ include_once("controleur/update_light_commun.php");
                 $contenu .= '<tr>';
                 $contenu .= '<td>';
                 $contenu .='<div class=console_reglage>';
-                if (isset($valeur)) 
+                $reponse = recup_last_valeur_schroll($bdd, $id_piece, $id_utilisateur);
+                $data = $reponse -> fetch();
+                echo($data[0]);
+                echo($id_utilisateur);
+                if ($data[0]!='')
                 {
-                    $contenu .=console_temperature($valeur);
+                    $contenu .=console_temperature($data[0]);
                 }
                 else
                 {
