@@ -13,7 +13,7 @@ if (isset($_POST['allumer']))
 	//echo 'taille :<br>'.$data_size;
 	for ($i=0; $i < $data_size; $i++)   
 	{
-		echo $data[$i][0];
+		//echo $data[$i][0];
 		$reponse = update_lampe_on($bdd, $data[$i][0]);
 	}
 }
@@ -26,7 +26,7 @@ if (isset($_POST['eteindre']))
 	//echo 'taille :<br>'.$data_size;
 	for ($i=0; $i < $data_size; $i++)   
 	{
-		echo $data[$i][0];
+		//echo $data[$i][0];
 		$reponse = update_lampe_off($bdd, $data[$i][0]);
 	}
 	

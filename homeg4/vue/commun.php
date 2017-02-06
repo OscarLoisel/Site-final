@@ -514,7 +514,7 @@ function edition_profil()
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td style="text-align: right;">
 						<label for="newmail">Nouveaux mail :</label>
 					</td>
 					<td>
@@ -523,7 +523,7 @@ function edition_profil()
 				</tr>
 
 				<tr>
-					<td>
+					<td style="text-align: right;">
 						<label for="newmail2">Confirmez votre mail :</label>
 					</td>
 					<td>
@@ -532,7 +532,7 @@ function edition_profil()
 				</tr>
 
 				<tr>
-					<td>
+					<td style="text-align: right;">
 						<label for="newmdp">Nouveau mot de passe :</label>
 					</td>
 					<td>
@@ -541,7 +541,7 @@ function edition_profil()
 				</tr>
 
 				<tr>
-					<td>
+					<td style="text-align: right;">
 						<label for="newmdp2">Confirmez votre mot de passe :</label>
 					</td>
 					<td>
@@ -551,10 +551,7 @@ function edition_profil()
 
 
 				<tr>
-					<td>
-					
-					</td>
-					<td>
+					<td colspan="2">
 						<br>
 						<input type="submit" value="Mettre à jour mon profil" name="formeditionprofil">
 					</td>

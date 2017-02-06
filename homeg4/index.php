@@ -1993,7 +1993,7 @@ if (isset($_POST['formscenario_lampe']))
 
         elseif ($date_debut > $date_fin)
         {
-            echo "date_debut > date_fin";
+            //echo "date_debut > date_fin";
             if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))
             {
                 $msg = "La date de début du scénario doit être inférieur à la date de fin du scénario.";
@@ -2126,7 +2126,7 @@ if (isset($_POST['formscenario_chauffage']))
 
         elseif ($date_debut > $date_fin)
         {
-            echo "date_debut > date_fin";
+            //echo "date_debut > date_fin";
             if (isset($_POST['choixh_d']) AND isset($_POST['choixm_d']) AND isset($_POST['choixh_f']) AND isset($_POST['choixm_f']))
             {
                 $msg = "La date de début du scénario doit être inférieur à la date de fin du scénario.";
@@ -2450,8 +2450,6 @@ if (isset($_POST['bouton_news']))
             $type = $_GET['type'];
             include("vue/page_reglage_capteur.php");
         }
-
-
         elseif ($_GET['cible'] == 'reglage') // REGLAGE
         {
             $id = $_SESSION["id"];

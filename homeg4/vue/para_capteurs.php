@@ -173,8 +173,8 @@
 	$contenu .= '</table>';
 	$contenu .=	 '</form>';
 	$contenu .= '</div>';
-	echo($indice);
-	echo($nombre);
+	//echo($indice);
+	//echo($nombre);
 		/*--> id piece*/
 
 
