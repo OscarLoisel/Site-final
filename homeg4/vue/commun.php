@@ -33,11 +33,11 @@ function entete($etape)
 		            }
 		            if($etape == "reglage")
 		            {
-		            	echo('<li id="reglage"><a href="index.php?cible=reglage"><strong>Réglage</strong></a></li>');
+		            	echo('<li id="reglage"><a href="index.php?cible=reglage"><strong>Réglage</strong></a>');
 		            }
 		            else
 		            {
-		            	echo('<li id="reglage"><a href="index.php?cible=reglage">Réglage</a></li>');
+		            	echo('<li id="reglage"><a href="index.php?cible=reglage">Réglage</a>');
 		            }
 		            if ($etape == "contact") 
 		            {
@@ -45,7 +45,7 @@ function entete($etape)
 		            }
 		            else
 		            {
-		            	echo('<li id="reglage"><a href="index.php?cible=contact">Contact</a></li>');
+		            	echo('<li id="reglage"><a href="index.php?cible=contact">Contact</a>');
 		            }
 					if($etape == "deconnexion") //AND isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id'])
 					{
@@ -1389,4 +1389,5 @@ function news_topic()
 	<?php
     $news_topic = ob_get_clean();
     return $news_topic;
+    ?>
 }
