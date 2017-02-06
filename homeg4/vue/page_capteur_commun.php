@@ -489,7 +489,14 @@ include_once("controleur/update_light_commun.php");
                 $contenu .= '<tr>';
                 $contenu .= '<td>';
                 $contenu .='<div class=console_reglage>';
-                $contenu .=console_temperature();
+                if (isset($valeur)) 
+                {
+                    $contenu .=console_temperature($valeur);
+                }
+                else
+                {
+                    $contenu .= console_temperature(20);
+                }
                 $contenu .='</div>';
                 $contenu .= '</td>';
 
