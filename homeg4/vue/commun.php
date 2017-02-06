@@ -1385,7 +1385,7 @@ function news_topic()
     </form>
     </div>
 
-	
+	qdsedrfghj
 
 	<?php
     $news_topic = ob_get_clean();
