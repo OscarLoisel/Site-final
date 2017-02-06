@@ -159,7 +159,7 @@ function aside($etape,$moyenne_temperature,$moyenne_hum,$nb_alarme)
 					</tr>
 
 					<tr>
-						<td class="critere">Alarme<br /><br /><?php echo($nb_alarme); ?></td>
+						<td class="critere" colspan="2">Alarme<br /><br /><?php echo($nb_alarme); ?></td>
 					</tr>
 
 				</table>
@@ -217,20 +217,6 @@ function aside($etape,$moyenne_temperature,$moyenne_hum,$nb_alarme)
 	return $aside;
 }
 
-
-
-
-
-function asideHorsConnexion()
-{
-	ob_start();
-	?>
-		<div id="asidehorsconnexion">
-		</div>
-	<?php
-	$asideHorsConnexion= ob_get_clean();
-	return $asideHorsConnexion;
-}
 
 function asideReglage($etape)
 {
@@ -1113,6 +1099,38 @@ function AsideAdmin ($etape)
 	$entete = ob_get_clean();
 	return $entete;
 }
+
+function asideHorsConnexion()
+{
+	ob_start();
+	?>
+		
+	<?php
+	$asideHorsConnexion= ob_get_clean();
+	return $asideHorsConnexion;
+}
+
+function asideAdmin2($nbr_utilisateur)
+{
+	ob_start();
+	?>
+		<div id="tdb">
+				<table id="tableau_tdb">
+
+					<tr>
+						<td colspan="2">TABLEAU DE BORD</td>
+					</tr>
+
+					<tr>
+						<td class="critere">Nombre d'utilisateur enregistré<br /><br /><?php echo($nbr_utilisateur); ?></td>
+					</tr>
+				</table>
+		</div>
+	<?php
+	$asideHorsConnexion= ob_get_clean();
+	return $asideHorsConnexion;
+}
+
 
 
 function acceuiladmin()

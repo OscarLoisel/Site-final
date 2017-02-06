@@ -1,7 +1,7 @@
 <?php
 
 	$entete = enteteAdmin("home_admin");
-	$aside = asideHorsConnexion();
+	$aside = asideAdmin2($nbr_utilisateur);
 	$contenu = acceuiladmin();
 	$pied = pied();
 

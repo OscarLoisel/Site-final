@@ -2,7 +2,7 @@
 	require("controleur/gestion_utilisateur.php");
 
 	$entete = enteteAdmin("utilisateur");
-	$aside = asideHorsConnexion();
+	$aside = asideAdmin2($nbr_utilisateur);
 	$contenu ='<div id="table_gestion">';
 	$contenu .= '<div id="titre">';
 	$contenu .= '<h1>Gestion des membres</h1>';
@@ -32,7 +32,7 @@
 			$contenu .='</td>';
 		}*/
 		$contenu .='<td>';
-		$contenu .= '<a href="index.php?cible=delete&amp;delete='.$id_mbr.'"> Supprimer</a>';
+		$contenu .= '<a href="index.php?cible=delete&amp;delete='.$id_mbr.'"> <img src="images/delete.png"></a>';
 		$contenu .='</td>';
 		$contenu .='</tr>';
 
