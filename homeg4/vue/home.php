@@ -17,7 +17,7 @@
         {
             if($nbrligne != 0)
             {
-                echo($data[0][3]);
+                //echo($data[0][3]);
                 $id = $data[$i][0];
                 $contenu .= '<a href="index.php?cible=page_capteur_commun&amp;id_piece='.$id.'&amp;etat=">';   
                 $contenu .= '<div class="piece_grille">';
@@ -28,12 +28,12 @@
                         $contenu .= '<strong>'; 
                         $contenu .= $data[$i][1];
                         $contenu .= '</strong>';
-                        echo($data[0][3]);
+                        //echo($data[0][3]);
 
                         $reponse_etat = verif_etat_capteurs($bdd, $id);
                         $data_etat = $reponse_etat -> fetchAll();
                         $size_etat = sizeof($data_etat);
-                        echo $size_etat;
+                        //echo $size_etat;
                         $compteur = 0;
                         for ($j=0; $j < $size_etat; $j++) 
                         { 
@@ -41,15 +41,15 @@
                         }
                         if ($compteur == $size_etat) 
                         {
-                            $contenu .= '<img src="images/etat_vert.png">';
+                            $contenu .= '';
                         }
                         else
                         {
-                            $contenu .= '<img src="images/etat_rouge.png">';
+                            $contenu .= '<img src="images/warning.png">';
                         } 
                         $contenu .= '</tr>';
                         $contenu .= '</td>';
-                        echo($i);
+                        //echo($i);
                     if($data[$i][3] == 'logo1')
                     {
 
