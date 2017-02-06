@@ -1388,6 +1388,6 @@ function news_topic()
 	
 
 	<?php
-    $listecapteuralarme = ob_get_clean();
-    return $listecapteuralarme;
+    $news_topic = ob_get_clean();
+    return $news_topic;
 }
