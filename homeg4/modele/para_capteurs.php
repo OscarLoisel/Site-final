@@ -14,4 +14,11 @@
 	    $reponse->execute(array($id));
 	    return $reponse;	
 	}
+
+	function verif_etat_capteurs($bdd, $id_piece)
+	{
+		$reponse = $bdd -> prepare("SELECT etat FROM capteurs WHERE id_piece = ?");
+		$reponse -> execute(array($id_piece));
+		return $reponse;
+	}
 ?>
