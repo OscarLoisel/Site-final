@@ -5,8 +5,8 @@ include_once("controleur/update_chauffage_commun.php");
 include_once("controleur/update_volet_commun.php");
 include_once("controleur/update_light_commun.php");
 
-    $moyenne_temp = moyenne_temperature($bdd,$_SESSION['id']);
-    $moyenne_hum = moyenne_humidite($bdd,$_SESSION['id']);
+    $moyenne_temp = round(moyenne_temperature($bdd,$_SESSION['id']),1);
+    $moyenne_hum = round(moyenne_humidite($bdd,$_SESSION['id']),1);
     $nb_alarme = nombre_camera_allume($bdd,$_SESSION['id']);
 
 
