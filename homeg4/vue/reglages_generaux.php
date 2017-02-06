@@ -3,7 +3,7 @@
 
 
 	$entete = entete("utilisateur");
-	$aside = asideHorsConnexion();
+	$aside = asideReglage("reglages_generaux");
 	$contenu ='<div id="table_gestion">';
 	$contenu .= '<div id="titre">';
 	$contenu .= '<h1>Liste des salles</h1>';
@@ -30,7 +30,7 @@
 			$contenu .='</td>';
 		}*/
 		$contenu .='<td>';
-		$contenu .= '<a href="index.php?cible=delete_piece&amp;delete_piece='.$id_mbr.'"> Supprimer</a>';
+		$contenu .= '<a href="index.php?cible=delete_piece&amp;delete_piece='.$id_mbr.'"> <img src="images/delete.png"</a>';
 		$contenu .='</td>';
 		$contenu .='</tr>';
 
