@@ -250,14 +250,6 @@ function asideReglage($etape)
             		{
             			echo('<li><a href="index.php?cible=scenario">Scénarios</a></li>');
             		}
-	                if($etape=="ajout_capteur")
-					{
-	                    echo('<li><a href="index.php?cible=ajout_capteur"><strong>Ajouter un capteur</strong></a></li>');
-	                }
-	                else
-            		{
-            			echo('<li><a href="index.php?cible=ajout_capteur">Ajouter un capteur</a></li>');
-            		}
 	                if($etape=="cgu")
 					{
 	                    echo('<li id="reglage_3"><a href="index.php?cible=cgu"><strong>Conditions générales d\'utilisation</strong></a></li>'); 

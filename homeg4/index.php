@@ -2489,8 +2489,6 @@ if (isset($_POST['bouton_news']))
         {
             include("vue/newsletter.php");
         }
-        
-
         elseif ($_GET['cible'] == 'lampes') // ASIDE
         {
             include("vue/liste_capteur_lampe.php");
