@@ -13,6 +13,7 @@
     include_once("modele/update_lampe.php");
     include_once('modele/update_chauffage.php');
     include_once("modele/recup_moyenne.php");
+    include_once("modele/recup_utilisateur.php");
     include_once("modele/update_chauffage_commun.php");
     include_once("modele/select_scenario.php");
     include_once("modele/insert_news.php");

@@ -1,6 +1,10 @@
 <?php
 	require("controleur/gestion_utilisateur.php");
 
+	$reponse = nbr_utilisateur($bdd);
+	$nbr_utilisateur = sizeof($reponse);
+	echo $nbr_utilisateur;
+
 	$entete = enteteAdmin("utilisateur");
 	$aside = asideAdmin2($nbr_utilisateur);
 	$contenu ='<div id="table_gestion">';
