@@ -167,17 +167,17 @@ function aside($etape,$moyenne_temperature,$moyenne_hum,$nb_alarme)
 
 		<div id="menu_capteurs">
 			<div class="liste_capteurs">
-				<ul>
+				
 
 				<?php
 
 				if($etape=="lampes")
 				{
-                    echo('<li><a href="index.php?cible=lampes"><strong>Lampes</strong></a></li>'); 
+                    echo('<a href="index.php?cible=lampes"><li><strong>Lampes</strong></li></a>'); 
                 }
                 else
 	            {
-	            	echo('<li><a href="index.php?cible=lampes">Lampes</a></li>');
+	            	echo('<a href="index.php?cible=lampes"><li>Lampes</li></a>');
 	            }
                 if($etape=="chauffage")
 				{
@@ -185,7 +185,7 @@ function aside($etape,$moyenne_temperature,$moyenne_hum,$nb_alarme)
                 }
                 else
 	            {
-	            	echo('<li><a href="index.php?cible=chauffage">Chauffage</a></li>');
+	            	echo('<a href="index.php?cible=chauffage"><li>Chauffage</li></a>');
 	            }
                 if($etape=="volets")
 				{
@@ -193,7 +193,7 @@ function aside($etape,$moyenne_temperature,$moyenne_hum,$nb_alarme)
                 }
                 else
 	            {
-	            	echo('<li><a href="index.php?cible=volets">Volets</a></li>');
+	            	echo('<a href="index.php?cible=volets"><li>Volets</li></a>');
 	            }
                 if($etape=="alarme")
 				{
@@ -201,12 +201,12 @@ function aside($etape,$moyenne_temperature,$moyenne_hum,$nb_alarme)
                 }
                 else
 	            {
-	            	echo('<li><a href="index.php?cible=alarme">Alarme</a></li>');
+	            	echo('<a href="index.php?cible=alarme"><li>Alarme</li></a>');
 	            }
                 
 				?>
 					
-				</ul>
+				
 			</div> 
 
 			
@@ -238,7 +238,7 @@ function asideReglage($etape)
 	?>
 	<div id="menu_capteurs">
 			<div class="liste_capteurs">
-				<ul>
+				
 
 				<?php
 
@@ -285,7 +285,7 @@ function asideReglage($etape)
 
                 ?>
 
-				</ul>
+				
 			</div>
 	</div>
 	<?php
