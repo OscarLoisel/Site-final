@@ -1374,13 +1374,40 @@ function news_topic()
     <div>
     
     <form action="" method="post">
-        <p>
-        <label for="pseudo">Pseudo</label> : <input type="text" name="pseudo" id="pseudo" /><br />
-        <label for="titre">Titre</label> :  <input type="text" name="titre" id="titre" /><br />
-        <label for="message">Message</label> :  <input type="text" name="message" id="message" /><br />
-
-        <input type="submit" value="Envoyer" name="bouton_news" />
-		</p>
+       	<table>
+    		<tr>
+    			<td>
+    				<label for="pseudo">Pseudo : </label>
+    			</td>
+    			<td>
+    				<input type="text" name="pseudo" id="pseudo" />
+    			</td>
+    		</tr>
+    			<tr>
+    			<td>
+    				<label for="titre">Titre : </label>
+    			</td>
+    			<td>
+    				<input type="text" name="titre" id="titre" />
+    			</td>
+    		</tr>
+    			<tr>
+    			<td>
+    				<label for="message">Message : </label>
+    			</td>
+    			<td>
+    				<input type="text" name="message" id="message" />
+    			</td>
+    		</tr>
+    		<tr>
+	    		<td>
+	    			
+	    		</td>
+    			<td>
+    				<input type="submit" value="Envoyer" name="bouton_news" />
+    			</td>
+    		</tr>
+    	</table>
     </form>
     </div>
 
