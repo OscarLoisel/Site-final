@@ -164,11 +164,11 @@ function enteteAdmin($etape)
 	                }
 	                if($etape=="test_tram")
 					{
-	                    echo('<li><a href="index.php?cible=test_tram"><strong>Test TRAM</strong></a></li>');
+	                    echo('<li><a href="index.php?cible=insertion_tram"><strong>Insertion TRAM</strong></a></li>');
 	                }
 	                else
 	                {
-	                	echo('<li><a href="index.php?cible=test_tram">Test TRAM</a></li>');
+	                	echo('<li><a href="index.php?cible=insertion_tram">Insertion TRAM</a></li>');
 	                }
 	                if($etape=="deconnexion") 
 					{

@@ -8,7 +8,7 @@
     include_once("modele/insertpiece.php");
     include_once("modele/edition_profil.php");
     include_once("modele/insertcapteur.php");
-    include_once("modele/insertdonnes.php");
+    include_once("modele/insertion_tram.php");
     include_once("modele/recup_valeurs.php");
     include_once("modele/update_lampe.php");
     include_once('modele/update_chauffage.php');
@@ -2395,6 +2395,10 @@ if (isset($_POST['bouton_news']))
             $id_mbr = $_GET['confirme'];
             include("vue/gestion_utilisateur.php");
         }
+         elseif ($_GET['cible'] == "insertion_tram") // OK
+        {
+            include("vue/insertion_tram.php");
+        }
         elseif ($_GET['cible'] == "delete") // OK
         {
             $id_mbr = $_GET['delete'];
@@ -2411,7 +2415,6 @@ if (isset($_POST['bouton_news']))
         session_destroy();
         include_once("Vue/page_connexion.php");
         }
-=
 
     }  
 

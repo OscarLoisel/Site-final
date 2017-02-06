@@ -8,7 +8,7 @@ $contenu ='<form method="POST" action="">';
 $contenu .='<label>';
 $contenu .='Choisir un utilisateur';
 $contenu .='</label>';
-$reponse = readutilisateur();
+$reponse = readutilisateurs($bdd);
 $contenu .='<select name="deroulant_user" size="'.$size_user.'"';
 $contenu .= '<option>'.$nom_utilisateur;
 $contenu .='<label>';
