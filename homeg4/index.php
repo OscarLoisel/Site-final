@@ -2398,12 +2398,13 @@ if (isset($_POST['bouton_news']))
             $id_mbr = $_GET['delete'];
             include("vue/gestion_utilisateur.php");
         }
-        else if ($_GET['cible'] == "deconnexion") // OK
-        {
         elseif ($_GET['cible'] == 'newslettera') 
         {
             include("vue/newslettera.php");
         }
+        else if ($_GET['cible'] == "deconnexion") // OK
+        {
+
         // Détruit toutes les variables de session
         $_SESSION = array();
         /*if (isset($_COOKIE[session_name()])) 
