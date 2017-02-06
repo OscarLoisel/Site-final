@@ -8,6 +8,7 @@ include_once("controleur/update_alarme.php");
     $entete = entete("home");
     $aside = aside("sav",$moyenne_temp,$moyenne_hum,$nb_alarme);
     $contenuc = listecapteuralarme();
+    $contenuc .= $smg;
     $pied = pied();
     
     include('gabarit_capteur.php');
