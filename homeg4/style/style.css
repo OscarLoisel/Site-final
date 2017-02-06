@@ -50,9 +50,9 @@ nav {
 
 .menu-accordeon{
 	position : relative;
-	margin-top: 4em;
+	margin-top: 40px;
 	/*justify-content: space-around;*/
-	margin-left : 108px;
+	margin-left : 8em;
 	/*width : 900px;
 	height : 10%;*/
 }
@@ -191,15 +191,15 @@ color:#000;
 	word-wrap : break-word;
 	/*margin-right:2em;
 	margin-left:2em;*/
-	margin : auto;
+	margin-left: 27em;
 	/*width: 60%;*/
 	color: black;
-	width: 900px;
-	height: 560px;
-	margin-top: 2em;
+	width: 880px;
+	height: 590px;
+	margin-top: 30px;
 	background-color: rgba(165,191,200,0.6);
 	overflow: auto;
-
+	position: absolute;
 }
 
 /* CONTENU ACCUEIL */
@@ -423,8 +423,8 @@ aside {
 	/*width: 16.1em;
 	height: 10em;*/
 	padding: 1em;
-	margin-left: 1.3em;
-	margin-top: 2em;
+	margin-left: 20px;
+	margin-top: 30px;
 	background-color: rgba(165,191,200,0.8);
 }
 
@@ -512,13 +512,13 @@ td[colspan="2"] {
 /*PIED */
 
 footer{
+	position: absolute;
 	display : flex;
 	justify-content: center;
-	margin-top : 6em;
+	top: 800px;
+	margin-left: 40px;
 	border-top : #314367 solid 1px;
-	width : 90%;
-	margin-left : auto;
-	margin-right: auto;
+	width : 1220px;
 	color :#314367 ;
 }
 footer div{
