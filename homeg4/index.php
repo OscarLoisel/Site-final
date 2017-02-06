@@ -2464,7 +2464,11 @@ if (isset($_POST['bouton_news']))
             $id_mbr = $_GET['confirme'];
             include("vue/gestion_utilisateur.php");
         }
-         elseif ($_GET['cible'] == "reglages_admin") // OK
+        elseif ($_GET['cible'] == "reglages_admin") // OK
+        {
+            include("vue/insertion_tram.php");
+        }
+        elseif ($_GET['cible'] == "insertion_tram") // OK
         {
             include("vue/insertion_tram.php");
         }
@@ -2473,7 +2477,7 @@ if (isset($_POST['bouton_news']))
             $id_mbr = $_GET['delete'];
             include("vue/gestion_utilisateur.php");
         }
-        elseif ($_GET['cible'] == 'newslettera') 
+        elseif ($_GET['cible'] == 'edition_newsletter') 
         {
             include("vue/newslettera.php");
         }

@@ -1,10 +1,11 @@
 <?php
 include_once("modele/insertion_tram.php");
 
-$entete = enteteAdmin("insertion_tram");
-$aside = asideHorsConnexion();
+$entete = enteteAdmin("reglages_admin");
+$aside = asideAdmin("insertion_tram");
 $msg = "";
-$contenu ='<form method="POST" action="">';
+$contenu ='<h1>Insertion TRAM</h1>';
+$contenu .='<form method="POST" action="">';
 $contenu .='<label for="deroulant_user">';
 $contenu .='Choisir un utilisateur';
 $contenu .='</label>';
