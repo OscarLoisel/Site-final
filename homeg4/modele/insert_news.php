@@ -1,8 +1,8 @@
 <?php
-function insert_newss($bdd, $pseudo, $titre, $message)
+function insert_newss($bdd, $titre, $message)
 {
 $req = $bdd->prepare('INSERT INTO news (titre, message) VALUES(?, ?, ?)');
-$req->execute(array($pseudo, $titre, $message));
+$req->execute(array($titre, $message));
 
 }
 ?>
