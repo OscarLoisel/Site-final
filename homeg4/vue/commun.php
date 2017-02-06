@@ -1448,7 +1448,7 @@ function news_topic()
     				<input type="submit" value="Envoyer" name="bouton_news" />
     			</td>
     		</tr>
-    	</table>
+    	</table><br /><br />
     </form>
     </div>
 
