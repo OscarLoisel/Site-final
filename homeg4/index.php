@@ -24,6 +24,10 @@
         include("controleur/connexion.php");
     }
 
+// INSERTION DES TRAMS DANS LA BASE DE DONNÉES
+
+    
+
 // FORMULAIRE INSCRIPTION
     
     if (isset($_POST['forminscription'])) 

@@ -1,5 +1,7 @@
 <?php
 
+include_once("modele/connexion_base.php");
+include_once("modele/insertion_trame.php");
 //TRA - OBJ - REQ - TYP - NUM - VAL - TIM
 
 $tram ='100011301002B0125';
@@ -10,7 +12,12 @@ $requete = substr($tram, 5, 1); //1 - IDENTIFIE LA COMMANDE - modifie l'etat du 
 $type = substr($tram, 6,1); // 1 - LE TYPE DE CAPTEUR
 $numero = substr($tram, 7, 2); //2 - NUMERO DE CAPTEUR
 $valeur_capteur_hex = substr($tram, 9, 4); //4 - VALEUR DU CAPTEUR
-$date = substr($tram, 13, 4); // 4 - DATE
+$annee = substr($tram, 13, 4); //4 - VALEUR DE L'ANNÉE 
+$mois = substr($tram, 17, 2); //2 - VALEUR DU MOIS
+$jour = substr($tram, 19, 2); //2 - VALEUR DU JOUR
+$heure = substr($tram, 21, 2); //2 - VALEUR DU HEURE
+$minute = substr($tram, 23, 2); //2 - VALEUR DU MINUTE
+$seconde = substr($tram, 25, 2); //2 - VALEUR DU SECONDE
 
 
 
@@ -71,9 +78,10 @@ echo $date;
 	// décodage avec sscanf
 		// tout en chaine de caracteres
 		list($t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec) = sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+		insert_trame($bdd, $t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec);
 		echo("$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec</br/>");
 	
 		// en typant les données (à vérifier avec Gilles...)
-		list($t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec) = sscanf($trame,"%1d%4x%1s%1s%2x%4x%4s%2s%4d%2d%2d%2d%2d%2d");
-		echo("$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec");
+		//list($t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec) = sscanf($trame,"%1d%4x%1s%1s%2x%4x%4s%2s%4d%2d%2d%2d%2d%2d");
+		//echo("$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec");
 ?>
